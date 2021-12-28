@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwatchmen_docs=self.webpackChunkwatchmen_docs||[]).push([[209],{1764:function(e){e.exports=JSON.parse('{"allTagsPath":"/watchmen-docs/blog/tags","slug":"/watchmen-docs/blog/tags/hello","name":"hello","count":1,"permalink":"/watchmen-docs/blog/tags/hello"}')}}]);
