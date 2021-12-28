@@ -1,28 +1,31 @@
-import Translate from '@docusaurus/Translate';
+import Translate, {translate} from '@docusaurus/Translate';
 import clsx from 'clsx';
 import React from 'react';
 import styles from './homepage-features.module.css';
 
 const features = [
 	{
-		title: 'Easy to Use',
+		title: translate({id: 'homepage.feature.easy-to-use.title', message: 'Easy to Use'}),
 		svg: require('../../static/img/easy-to-use.svg').default,
 		description: <Translate id="homepage.feature.easy-to-use">
-			Watchmen was designed from the ground up to be easily installed and used to get your data up and analysing quickly.
+			Watchmen was designed from the ground up to be easily installed and used to get your data up and analysing
+			quickly.
 		</Translate>
 	},
 	{
-		title: 'Focus on What Matters',
+		title: translate({id: 'homepage.feature.focus-on-matters.title', message: 'Focus on What Matters'}),
 		svg: require('../../static/img/focus-on-matters.svg').default,
 		description: <Translate id="homepage.feature.focus-on-matters">
-			Watchmen lets you focus on your data, and we'll do the chores. Go ahead and move your data into the watchmen site.
+			Watchmen lets you focus on your data, and we'll do the chores. Go ahead and move your data into the watchmen
+			site.
 		</Translate>
 	},
 	{
-		title: 'Powered by Cloud Native',
+		title: translate({id: 'homepage.feature.powered-by.title', message: 'Powered by Cloud Native'}),
 		svg: require('../../static/img/powered-by.svg').default,
 		description: <Translate id="homepage.feature.powered-by">
-			Compose and deploy watchmen by Cloud Native technologies, to minimize expense and maximize results from data analysis.
+			Compose and deploy watchmen by Cloud Native technologies, to minimize expense and maximize results from data
+			analysis.
 		</Translate>
 	}
 ];
