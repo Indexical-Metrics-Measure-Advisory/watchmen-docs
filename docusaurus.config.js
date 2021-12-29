@@ -69,6 +69,7 @@ const config = {
 				logo: {
 					alt: 'Matryoshka', src: 'img/logo.svg'
 				},
+				hideOnScroll: true,
 				items: [
 					{
 						type: 'doc',
@@ -80,6 +81,12 @@ const config = {
 					{type: 'doc', docId: 'docs-index', position: 'left', label: 'Docs'},
 					{to: '/blog', label: 'Blog', position: 'left'},
 					// {type: 'localeDropdown', position: 'right'},
+					{
+						type: 'docsVersionDropdown',
+						position: 'right',
+						dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+						dropdownActiveClassDisabled: true
+					},
 					{
 						href: 'https://github.com/Indexical-Metrics-Measure-Advisory',
 						label: 'GitHub',
