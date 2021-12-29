@@ -1,4 +1,5 @@
 import Link from '@docusaurus/Link';
+import Translate from '@docusaurus/Translate';
 import {useLatestVersion, useVersions} from '@theme/hooks/useDocs';
 import Layout from '@theme/Layout';
 import React from 'react';
@@ -14,20 +15,34 @@ const Version = () => {
 			title="Versions"
 			description="Watchmen Versions page listing all documented site versions">
 			<main className="container margin-vert--lg">
-				<h1>Watchmen documentation versions</h1>
+				<h1>
+					<Translate id="versions-page.title">
+						Watchmen documentation versions
+					</Translate>
+				</h1>
 
 				{latestVersion && (
 					<div className="margin-bottom--lg">
-						<h3 id="next">Current version (Stable)</h3>
+						<h3 id="next">
+							<Translate id="versions-page.current-version-title">
+								Current version (Stable)
+							</Translate>
+						</h3>
 						<p>
-							Here you can find the documentation for current released version.
+							<Translate id="versions-page.current-version-description">
+								Here you can find the documentation for current released version.
+							</Translate>
 						</p>
 						<table>
 							<tbody>
 							<tr>
 								<th>{latestVersion.label}</th>
 								<td>
-									<Link to={`${latestVersion.path}/docs-index`}>Documentation</Link>
+									<Link to={`${latestVersion.path}/docs-index`}>
+										<Translate id="versions-page.doc-link">
+											Documentation
+										</Translate>
+									</Link>
 								</td>
 								{/*<td>*/}
 								{/*	<a href={`${repoUrl}/releases/tag/v${latestVersion.name}`}>*/}
@@ -42,17 +57,26 @@ const Version = () => {
 
 				{currentVersion !== latestVersion && (
 					<div className="margin-bottom--lg">
-						<h3 id="latest">Next version (Unreleased)</h3>
+						<h3 id="latest">
+							<Translate id="versions-page.next-version-title">
+								Next version (Unreleased)
+							</Translate>
+						</h3>
 						<p>
-							Here you can find the documentation for work-in-process unreleased
-							version.
+							<Translate id="versions-page.next-version-description">
+								Here you can find the documentation for work-in-process unreleased version.
+							</Translate>
 						</p>
 						<table>
 							<tbody>
 							<tr>
 								<th>{currentVersion.label}</th>
 								<td>
-									<Link to={`${currentVersion.path}/docs-index`}>Documentation</Link>
+									<Link to={`${currentVersion.path}/docs-index`}>
+										<Translate id="versions-page.doc-link">
+											Documentation
+										</Translate>
+									</Link>
 								</td>
 							</tr>
 							</tbody>
@@ -63,10 +87,14 @@ const Version = () => {
 				{(pastVersions.length > 0) && (
 					<div className="margin-bottom--lg">
 						<h3 id="archive">
-							Past versions (Not maintained anymore, recommend to upgrade to latest stable version)
+							<Translate id="versions-page.past-version-title">
+								Past versions (Not maintained anymore, recommend to upgrade to latest stable version)
+							</Translate>
 						</h3>
 						<p>
-							Here you can find documentation for previous versions of Watchmen.
+							<Translate id="versions-page.past-version-description">
+								Here you can find documentation for previous versions of Watchmen.
+							</Translate>
 						</p>
 						<table>
 							<tbody>
@@ -74,13 +102,12 @@ const Version = () => {
 								<tr key={version.name}>
 									<th>{version.label}</th>
 									<td>
-										<Link to={`${version.path}/docs-index`}>Documentation</Link>
+										<Link to={`${version.path}/docs-index`}>
+											<Translate id="versions-page.doc-link">
+												Documentation
+											</Translate>
+										</Link>
 									</td>
-									{/*<td>*/}
-									{/*	<a href={`${repoUrl}/releases/tag/v${version.name}`}>*/}
-									{/*		Release Notes*/}
-									{/*	</a>*/}
-									{/*</td>*/}
 								</tr>
 							))}
 							</tbody>
