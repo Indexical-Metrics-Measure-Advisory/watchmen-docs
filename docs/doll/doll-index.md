@@ -1,6 +1,6 @@
 ---
 id: doll-index
-title: Overview
+title: Doll Overview
 sidebar_position: 1
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: dqc-index
-title: Overview
+title: DQC Overview
 sidebar_position: 1
 ---
 

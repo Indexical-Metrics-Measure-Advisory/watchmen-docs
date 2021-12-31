@@ -1,6 +1,6 @@
 ---
 id: web-client-index
-title: Overview
+title: Web Client Overview
 sidebar_position: 1
 ---
 
