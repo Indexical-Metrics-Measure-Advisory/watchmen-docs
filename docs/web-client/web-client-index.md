@@ -15,7 +15,7 @@ sidebar_position: 1
 First, ask your administrator to create an account, and open web client in browser.
 
 :::tip
-We prefer the latest Chrome to get the best experience.
+We highly recommend using the latest version of Google Chrome to have the best experience.
 :::
 
 ## Login
