@@ -19,4 +19,4 @@ We highly recommend using the latest version of Google Chrome to have the best e
 :::
 
 ## Login
-![Login](./images/login.png)
+![Login](images/login.png)
