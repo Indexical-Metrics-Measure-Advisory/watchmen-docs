@@ -19,4 +19,4 @@ We prefer the latest Chrome to get the best experience.
 :::
 
 ## Login
-![Login](/img/web-client/login.png)
+![Login](./images/login.png)
