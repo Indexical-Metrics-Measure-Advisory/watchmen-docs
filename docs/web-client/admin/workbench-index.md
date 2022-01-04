@@ -42,3 +42,7 @@ Following features are for data zone admin:
 :::info
 `Data Zone Admin` is also called as `Admin` for short in following chapters if no otherwise specified as `Super Admin`.
 :::
+
+## Centralized Definition Persistence
+Definition data in **_Watchmen_** is stored centralized now.
+A definition data source must be configured in standard deployment, your can find it in [Deployment](../../deployment/deploy-index) chapter.
