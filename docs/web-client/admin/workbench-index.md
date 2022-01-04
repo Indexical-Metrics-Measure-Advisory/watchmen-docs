@@ -12,7 +12,7 @@ There are 2 roles of admin:
 - Data Zone Admin
 
 ### Super Admin
-**_Watchmen_** is designed for multiple tenants, all data including definitions are tenant oriented, a super
+**_Watchmen_** is designed for multiple data zones, all data including definitions are data zone oriented, a super
 administrator is required to maintain each data zone's `startup settings`.
 
 The following features are only for super admin:
