@@ -8,19 +8,19 @@ sidebar_position: 1
 
 In **_Watchmen_**, definition objects are called as `Tuple`,
 
-- [Data Zone](admin/data-zone)
-- [Data Source](admin/data-source)
-- [External Writer](admin/external-writer)
-- [User Group](admin/user-group)
-- [User](admin/user)
-- [Topic](admin/topic)
-- [Enumeration](admin/enumeration)
-- [Pipeline](admin/pipeline)
-- [Space](admin/space)
-- [Connected Space](console/connected-space)
-- [Subject](console/subject)
-- [Report](console/report)
-- [Dashboard](console/dashboard)
+- [Data Zone](data-zone)
+- [Data Source](data-source)
+- [External Writer](external-writer)
+- [User Group](user-group)
+- [User](user)
+- [Topic](topic)
+- [Enumeration](enumeration)
+- [Pipeline](pipeline)
+- [Space](space)
+- [Connected Space](connected-space)
+- [Subject](subject)
+- [Report](report)
+- [Dashboard](dashboard)
 
 ## Backend and Frontend
 We use typescript for frontend and python for backend.

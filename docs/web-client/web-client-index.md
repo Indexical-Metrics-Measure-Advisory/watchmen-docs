@@ -101,5 +101,6 @@ part, generate a new `PAT` or remove existing one,
 - Multiple `PAT`s are allowed,
 - A human reading label for each `PAT` is recommended.
 
-:::tip Ask your administrator for more information if you want to visit data via API.
+:::tip  
+Ask your administrator for more information if you want to visit data via API.
 :::
