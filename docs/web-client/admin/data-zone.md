@@ -19,7 +19,7 @@ Before create anything, a data zone must be created first, tuples are organized 
 
 Data zone use [standard tuple page](../standard-tuple-page).
 
-![Edit Data Zone](images/edit-data-zone.png)
+![Edit Data Zone](images/data-zone.png)
 
 ## Form Validation
 
