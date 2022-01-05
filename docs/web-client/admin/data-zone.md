@@ -16,15 +16,17 @@ Data zone is only available for `Super Admin`.
 Before create anything, a data zone must be created first, tuples are organized within a data zone.
 
 ## Find a Data Zone
+
 Click `Data Zones` menu,
 
 ![Query Data Zone](images/query-data-zone.png)
 
-:::tip
+:::tip  
 9 cards per page.
 :::
 
 ## Edit Data Zone
+
 Click the `Data Zone` card,
 
 ![Edit Data Zone](images/edit-data-zone.png)
@@ -36,6 +38,7 @@ There is a reminder at the bottom of form when something is changed.
 Click `Confirm` button to save your changes, or click `Close` to discard them.
 
 ## Create Data Zone
+
 Click the `Create Data Zone` button, a data changed reminder confirm dialog pops up when still in editing and something has been changed,
 
 ![Discard Changes Reminder](images/discard-changes-reminder.png)
