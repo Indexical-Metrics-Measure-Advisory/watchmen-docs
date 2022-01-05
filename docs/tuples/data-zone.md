@@ -5,6 +5,8 @@ sidebar_position: 2
 ---
 
 # Data Zone
+## Model
+### Frontend
 ```typescript title="watchmen-web-client/src/services/data/tuples/tenant-types.ts"
 export type TenantId = string;
 
@@ -12,4 +14,11 @@ export interface Tenant extends Tuple {
 	tenantId: TenantId;
 	name: string;
 }
+```
+
+### Backend
+```python title="watchmen-matryoshka-doll/watchmen/auth/tenant.py"
+class Tenant(WatchmenModel):
+    tenantId: str = None
+    name: str = None
 ```
