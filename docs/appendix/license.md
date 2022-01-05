@@ -1,6 +1,6 @@
 ---
-id: license
-title: License
+id: license  
+title: License  
 sidebar_position: 1
 ---
 

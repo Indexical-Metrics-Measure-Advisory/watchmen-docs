@@ -15,35 +15,15 @@ Data zone is only available for `Super Admin`.
 
 Before create anything, a data zone must be created first, tuples are organized within a data zone.
 
-## Find a Data Zone
+## Standard Tuple Page
 
-Click `Data Zones` menu,
-
-![Query Data Zone](images/query-data-zone.png)
-
-:::tip  
-9 cards per page.
-:::
-
-## Edit Data Zone
-
-Click the `Data Zone` card,
+Data zone use [standard tuple page](../standard-tuple-page).
 
 ![Edit Data Zone](images/edit-data-zone.png)
 
-There is a reminder at the bottom of form when something is changed.
+## Form Validation
 
-![Data Changed Reminder](images/data-changed-reminder.png)
+Only one field `Zone Name` for data zone, it is required, keep it not blank.
 
-Click `Confirm` button to save your changes, or click `Close` to discard them.
-
-## Create Data Zone
-
-Click the `Create Data Zone` button, a data changed reminder confirm dialog pops up when still in editing and something has been changed,
-
-![Discard Changes Reminder](images/discard-changes-reminder.png)
-
-Click `No` to discard creating, or click `Yes` to discard editing and switch to a new data zone editing,
-
-![Create Data Zone](images/create-data-zone.png)
-
+## Model
+Find data zone model **[here](../../tuples/data-zone)**.

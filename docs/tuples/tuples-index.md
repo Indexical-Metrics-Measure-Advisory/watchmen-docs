@@ -1,11 +1,13 @@
 ---
-id: tuples-index
-title: Index
+id: tuples-index  
+title: Tuple Index  
 sidebar_position: 1
 ---
 
 # Tuples Index
+
 In **_Watchmen_**, definition objects are called as `Tuple`,
+
 - [Data Zone](admin/data-zone)
 - [Data Source](admin/data-source)
 - [External Writer](admin/external-writer)
@@ -20,3 +22,21 @@ In **_Watchmen_**, definition objects are called as `Tuple`,
 - [Report](console/report)
 - [Dashboard](console/dashboard)
 
+## Backend and Frontend
+We use typescript for frontend and python for backend.
+
+## Tuple Interface
+### Frontend
+```typescript title="watchmen-web-client/src/services/data/tuples/tuple-types.ts"
+export interface Tuple {
+	createTime: DateTime;
+	lastModified: DateTime;
+}
+```
+
+### Backend
+```python title="watchmen-model/model/model/common/watchmen_model.py"
+class WatchmenModel(BaseModel):
+    lastModified: datetime = datetime.now().replace(tzinfo=None)
+    createTime: str = None
+```
