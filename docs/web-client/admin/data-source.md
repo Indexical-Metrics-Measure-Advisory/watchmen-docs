@@ -23,7 +23,10 @@ Data source use [standard tuple page](../standard-tuple-page).
 
 ![Edit Data Zone](images/data-source.png)
 
+Extra parameter pair is added automatically, and will not be removed when name and value are cleared, empty pairs are dropped on saving.
+
 ## Form Validation
+
 - Data Source Code: required,
 - Data Zone: required,
 - Extra Parameter Name: required when value existed.
