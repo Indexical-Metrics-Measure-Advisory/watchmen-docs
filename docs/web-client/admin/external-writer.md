@@ -34,7 +34,7 @@ External writer use [standard tuple page](../standard-tuple-page).
 
 ## Model
 
-Find data source model **[here](../../tuples/external-writer)**.
+Find external writer model **[here](../../tuples/external-writer)**.
 
 ## Built-in Writers
 **[Here](../../doll/built-in/built-in-external-writers)** for more details on using built-in external writers.
