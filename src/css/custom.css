@@ -40,3 +40,6 @@ div.docs-doc-page main img {
     box-shadow: rgba(0,0,0,0.05) 1px 1px 2px 3px;
 }
 
+p > code, li > code {
+    padding: 0 8px;
+}

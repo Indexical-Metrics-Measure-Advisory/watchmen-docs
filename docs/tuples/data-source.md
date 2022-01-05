@@ -37,7 +37,7 @@ export interface DataSource extends Tuple {
 ```
 
 ### Backend
-```python title="watchmen_boot/storage/model/data_source.py"
+```python title="watchmen-boot/storage/model/data_source.py"
 class DataSourceParam(BaseModel):
     name: str = None
     value: str = None
