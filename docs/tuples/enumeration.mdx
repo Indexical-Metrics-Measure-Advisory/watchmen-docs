@@ -1,0 +1,41 @@
+---
+id: enumeration  
+title: Enumeration  
+sidebar_position: 8
+---
+
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+# Enumeration
+## Model
+<Tabs>
+<TabItem value="ts" label="Typescript">
+
+```typescript title="watchmen-web-client/src/services/data/tuples/enum-types.ts"
+export interface EnumItem {
+	code: string;
+	label: string;
+	replaceCode?: string;
+	parentCode?: string;
+}
+
+export type EnumId = string;
+
+export interface Enum extends Tuple {
+	enumId: EnumId;
+	name: string;
+	description?: string;
+	parentEnumId?: EnumId;
+	items: Array<EnumItem>;
+	tenantId?: TenantId;
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+**_`(under construction)`_**
+
+</TabItem>
+</Tabs>

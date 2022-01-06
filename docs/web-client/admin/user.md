@@ -15,7 +15,7 @@ administrator.
 
 ## Standard Tuple Page
 
-External writer use [standard tuple page](../standard-tuple-page).
+User use [standard tuple page](../standard-tuple-page).
 
 ![Edit User](images/user.png)
 

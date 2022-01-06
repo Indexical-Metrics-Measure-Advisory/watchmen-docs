@@ -4,9 +4,14 @@ title: User Group
 sidebar_position: 6
 ---
 
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
 # User Group
 ## Model
-### Frontend
+<Tabs>
+<TabItem value="ts" label="Typescript">
+
 ```typescript title="watchmen-web-client/src/services/data/tuples/user-types.ts"
 export type UserGroupId = string;
 
@@ -34,5 +39,10 @@ export interface UserGroup extends Tuple, SpaceHolder, UserHolder {
 }
 ```
 
-### Backend
+</TabItem>
+<TabItem value="py" label="Python">
+
 **_`(under construction)`_**
+
+</TabItem>
+</Tabs>
