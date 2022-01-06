@@ -35,7 +35,7 @@ There are 2 kinds of topic,
 - System
 - Business
 
-Typically, topics for business data are `Business`, topics for analysis of monitor logs are `System`.
+For example, topics for business data are `Business`, topics for analysis of monitor logs are `System`.
 
 ## Type
 
