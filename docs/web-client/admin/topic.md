@@ -13,6 +13,7 @@ Topic is the core concept of **_Watchmen_**,
 - Attached into a data source.
 
 And
+
 - All data are stored in topics,
 - Pipelines run on topics,
 - Subjects, datasets, reports are built based on topics.
@@ -38,11 +39,16 @@ Typically, topics for business data are `Business`, topics for analysis of monit
 
 ## Type
 
-There are several types of topic,
+There are several types of topic.
 
-- Raw
-- Meta
-- Distinct
+### Raw
+
+### Meta
+
+### Distinct
+
+### Aggregation
+
 - Aggregate
 - Time
 - Ratio
