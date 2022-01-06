@@ -19,8 +19,4 @@ export interface Tenant extends Tuple {
 ```
 
 ### Backend
-```python title="watchmen-matryoshka-doll/watchmen/auth/tenant.py"
-class Tenant(WatchmenModel):
-    tenantId: str = None
-    name: str = None
-```
+**_`(under construction)`_**

@@ -26,12 +26,4 @@ export interface ExternalWriter extends Tuple {
 ```
 
 ### Backend
-```python title="watchmen-model/model/model/external/external_writer.py"
-class ExternalWriter(WatchmenModel):
-    writerId: str = None
-    writerCode: str = None
-    type: str = None
-    pat: str = None
-    url: str = None
-    tenantId: str = None
-```
+**_`(under construction)`_**

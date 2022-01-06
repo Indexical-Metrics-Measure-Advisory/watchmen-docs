@@ -35,8 +35,4 @@ export interface Tuple {
 ```
 
 ### Backend
-```python title="watchmen-model/model/model/common/watchmen_model.py"
-class WatchmenModel(BaseModel):
-    lastModified: datetime = datetime.now().replace(tzinfo=None)
-    createTime: str = None
-```
+**_`(under construction)`_**

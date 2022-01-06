@@ -9,7 +9,7 @@ sidebar_position: 30
 External writer is used in pipeline, write data to external.
 
 :::caution  
-External Writer is only available for `Super Admin`.
+External writer is available for `Super Admin` only.
 :::
 
 :::caution  

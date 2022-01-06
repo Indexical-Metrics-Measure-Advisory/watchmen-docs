@@ -23,7 +23,8 @@ When logged in with `Admin` role, page should be as following,
 
 ![Edit User By Admin](images/user-admin.png)
 
-A `Groups` field is visible now, current user can be added to user groups or remove from them.
+- A `Groups` field is visible, current user can be added to user groups or remove from them.
+- `Data Zone` field is invisible, which means creating/editing user should be in same data zone with current user.
 
 ## Form Validation
 
@@ -33,7 +34,7 @@ A `Groups` field is visible now, current user can be added to user groups or rem
 - User Role: required. Only 2 options are available:
     - Console User, aka Business User,
     - Administrator, aka Data Zone Admin,
-- Data Zone: required.
+- Data Zone: required. Only visible when logged in with `Super Admin` role,
 - Groups: optional. Only visible when logged in with `Admin` role.
 
 :::caution  

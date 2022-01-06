@@ -40,15 +40,4 @@ export interface UserHolder extends TupleHolder {
 ```
 
 ### Backend
-```python title="watchmen-model/model/model/common/user.py"
-class User(WatchmenModel):
-    userId: str = None
-    name: str = None
-    nickName: str = None
-    password: str = None
-    # pwd:str = None
-    is_active: bool = True
-    groupIds: list = None
-    role: str = None
-    tenantId: str = None
-```
+**_`(under construction)`_**

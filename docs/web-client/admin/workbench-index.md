@@ -18,11 +18,13 @@ There are 2 roles of admin:
 **_Watchmen_** is designed for multiple data zones, all data including definitions are data zone oriented, a super administrator is required
 to maintain each data zone's `startup settings`.
 
-The following features are only for super admin:
+The following features are only for `Super Admin`:
 
 - Data zone maintain,
 - Data source maintain,
 - External writer maintain.
+
+Following features are available for `Super Admin`, but also for 'Admin', 
 - User maintain.
 
 ### Data Zone Admin

@@ -6,11 +6,10 @@ sidebar_position: 10
 
 # Data Zone
 
-Data zones allow the logical and/or physical separation of data that keeps the environment secure, organized, and agile. In **_Watchmen_**,
-data zone can be created/maintained by super admin only.
+Data zones allow the logical and/or physical separation of data that keeps the environment secure, organized, and agile.
 
 :::info  
-Data zone is only available for `Super Admin`.
+Data zone is available for `Super Admin` only.
 :::
 
 Before create anything, a data zone must be created first, tuples are organized within a data zone.

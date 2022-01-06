@@ -10,7 +10,7 @@ Data sources are defined in data zone, it's a logical concept.
 Topics are stored in appointed data source.
 
 :::caution  
-Data source is only available for `Super Admin`.
+Data source is available for `Super Admin` only.
 :::
 
 :::caution  
