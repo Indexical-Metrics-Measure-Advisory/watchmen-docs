@@ -6,15 +6,14 @@ sidebar_position: 80
 
 # Topic
 
-Topic is the core concept of **_Watchmen_**, all data are stored in topics.
-
-Topic
+Topic is the core concept of **_Watchmen_**,
 
 - Is categorized by kind and type,
 - Has a set of factors,
 - Attached into a data source.
 
 And
+- All data are stored in topics,
 - Pipelines run on topics,
 - Subjects, datasets, reports are built based on topics.
 
