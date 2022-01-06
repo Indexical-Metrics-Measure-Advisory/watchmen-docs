@@ -1,0 +1,45 @@
+---
+id: space  
+title: Space  
+sidebar_position: 7
+---
+
+# Space
+## Model
+### Frontend
+```typescript title="watchmen-web-client/src/services/data/tuples/user-group-types.ts"
+export type UserGroupId = string;
+
+export interface UserGroupHolder extends TupleHolder {
+	userGroupIds: Array<UserGroupId>;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/topic-types.ts"
+export type TopicId = string;
+
+export interface TopicHolder extends TupleHolder {
+	topicIds: Array<TopicId>;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/space-types.ts"
+export interface SpaceFilter {
+	topicId: TopicId;
+	joint: ParameterJoint;
+	enabled: boolean;
+}
+
+export type SpaceId = string;
+
+export interface Space extends Tuple, TopicHolder, UserGroupHolder {
+	spaceId: SpaceId;
+	name: string;
+	description?: string;
+	tenantId?: TenantId;
+	filters?: Array<SpaceFilter>;
+}
+```
+
+### Backend
+**_`(under construction)`_**
