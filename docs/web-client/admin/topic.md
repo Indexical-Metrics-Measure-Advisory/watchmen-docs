@@ -6,7 +6,12 @@ sidebar_position: 80
 
 # Topic
 
-Space is a set of topics. When space is assigned to user groups, that is to say, users in groups can connect to space in console workbench.
+Topic is the core concept of **_Watchmen_**, all data are stored in topics.
+
+Topic 
+- Is categorized by kind and type,
+- Has a set of factors,
+- Attached into a data source.
 
 :::tip  
 Topic is available for `Admin` only.
@@ -35,7 +40,7 @@ Topic use [standard tuple page](../standard-tuple-page).
   - Index Group: optional,
   - Encryption: optional,
   - Enumeration: required when a factor is an enumeration,
-  - Flatten Column: required when topic is raw and factor name contains `.`.
+  - Flatten Column: required when topic is raw and factor name contains at least one dot(`.`).
 
 ## Model
 
