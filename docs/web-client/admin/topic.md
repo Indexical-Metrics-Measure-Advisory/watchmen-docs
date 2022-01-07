@@ -10,12 +10,14 @@ Topic is the core concept of **_Watchmen_**,
 
 - Is categorized by kind and type,
 - Has a set of factors,
-- Attached into a data source.
+- Attached into a data source
+- In RDS, topic equates table,
+- In NoSQL, topic equates document.
 
 And
 
 - All data are stored in topics,
-- Pipelines run on topics,
+- Pipelines are run on topics,
 - Subjects, datasets, reports are built based on topics.
 
 :::tip  
@@ -35,7 +37,7 @@ There are 2 kinds of topic,
 - System
 - Business
 
-For example, topics for business data are `Business`, topics for analysis of monitor logs are `System`.
+For example, topics for business data are `Business`, topics for log data are `System`.
 
 ## Type
 
@@ -43,26 +45,229 @@ There are several types of topic.
 
 ### Raw
 
+Raw topic is for receive data from other systems, we use JSON format to store raw data which received via RESTful API. Raw data is
+immutable, which means every request will create a new raw data record.  
+In some cases, raw data needs to be searched, but as a fairly well known fact, data stored as JSON is not that easy for searching,
+especially in RDS, such as Oracle and MySQL. In the latest version of Oracle and MySQL, they both provide the functions to operate JSON
+objects, but we offer an easy way, which is a factor in hierarchical structure of a JSON object can be flattened as a single column.
+
+For example, here is an order JSON,
+
+```json
+{
+	"orderId": 10000,
+	"orderNo": "N10000",
+	"amount": 10000,
+	"customer": {
+		"name": "John Doe",
+		"gender": "M"
+	}
+}
+```
+
+Simply tick the `Flatten Column` checkbox, a single table column is created for `customer.name`,
+
+![Flatten Factor](images/flatten-factor.png)
+
+Now, the raw topic can be searched by simple SQL,
+
+```sql
+// assume topic name is "customer", then table name will be "TOPIC_CUSTOMER"
+SELECT * FROM TOPIC_CUSTOMER WHERE CUSTOMER_NAME = 'John Doe';
+```
+
+:::tip
+
+- Index doesn't be applied in above sample. In real world, for search performance, it should be declared,
+- Dots(`.`) in factor name are replaced by underscore.
+
+:::
+
 ### Meta
+
+Meta topic is for those data is definition, meta, not for instance data. There are several characteristic features of metadata,
+
+- Includes more factors instead of code-label pair in enumeration,
+- Immutable or at least slowly changing,
+- Writing from other topics is not necessary,
+- Reading in pipeline only.
+
+Subject/dataset will be more descriptive base on a set of well-designed meta topics.
 
 ### Distinct
 
+Distinct topic is for instance data, such as order, customer, etc. In transaction system, instance data is changed time by time, the latest
+snapshot should be extracted and send to **_Watchmen_**, store in distinct topic. On the other hand, we also know changes are very important
+part in IT system, for some reason, typically for audit, changes are logged and persisted. From perspective of changes on timeline, they are
+also can be treated as distinct data. Let's play that out with an example to make it more apparent.
+
+- Firstly, a raw topic `RAW_ORDER`,
+
+```json
+{
+	"orderId": 10000,
+	"orderNo": "N10000",
+	"amount": 10000,
+	"customer": {
+		"name": "John Doe",
+		"gender": "M"
+	}
+}
+```
+
+- Create a distinct topic `ORDER` for instance data, a distinct row will be created when raw data received,
+
+| OrderID | OrderNO | Amount | 
+|---------|---------|--------|
+| 10000   | N10000  | 10000  | 
+
+- Create another distinct topic `ORDER_AMOUNT_CHANGES` for change logs of order amount, a change row will be created,
+
+| ChangeID            | OrderID | OrderNO | Amount | 
+|---------------------|---------|---------|--------|
+| 9000000000000000000 | 10000   | N10000  | 10000  |
+
+- Change occurred on order `N10000`, amount is changed from `10000` to `20000`,
+
+```json
+{
+	"orderId": 10000,
+	"orderNo": "N10000",
+	"amount": 20000,
+	"customer": {
+		"name": "John Doe",
+		"gender": "M"
+	}
+}
+```
+
+- For topic `ORDER`, change should be merged into order record,
+
+| OrderID | OrderNO | Amount | 
+|---------|---------|--------|
+| 10000   | N10000  | 20000  | 
+
+- For topic `ORDER_AMOUNT_CHANGES`, a new record is created for change,
+
+| ChangeID            | OrderID | OrderNO | Amount | 
+|---------------------|---------|---------|--------|
+| 9000000000000000000 | 10000   | N10000  | 10000  |
+| 9000000000000000001 | 10000   | N10000  | 20000  |
+
+Now we see the difference between topics `ORDER` and `ORDER_AMOUNT_CHANGES`, they describe one order from different perspectives. From
+statistical experience, different perspectives will lead the different conclusions. In this case, we can analyze the consumer behavior of
+how much from `ORDER`, and how often changes from `ORDER_AMOUNT_CHANGES`.
+
 ### Aggregation
+
+**_Watchmen_** offers 3 types of topics to store aggregation data.
 
 - Aggregate
 - Time
 - Ratio
 
+Types of aggregation topics are designed from the point of view of management. It is suggested to classify aggregation topics to,
+
+- Ratio: has one computed ratio factor at least, for aggregated to a ratio, like increment, decrement, etc.,
+- Time: has one time-dimension factor at least, for aggregation on time period, like annually, quarterly, monthly, etc.,
+- Aggregate: except ratio and time aggregation, for aggregation on enumeration, meta, etc.
+
 ## Factor
+
+Factors are the basic elements of a topic. According to topic stored, factor equates
+
+- A table column when topic is a table in RDS,
+- A field when topic is a document in NoSQL.
+
+### Factor Types
+
+**_Watchmen_** offers 50+ types for factor,
+
+| Factor Type      | Comment                                                                          | Purpose              |
+|------------------|----------------------------------------------------------------------------------|----------------------|
+| Sequence         | Sequence, auto-increment                                                         |                      |
+| Number           | Numeric value                                                                    |                      |
+| Unsigned         | 0 & Positive numeric value                                                       |                      |
+| Text             | String value                                                                     |                      |
+| Boolean          | Boolean value                                                                    |                      |
+| Address          | String value for address                                                         | Geo related          |
+| Continent        | Predefined enumeration, for address                                              | Geo related          |
+| Region           | Predefined enumeration, for address                                              | Geo related          |
+| Country          | Predefined enumeration, for address                                              | Geo related          |
+| Province         | Predefined enumeration, for address                                              | Geo related          |
+| City             | Predefined enumeration, for address                                              | Geo related          |
+| District         | Predefined enumeration, for address                                              | Geo related          |
+| Road             | Predefined enumeration, for address                                              | Geo related          |
+| Community        | String value                                                                     |                      |
+| Floor            | Numeric value for address                                                        |                      |
+| Residence type   | Predefined enumeration                                                           |                      |
+| Residential area | Numeric value for house property                                                 |                      |
+| Email            | String value for contact                                                         |                      |
+| Phone            | String value for contact                                                         |                      |
+| Mobile           | String value for contact                                                         |                      |
+| Fax              | String value for contact                                                         |                      |
+| Datetime         | YYYY-MM-DD HH:mm:ss                                                              | Time related         |
+| Full datetime    | YYYY-MM-DD HH:mm:ss.SSS                                                          | Time related         |
+| Date             | YYYY-MM-DD                                                                       | Time related         |
+| Time             | HH:mm:ss                                                                         | Time related         |
+| Year             | 4 digits                                                                         | Time related         |
+| Half year        | 1: first half, 2: second half                                                    | Time related         |
+| Quarter          | 1 - 4                                                                            | Time related         |
+| Month            | 1 - 12                                                                           | Time related         |
+| Half month       | 1: first half, 2: second half                                                    | Time related         |
+| Ten days         | 1, 2, 3                                                                          | Time related         |
+| Week of year     | 0 (the partial week that precedes the first Sunday of the year) - 53 (leap year) | Time related         |
+| Week of month    | 0 (the partial week that precedes the first Sunday of the year) - 5              | Time related         |
+| Half week        | 1: first half, 2: second half                                                    | Time related         |
+| Day of month     | 1 - 31, according to month/year                                                  | Time related         |
+| Day of week      | 1 (Sunday) - 7 (Saturday)                                                        | Time related         |
+| Day kind         | 1: workday, 2: weekend, 3: holiday                                               | Time related         |
+| Hour             | 0 - 23                                                                           | Time related         |
+| Hour kind        | 1: work time, 2: off hours, 3: sleeping time                                     | Time related         |
+| Minute           | 0 - 59                                                                           | Time related         |
+| Second           | 0 - 59                                                                           | Time related         |
+| Millisecond      | 0 - 999                                                                          | Time related         |
+| Am pm            | 1, 2                                                                             | Time related         |
+| Gender           | Predefined enumeration                                                           | Individual related   |
+| Occupation       | Predefined enumeration                                                           | Individual related   |
+| Date of birth    | YYYY-MM-DD                                                                       | Individual related   |
+| Age              | Positive numeric value                                                           | Individual related   |
+| ID No.           |                                                                                  | Individual related   |
+| Religion         | Predefined enumeration                                                           | Individual related   |
+| Nationality      | Predefined enumeration                                                           | Individual related   |
+| Biz trade        | Predefined enumeration                                                           | Organization related |
+| Biz scale        | Positive numeric value                                                           | Organization related |
+| Enum             | Enumeration, should be defined with `Enum`                                       |                      |
+
+:::tip  
+We highly recommend defining proper type for factor. Type is more readable than name, it can be used to do something in further analysis.
+:::
+
+### Special Types for Raw Topic
+
+There are 2 types are only for raw topic,
+
+| Factor Type | Comment | Purpose        |
+|-------------|---------|----------------|
+| Object      |         | Raw topic only |
+| Array       |         | Raw topic only |
+
+Because of raw topic store data exactly same as what RESTful received, which is on JSON format, therefore Hierarchical structure is
+necessary, these 2 types are designed to describe the object and array node. Factors in object or array element need to be declared
+explicitly, use dots(`.`) to define the hierarchy.
+
+For example,
+
+
 
 ## Scripts
 
 Check supported script types by following table,
 
-| Script Purpose | Oracle SQL Script  |  Oracle Liquibase  |  MySQL SQL Script  | MySQL Liquibase |
-|:---------------|:------------------:|:------------------:|:------------------:|:------------------:|
-| Creation       | ✅ | ✅ | ✅ | ✅ |
-| Alteration     | ✅ | ✅ | ✅ | ✅ |
+| Script Purpose | Oracle SQL Script | Oracle Liquibase | MySQL SQL Script | MySQL Liquibase |
+|:---------------|:-----------------:|:----------------:|:----------------:|:---------------:|
+| Creation       |         ✅         |        ✅         |        ✅         |        ✅        |
+| Alteration     |         ✅         |        ✅         |        ✅         |        ✅        |
 
 ### How to Export Scripts
 
@@ -104,19 +309,19 @@ zip root/
 - SQL for drop table is commented in script file, uncomment it if you need,  
   Note drop table will drop all instance data also,
 - Mandatory columns will be created automatically,
-	- PK column: `id_`,
-	- Aggregation column: `aggregate_assist_`,
-	- Version column: `version_`,
-	- Data zone column: `tenant_id_`,
-	- Time audit columns: `insert_time_` and `update_time_`,
-	- Raw data column: `data_`, only when raw topic,
+- PK column: `id_`,
+- Aggregation column: `aggregate_assist_`,
+- Version column: `version_`,
+- Data zone column: `tenant_id_`,
+- Time audit columns: `insert_time_` and `update_time_`,
+- Raw data column: `data_`, available for raw topic only,
 - Primary key will be created automatically on PK column,
 - Indexes will be created automatically,
-	- On data zone column,
-	- On time audit columns,
-	- On indexed factors,
-	- Unique indexes on factors which appointed,
-	- this part is shared between liquibase creation and alteration.
+- On data zone column,
+- On time audit columns,
+- On indexed factors,
+- Unique indexes on factors which appointed,
+- this part is shared between liquibase creation and alteration.
 
 #### For Alteration
 
@@ -130,29 +335,29 @@ Read comments in script files for more details about how to choose, modify and e
 :::
 
 :::danger Be very careful on execution of scripts.  
-Scripts exported are base version generated by frontend, we have no idea with what the structure of target data source is exactly.  
-Thus, we highly recommend going through the script files, modify them to what you need, store and maintain versions by some version
-control tool, such as GIT.
+Scripts exported are base version generated by frontend, we have no idea with what exactly is the structure of target data source.  
+Therefore, we highly recommend review all script files, modify them to what you need, store and maintain versions by some version control
+tool, such as GIT.
 :::
 
 ## Form Validation
 
 - Topic Name: required,
-	- Must follow the standard of data source type. For example, in oracle, topic equates a `Table`,
-	- Snake case or camel case is allowed,
+- Must follow the standard of data source type. For example, in oracle, topic equates a `Table`,
+- Snake case or camel case is allowed,
 - Topic Kind: required,
 - Topic Type: required,
 - Data Source: required,
 - Description: optional,
 - Factors: at least one factor is required,
-	- Name: required,
-	- Label: optional. Highly recommend filling it with a human reading text,
-	- Type: required,
-	- Default Value: optional,
-	- Index Group: optional,
-	- Encryption: optional,
-	- Enumeration: required when a factor is an enumeration,
-	- Flatten Column: required when topic is raw and factor name contains at least one dot(`.`).
+- Name: required,
+- Label: optional. Highly recommend filling it with a human reading text,
+- Type: required,
+- Default Value: optional,
+- Index Group: optional,
+- Encryption: optional,
+- Enumeration: required when a factor is an enumeration,
+- Flatten Column: required when topic is raw and factor name contains at least one dot(`.`).
 
 ## Model
 
