@@ -11,8 +11,8 @@ Topic is the core concept of **_Watchmen_**,
 - Is categorized by kind and type,
 - Has a set of factors,
 - Attached into a data source
-- In RDS, topic equates table,
-- In NoSQL, topic equates document.
+	- In RDS, topic equates table,
+	- In NoSQL, topic equates document.
 
 And
 
@@ -354,7 +354,7 @@ depends on the query criteria in pipelines, it is similar with RDS index.
 ### Enumeration
 
 When a factor is defined as a `Enum`, relationship with `Enumeration` should be defined as well, then system will know the range of values.
-It is important for UI rendering, and also is important for monitoring in `DQC`. 
+It is important for UI rendering, and also is important for monitoring in `DQC`.
 
 :::info  
 See [Enumeration](enumeration) and [DQC](../dqc/dqc-wb-index) for more information.  
