@@ -256,9 +256,113 @@ Because of raw topic store data exactly same as what RESTful received, which is 
 necessary, these 2 types are designed to describe the object and array node. Factors in object or array element need to be declared
 explicitly, use dots(`.`) to define the hierarchy.
 
-For example,
+For example, a raw topic instance data as below,
 
+```json
+{
+	"orderId": 10000,
+	"orderNo": "N10000",
+	"amount": 20000,
+	"customer": {
+		"name": "John Doe",
+		"gender": "M",
+		"contact": {
+			"mobile": "87654321",
+			"fax": "12345678"
+		},
+		"addresses": [
+			{
+				"city": "New York",
+				"district": "Brooklyn",
+				"line1": "26 W. Talbot Avenue",
+				"line2": ""
+			},
+			{
+				"city": "New York",
+				"district": "South Richmond Hill",
+				"line1": "7727 Stonybrook St."
+			}
+		]
+	}
+}
+```
 
+Factors should be defined as below,
+
+| Name                        | Type     | Flatten | Index |
+|-----------------------------|----------|:-------:|:-----:|
+| orderId                     | Sequence |    ✅    |   ✅   |
+| orderNo                     | Text     |    ✅    |   ✅   |
+| amount                      | Unsigned |         |       |
+| customer                    | Object   |         |       |
+| customer.name               | Text     |    ✅    |   ✅   |
+| customer.gender             | Gender   |         |       |
+| customer.contact            | Object   |         |       |
+| customer.contact.mobile     | Mobile   |    ✅    |   ✅   |
+| customer.contact.fax        | Fax      |         |       |
+| customer.addresses          | Array    |         |       |
+| customer.addresses.city     | City     |         |       |
+| customer.addresses.district | District |         |       |
+| customer.addresses.line1    | Text     |         |       |
+| customer.addresses.line2    | Text     |         |       |
+
+:::tip  
+Typically, a factor should be indexed when it is flattened.
+:::
+
+:::caution  
+Factors belong to an array cannot be flattened and indexed.
+:::
+
+### Encryption
+
+For security reason, factor can be encrypted. There are several encryption methods built-in,
+
+- AES256 PKCS5 PADDING: reversible,
+- MD5: one-way,
+- SHA256: one-way,
+- MASK MAIL: mask mail,
+- MASK CENTER 3: mask 3 characters in the middle,
+- MASK CENTER 5: mask 5 characters in the middle,
+- MASK LAST 3: mask 3 characters at the end,
+- MASK LAST 6: mask 6 characters at the end,
+- MASK DAY: mask day in time type,
+- MASK MONTH: mask month in time type,
+- MASK MONTH DAY: mask month and day in time type.
+
+### Default Value
+
+Default value can be set on factor.
+
+:::caution  
+Type of default value will not be validated, keep it compatible with factor type.
+:::
+
+### Index & Unique Index
+
+In raw topic, flattened factor should be indexed for searching purpose. For other types of topics, if factor will be used in pipelines as
+criteria, and topic is stored in RDS, never forget the index, it improves query performance by avoiding a full table scan.
+
+**_Watchmen_** offers 10 index groups per topic, factors share the same index group will be created as a composite index. Use unique index
+group instead when instance data of factor are unique, **_Watchmen_** also offers 10 unique index groups per topic. How to group index
+depends on the query criteria in pipelines, it is similar with RDS index.
+
+:::caution  
+`Sequence` type might be not unique in topic, such as a `orderId` in `ORDER_AMOUNT_CHANGES`, it is a `Sequence`, but not unique.
+:::
+
+### Enumeration
+
+When a factor is defined as a `Enum`, relationship with `Enumeration` should be defined as well, then system will know the range of values.
+It is important for UI rendering, and also is important for monitoring in `DQC`. 
+
+:::info  
+See [Enumeration](enumeration) and [DQC](../dqc/dqc-wb-index) for more information.  
+:::
+
+### Label & Description
+
+Label is for human reading on UI rendering, description is for more details.
 
 ## Scripts
 
