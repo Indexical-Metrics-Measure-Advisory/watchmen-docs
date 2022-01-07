@@ -34,12 +34,12 @@ Data Zone Admin is designed for configuring, monitoring data zone's development,
 Following features are for data zone admin:
 
 - Admin dashboard,
-- Topic maintain,
-- Enumeration maintain,
-- Space maintain,
-- Pipeline maintain,
-- User Group maintain,
 - User maintain,
+- User Group maintain,
+- Space maintain,
+- Enumeration maintain,
+- Topic maintain,
+- Pipeline maintain,
 - Pipeline Simulator,
 - Monitor Logs Query,
 - Monitor Rule maintain,
@@ -48,7 +48,7 @@ Following features are for data zone admin:
 - Assets Catalog maintain.
 
 :::info  
-`Data Zone Admin` is also called as `Admin` for short in following chapters if no otherwise specified as `Super Admin`.
+`Data Zone Admin` is also known as `Admin` for short in following chapters if no otherwise specified as `Super Admin`.
 :::
 
 ## Centralized Definition Persistence

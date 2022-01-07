@@ -11,12 +11,12 @@ In **_Watchmen_**, definition objects are called as `Tuple`,
 - [Data Zone](admin/data-zone)
 - [Data Source](admin/data-source)
 - [External Writer](admin/external-writer)
-- [User Group](admin/user-group)
 - [User](admin/user)
-- [Topic](admin/topic)
-- [Enumeration](admin/enumeration)
-- [Pipeline](admin/pipeline)
+- [User Group](admin/user-group)
 - [Space](admin/space)
+- [Enumeration](admin/enumeration)
+- [Topic](admin/topic)
+- [Pipeline](admin/pipeline)
 
 They all following the same interface `Tuple`, you can find the whole list and base model **[here](../tuples/tuples-index)**.  
 Most of them are using standard tuple page for finding, editing and creating.
