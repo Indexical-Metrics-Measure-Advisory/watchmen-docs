@@ -29,11 +29,15 @@ const config = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/',
 					showLastUpdateAuthor: true,
-					showLastUpdateTime: true
+					showLastUpdateTime: true,
+					remarkPlugins: [
+						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
+					]
 				},
 				blog: {
 					showReadingTime: true, // Please change this to your repo.
-					editUrl: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/'
+					editUrl: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/',
+					remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')]
 				},
 				theme: {
 					customCss: require.resolve('./src/css/custom.css')
