@@ -241,7 +241,7 @@ Factors are the basic elements of a topic. According to topic stored, factor equ
 | Nationality      | Predefined enumeration                                                           | Individual related   |
 | Biz trade        | Predefined enumeration                                                           | Organization related |
 | Biz scale        | Positive numeric value                                                           | Organization related |
-| Enum             | Enumeration, should be defined with `Enum`                                       |                      |
+| Enum             | Enumerated values, should be defined with `Enumeration`                          |                      |
 
 :::tip  
 We highly recommend defining proper type for factor. Type is more readable than name, it can be used to do something in further analysis.
