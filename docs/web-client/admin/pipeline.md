@@ -129,8 +129,15 @@ The exported markdown file can be imported again, simply by clicking the `Import
 ![Import Pipeline Catalog Dialog](images/import-dialog-of-pipeline-catalog.png)
 
 :::danger  
-DO NOT modify the hyperlink parts in exported markdown file, it contains the data part. Any other is just for read, you can modify them to
-anything you prefer.
+DO NOT modify the hyperlink parts in exported markdown file, it contains the data part. Actually we only read these parts in importing.    
+Any others are for read only, you can modify them to anything you prefer. But it is not recommended that any modification on not-description
+parts, such as factors tables, pipeline DSLs.
+:::
+
+:::info  
+We render graphics and images in standard HTML tags, they cannot be rendered correctly in GitHub, Gitlab and some other SaaS services (or
+private installations). Simply leave them as they are, it is just for security reason. Open it via locally markdown tool, it can be rendered
+correctly.
 :::
 
 ### Pipeline
