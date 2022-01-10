@@ -425,7 +425,7 @@ Delete factor by `Delete Factor` in factor buttons.
 Deletion cannot be recovered, must be re-added again. Be careful on this.
 :::
 
-### Import
+#### Import
 
 Factors can be imported by file, there are several ways to import factors,
 
@@ -439,7 +439,7 @@ Factors can be imported by file, there are several ways to import factors,
 Factors will be replaced by imported.
 :::
 
-#### Structure
+##### Structure
 
 A structure template zip can be downloaded by `Download Structure Template` button.
 
@@ -453,7 +453,7 @@ zip root/
 
 Modify the template file simply following guide inside, and import by `Import By Structure` button.
 
-#### Instance Data
+##### Instance Data
 
 For easy to import, instance data file is also supported. A json file including data can be imported and factors are detected automatically.
 Make sure data in file is an object array, including the sampling data items. Importer detects factors by following rules:
