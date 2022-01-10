@@ -476,9 +476,9 @@ For example,
 		"orderNo": "N10000",                                // text detected
 		"amount": null,                                     // null value, suspended for now,
 		"enabled": true,                                    // boolean detected
-		"customer": {
+		"customer": {                                       // object detected
 			"name": "John Doe",
-			"gender": "M",
+			"gender": "M",                                  // text detected, not gender
 			"contact": {
 				"mobile": "87654321",
 				"fax": "12345678"
@@ -490,11 +490,8 @@ For example,
 					"line1": "26 W. Talbot Avenue",
 					"line2": ""
 				},
-				{
-					"city": "New York",
-					"district": "South Richmond Hill",
-					"line1": "7727 Stonybrook St."
-				}
+				null,                                       // ignored when not an object in array
+				10000                                       // ignored when not an object in array
 			]
 		}
 	},
