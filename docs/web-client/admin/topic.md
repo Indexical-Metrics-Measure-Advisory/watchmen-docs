@@ -357,8 +357,8 @@ depends on the query criteria in pipelines, it is similar with RDS index.
 
 ### Enumeration
 
-When a factor is defined as a `Enum`, relationship with `Enumeration` should be defined as well, system know the range of values by this.
-It is important for UI rendering, and also is important for monitoring in `DQC`.
+When a factor is defined as a `Enum`, relationship with `Enumeration` should be defined as well, system know the range of values by this. It
+is important for UI rendering, and also is important for monitoring in `DQC`.
 
 :::info  
 See [Enumeration](enumeration) and [DQC](../dqc/dqc-wb-index) for more information.  
@@ -367,6 +367,145 @@ See [Enumeration](enumeration) and [DQC](../dqc/dqc-wb-index) for more informati
 ### Label & Description
 
 Label is for human reading on UI rendering, description is for more details on system maintaining.
+
+### Factor Operations
+
+![Factor Operations](images/factor-operators.png)
+
+#### Search
+
+A search bar is on above, factors will be filtered according to searching text.
+
+- A text: try to match name and label of factor,
+- `n:name`: match name only, such as `n:order`,
+- `l:label`: match label only, such as `l:seq`,
+- `t:type`: match type only, such as `t:text`,
+- `i:index`: match index only, such as `i:1`,
+- `u:index`: match unique index only, such as `u:1`,
+- `v:value`: match default value only,
+	- List factors which have default value when `v:true`,
+	- List factors which have no default value when it is not `v:true`, for short `v:` also works,
+- `e:enum`: match enumerated factors only,
+	- List factors which have enumeration when `e:true`,
+	- List factors which have no enumeration when it is not `e:true`, for short `e:` also works,
+	- Only effective on enumeration factors,
+- `f:flatten`: match flattened factors only,
+	- List factors which are flattened when `f:true`,
+	- List factors which are not flattened when it is not `f:true`, for short `f:` also works,
+	- Only effective on raw topic,
+- `c:crypt`: match encrypted factors only,
+	- List factors which are encrypted when `c:true`,
+	- List factors which are not encrypted when it is not `c:true`, for short `c:` also works.
+
+#### Pagination
+
+Factor list is pagination, there are 50 factors per page, switching by pagination dropdown.
+
+:::info  
+Pagination is under filter.
+:::
+
+#### Add & Delete
+
+Factors are sorted exactly by where they were added, normally it is not a problem, but in sometimes, new factor would be inserted before
+existing. Use `Prepend Factor` button in factor buttons to insert factor, or use `Append Factor` button in factors buttons to append factor
+at the end.
+
+:::info  
+Page will be switched automatically when the appended factor is in next page.
+:::
+
+:::caution  
+DO NOT prepend/append factor when a filter is applied, new factor might be invisible because it is filtered by search text.
+:::
+
+Delete factor by `Delete Factor` in factor buttons.
+
+:::caution  
+Deletion cannot be recovered, must be re-added again. Be careful on this.
+:::
+
+### Import
+
+Factors can be imported by file, there are several ways to import factors,
+
+- By structure file,
+	- TXT or CSV,
+	- JSON
+- By instance data file,
+	- JSON
+
+:::caution Factors will be replaced by imported.
+:::
+
+#### Structure
+
+A structure template zip can be downloaded by `Download Structure Template` button.
+
+Files in zip as below,
+
+```
+zip root/
+├── factor-template.csv
+└── factor-template.json
+```
+
+Modify the template file simply following guide inside, and import by `Import By Structure` button.
+
+#### Instance Data
+
+For easy to import, instance data file is also supported. A json file including data can be imported and factors are detected automatically.
+Make sure data in file is an object array, including the sampling data items. Importer detects factors by following rules:
+
+- First type is better. Using the first detected type, or raise conflict exception,
+	- `Text` is compatible with any types excepts `Object`/`Array`,
+	- All null values should be detected as `Text`,
+- Datetime type first for text value,
+	- 23 digits for `Full Datetime`,
+	- 19 digits for `DateTime`,
+	- 10 digits for `Date`,
+	- 8 digits for `Time`,
+- `Object`/`Array` is only for raw topic, let topic be raw type before importing.
+
+For example,
+
+```json5
+[
+	{
+		"orderId": 10000,                                   // number detected
+		"orderNo": "N10000",                                // text detected
+		"amount": null,                                     // null value, suspended for now,
+		"enabled": true,                                    // boolean detected
+		"customer": {
+			"name": "John Doe",
+			"gender": "M",
+			"contact": {
+				"mobile": "87654321",
+				"fax": "12345678"
+			},
+			"addresses": [
+				{
+					"city": "New York",
+					"district": "Brooklyn",
+					"line1": "26 W. Talbot Avenue",
+					"line2": ""
+				},
+				{
+					"city": "New York",
+					"district": "South Richmond Hill",
+					"line1": "7727 Stonybrook St."
+				}
+			]
+		}
+	},
+	{
+		"orderId": "10001",                                 // incorrect, detected as number in first item
+		"orderNo": 10001,                                   // correct, text is compatible with number
+		"amount": null,                                     // all values are null, detected as text     
+		"enabled": null,                                    // null, is compatible with boolean
+	}
+]
+```
 
 ## Scripts
 
