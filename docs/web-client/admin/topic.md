@@ -483,7 +483,7 @@ For example,
 				"mobile": "87654321",
 				"fax": "12345678"
 			},
-			"addresses": [
+			"addresses": [                                  // array detected
 				{
 					"city": "New York",
 					"district": "Brooklyn",
