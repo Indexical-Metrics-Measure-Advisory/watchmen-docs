@@ -147,7 +147,7 @@ const config = {
 			prism: {
 				theme: lightCodeTheme,
 				darkTheme: darkCodeTheme,
-				additionalLanguages: ['csv']
+				additionalLanguages: ['csv', 'json5']
 			}
 		})
 };

@@ -430,12 +430,13 @@ Deletion cannot be recovered, must be re-added again. Be careful on this.
 Factors can be imported by file, there are several ways to import factors,
 
 - By structure file,
-	- TXT or CSV,
-	- JSON
+	- CSV, or TXT in csv format,
+	- JSON,
 - By instance data file,
-	- JSON
+	- JSON.
 
-:::caution Factors will be replaced by imported.
+:::caution  
+Factors will be replaced by imported.
 :::
 
 #### Structure
@@ -469,7 +470,7 @@ Make sure data in file is an object array, including the sampling data items. Im
 
 For example,
 
-```json5
+```json5 {5,9,21,22,27}
 [
 	{
 		"orderId": 10000,                                   // number detected

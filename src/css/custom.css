@@ -37,9 +37,37 @@ div.docs-doc-page main img {
     position: relative;
     border-radius: 4px;
     padding: 12px;
-    box-shadow: rgba(0,0,0,0.05) 1px 1px 2px 3px;
+    box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 2px 3px;
 }
 
 p > code, li > code {
     padding: 0 8px;
+}
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.prism-code {
+    counter-reset: line-number;
+}
+
+.prism-code .token-line::marker {
+    color: var(--ifm-color-gray-400);
+    content: counter(line-number) " ";
+}
+
+.prism-code .token-line {
+    counter-increment: line-number;
+    display: list-item;
+    padding-left: var(--ifm-pre-padding);
+    margin-left: calc(var(--ifm-pre-padding) * 2.5);
+    border-left: 1px solid var(--ifm-color-gray-400);
 }
