@@ -135,9 +135,25 @@ parts, such as factors tables, pipeline DSLs.
 :::
 
 :::info  
-We render graphics and images in standard HTML tags, they cannot be rendered correctly in GitHub, Gitlab and some other SaaS services (or
-private installations). Simply leave them as they are, it is just for security reason. Open it via locally markdown tool, it can be rendered
-correctly.
+In markdown, graphics and images are stored by standard HTML tags, they cannot be rendered correctly in GitHub, Gitlab and some other SaaS
+services (or private installations). Simply leave them as they are, it is just for security reason. Open it via locally markdown tool, it
+can be rendered correctly.
+:::
+
+There are 3 ways to import data,
+
+- Non-Redundant: existing data will be ignored, and do creation when not existed,
+- Replace: existing data will be replaced, and do creation when not existed,
+- Force New: treat all imported data as new ones. Ids of tuples will be reset.
+
+Choose the right import way for your scenario and be careful with the imported tuples. Duplication check is based on the ids of tuples, such
+as `topicId` or `pipelineId`, which means even they have the same name, still will be treated as different ones by importation handler. It
+depends on the existing and import tuples, we cannot know what exactly the scenario is, all we can say is it occurs in all 3 ways.
+
+:::danger  
+Most of tuples will not create physical entities, but not for topic. Topic name equates table/document name in data source, therefore when
+topic names are duplicated but have different topic ids, unpredictable exceptions should be raised when do data source objects creation or
+modification. **Be very careful with it after importing**.
 :::
 
 ### Pipeline
