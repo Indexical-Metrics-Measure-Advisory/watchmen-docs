@@ -12,9 +12,7 @@ Pipeline describes the data flow between topics, triggered by topic data inserte
 Pipeline is available for `Admin` only.
 :::
 
-## Page
-
-### Catalog
+## Catalog Page
 
 ![Pipeline Catalog](images/pipeline-catalog.png)
 
@@ -34,20 +32,7 @@ to influence or affected by others.
 In pipeline catalog, `catalog`/`graphics`/`group` are the same concept: a set of topics, rendering to a graphics.
 :::
 
-#### Topic Navigator
-
-Click navigator panels to view more details of topic,
-
-- Incoming pipelines: pipelines write data to current topic,
-- Outgoing pipelines: pipelines triggerred by current topic,
-- External writers: triggerred by current topic only, which means external writers in incoming pipelines will not be displayed,
-- Factors.
-
-Click `Open Pipeline` button to edit pipeline,
-
-![Edit Pipeline](images/edit-pipeline.png)
-
-#### Header Buttons
+### Header Buttons
 
 There might many topics, it is too many to show in one graphics, topics can be separated to multiple graphics. Click `New Pipeline Group` in
 header buttons to create a new catalog page.
@@ -93,7 +78,7 @@ In a new catalog page,
   Switching is enabled only when there are more than 1 catalog.
   :::
 
-#### Export & Import
+### Export & Import
 
 Topics, pipelines and other tuples related can be exported as a zip file, by click the `Export` button in header buttons, a dialog shows,
 
@@ -156,7 +141,42 @@ topic names are duplicated but have different topic ids, unpredictable exception
 modification. **Be very careful with it after importing**.
 :::
 
-### Pipeline
+### Topic Navigator
+
+Click navigator panels to view more details of topic,
+
+- Incoming pipelines: pipelines write data to current topic,
+- Outgoing pipelines: pipelines triggerred by current topic,
+- External writers: triggerred by current topic only, which means external writers in incoming pipelines will not be displayed,
+- Factors.
+
+Click `Open Pipeline` button to edit pipeline,
+
+![Edit Pipeline](images/edit-pipeline.png)
+
+## Pipeline Page
+
+By click the `Open Pipeline` button on topic navigator, page is switched to pipeline edit work area,
+
+![Edit Pipeline](images/pipeline.png)
+
+Once pipeline edit work area is opened, all stages are collapsed and edit mode is on `Focus on Unit`. Here we introduce 3 edit modes,
+
+- `Focus on Unit`: only one unit is expanded,
+- `Focus on Stage`: only on stage is expanded,
+- `Free Walk`: free to expand and collapse.
+
+### Structure of Pipeline
+
+Before we go through the page, let's take a minute to learn the structure of pipeline.
+
+- Each pipeline is triggered by a topic, or more accurately, by insertion/modification/deletion of a row,
+- A pipeline contains multiple stages,
+- A stage contains multiple units,
+- A unit contains multiple actions,
+- Action is the atomic execution cell.
+
+### Header Buttons
 
 ## Validation
 
