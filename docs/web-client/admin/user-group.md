@@ -8,7 +8,7 @@ sidebar_position: 50
 
 User group is a set of users, for convenient to assign spaces to user.
 
-:::tip  
+:::info  
 User group is available for `Admin` only.
 :::
 

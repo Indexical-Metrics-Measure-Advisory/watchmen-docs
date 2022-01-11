@@ -8,7 +8,7 @@ sidebar_position: 60
 
 Space is a set of topics. When space is assigned to user groups, that is to say, users in groups can connect to space in console workbench.
 
-:::tip  
+:::info  
 Space is available for `Admin` only.
 :::
 

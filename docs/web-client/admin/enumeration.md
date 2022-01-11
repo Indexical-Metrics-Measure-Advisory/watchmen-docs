@@ -8,7 +8,7 @@ sidebar_position: 70
 
 Enumeration is code table for topic factors, such as country, city, etc.
 
-:::tip  
+:::info  
 Enumeration is available for `Admin` only.
 :::
 

@@ -74,7 +74,7 @@ In a new catalog page,
 
   ![Switch Pipeline Catalog](images/switch-pipeline-catalog-dialog.png)
 
-  :::tip  
+  :::info  
   Switching is enabled only when there are more than 1 catalog.
   :::
 

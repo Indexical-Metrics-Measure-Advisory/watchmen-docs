@@ -20,7 +20,7 @@ And
 - Pipelines are run on topics,
 - Subjects, datasets, reports are built based on topics.
 
-:::tip  
+:::info  
 Topic is available for `Admin` only.
 :::
 
@@ -76,7 +76,7 @@ Now, the raw topic can be searched by simple SQL,
 SELECT * FROM TOPIC_CUSTOMER WHERE CUSTOMER_NAME = 'John Doe';
 ```
 
-:::tip
+:::info
 
 - Index doesn't be applied in above sample. In real world, for search performance, it should be declared,
 - Dots(`.`) in factor name are replaced by underscore.
@@ -243,7 +243,7 @@ Factors are the basic elements of a topic. According to topic stored, factor equ
 | Biz scale        | Positive numeric value                                                           | Organization related |
 | Enum             | Enumerated values, should be defined with `Enumeration`                          |                      |
 
-:::tip  
+:::caution  
 We highly recommend defining proper type for factor. Type is more readable than name, it can be used to do something in further analysis.
 :::
 
@@ -310,7 +310,7 @@ Factors should be defined as below,
 | customer.addresses.line1    | Text     |         |       |
 | customer.addresses.line2    | Text     |         |       |
 
-:::tip  
+:::info  
 Typically, a factor should be indexed when it is flattened.
 :::
 
