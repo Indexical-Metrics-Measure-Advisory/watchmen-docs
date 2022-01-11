@@ -8,7 +8,7 @@ sidebar_position: 90
 
 Pipeline describes the data flow between topics, triggered by topic data inserted or updated.
 
-:::tip  
+:::info  
 Pipeline is available for `Admin` only.
 :::
 
@@ -28,7 +28,7 @@ In the very first pipeline catalog page, all existing topics will be displayed a
 Catalog belongs to the user, it is not shared between users. Topics can be organized individually for every administrator, don't worry about
 to influence or affected by others.
 
-:::tip  
+:::info  
 In pipeline catalog, `catalog`/`graphics`/`group` are the same concept: a set of topics, rendering to a graphics.
 :::
 
@@ -59,7 +59,7 @@ In a new catalog page,
 
   ![Delete Pipeline Catalog](images/delete-pipeline-catalog.png)
 
-  :::tip
+  :::info
 
 	- Topics will not be deleted when delete pipeline catalog,
 	- The last catalog cannot be deleted.
@@ -176,7 +176,55 @@ Before we go through the page, let's take a minute to learn the structure of pip
 - A unit contains multiple actions,
 - Action is the atomic execution cell.
 
+Here is a whole picture of pipeline,
+
+![Whole Pipeline](images/whole-pipeline.png)
+
+In this pipeline, there are,
+
+- 2 stages,
+- 1 unit for each stage,
+- 1 action for each unit.
+
 ### Header Buttons
+
+In pipeline header,
+
+- Pipeline name is auto generated, click name part to change it,
+
+  ![Change Pipeline Name](images/change-pipeline-name.png)
+
+- Style of `Save Pipeline` button is changed when anything change in pipeline, see the difference as below,
+
+  ![Unchanged Pipeline](images/pipeline-not-changed.png)
+
+  ![Changed Pipeline](images/pipeline-changed.png)
+
+  :::info  
+  Name change will not lead the style change of `Save Pipeline` button, it will be saved automatically, which means button style changed is
+  caused by content of pipeline changes only.
+  :::
+
+- Pipeline can be enabled/disabled, simply click the `Enable Pipeline`/`Disable Pipeline` button,
+
+  ![Enable Pipeline](images/enable-pipeline.png)
+
+  ![Disable Pipeline](images/disable-pipeline.png)
+
+  :::caution  
+  Enable pipeline doesn't mean it is correct to run, we cannot know precisely it is just staged or launched. We highly recommend disabling
+  pipelines until it is tested in simulator, and ready for environment testing.
+  :::
+
+  :::info  
+  Content of pipeline will also be saved when enablement switching.
+  :::
+
+- By click the `Back to Catalog` button, page should be switched to catalog.
+
+  ![Back to Pipeline Catalog](images/back-to-pipeline-catalog.png)
+
+### Edit Modes
 
 ## Validation
 
