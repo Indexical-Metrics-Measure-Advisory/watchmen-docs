@@ -160,11 +160,7 @@ By click the `Open Pipeline` button on topic navigator, page is switched to pipe
 
 ![Edit Pipeline](images/pipeline.png)
 
-Once pipeline edit work area is opened, all stages are collapsed and edit mode is on `Focus on Unit`. Here we introduce 3 edit modes,
-
-- `Focus on Unit`: only one unit is expanded,
-- `Focus on Stage`: only on stage is expanded,
-- `Free Walk`: free to expand and collapse.
+Once pipeline edit work area is opened, all stages are collapsed.
 
 ### Structure of Pipeline
 
@@ -225,6 +221,30 @@ In pipeline header,
   ![Back to Pipeline Catalog](images/back-to-pipeline-catalog.png)
 
 ### Edit Modes
+
+3 edit modes are offered,
+
+- `Focus on Unit`: only one unit is expanded,
+- `Focus on Stage`: only on stage is expanded,
+- `Free Walk`: free to expand and collapse.
+
+Use first two modes when you are focused on part of pipeline, or use free walk to go through the whole picture.
+
+![Pipeline Edit Modes](images/pipeline-edit-modes.png)
+
+There are 2 more buttons for free walk mode, to expand/collapse all stages.
+
+### DSL
+
+You also can review the pipeline definition by dsl mode, it's more like a YAML.
+
+![Pipeline DSL](images/pipeline-dsl.png)
+
+:::tip  
+Red part means something is incorrect, check that in definition.
+:::
+
+## Define a Pipeline
 
 ## Validation
 
