@@ -1,5 +1,7 @@
 ---
-id: dqc-index title: DQC Overview sidebar_position: 1
+id: dqc-index  
+title: DQC Overview  
+sidebar_position: 1
 ---
 
 # Overview
