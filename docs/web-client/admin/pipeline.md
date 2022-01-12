@@ -154,9 +154,17 @@ Click `Open Pipeline` button to edit pipeline,
 
 ![Edit Pipeline](images/edit-pipeline.png)
 
+or click `Create Outgoing Pipeline` button, a new pipeline triggered by this topic will be created,
+
+![Create Pipeline](images/create-pipeline.png)
+
+:::info  
+There is no create button for incoming pipeline, since pipeline always needs a trigger.
+:::
+
 ## Pipeline Page
 
-By click the `Open Pipeline` button on topic navigator, page is switched to pipeline edit work area,
+By click `Open Pipeline` button on topic navigator, page is switched to pipeline edit work area,
 
 ![Edit Pipeline](images/pipeline.png)
 
