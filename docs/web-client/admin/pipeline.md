@@ -246,6 +246,64 @@ Red part means something is incorrect, check that in definition.
 
 ## Define a Pipeline
 
+In this chapter, we will introduce each part of pipeline definition.
+
+### Trigger by Topic
+
+A pipeline is triggered by an insertion/modification/deletion of a row in topic, therefore first, a topic and how to trigger must be
+defined,
+
+![Pipeline Head](images/pipeline-head.png)
+
+There are 4 trigger types,
+
+- Insert,
+- Insert or Merge,
+- Merge,
+- Delete.
+
+`Insert` is usually for raw topic. For raw topics, typically only insertion occurred, each change of raw data should be recorded. For other
+types of topics, `Insert or Merge` is a better choice, there is always a very first row was inserted, and it would be modified (in trigger
+type, also known as `Merge`). For both of insertion and modification, the same logic should be applied. But sometimes, logics on insertion
+and modification are not the same, they can be handled separately by 2 pipelines, one is triggered by `Insert`, the other is triggered
+by `Merge`.  
+It is also supported for triggering by `Delete` operation, but deletion means a piece of history was removed physically. In analysis system,
+each piece of data should be hold for further use, a deletion might lead a puzzle has one last piece missing, which is not expected any
+time. Even it is helpful on rescuing some special situations, triggering a pipeline by deletion is still not recommended.
+
+Sometimes logic of pipeline is very complex, hardly to define them all in one pipeline. It is possible to define multiple pipelines which
+triggered by one operation. For example, there is a topic `Order`, an insertion occurred. All pipelines with,
+
+- Triggerred by `Order`,
+- Trigger type is one of `Insert` or `Insert or Merge`,
+
+Will be triggerred at the same time. Pipelines will be dispatched to different [Doll](../../doll/doll-index) nodes, they are run
+concurrently. Generally, it does not need to be concerned, but in fact, it is highly correlated with how to define pipelines. For example (
+not quite fit, just for explanation), we have topics and pipelines as below,
+
+![Concurrent Pipelines](images/concurrent-pipelines.png)
+
+There are several pipelines,
+
+1. Triggered by `Order`,
+	1. One writes to `Order Premium`,
+	2. The other writes to `Order Item` (assume a set of items in an order),
+2. Triggered by `Order Item`, do count aggregation, writes to `Order Item Count`,
+3. Triggered by `Order Premium`,
+	1. Read count from `Order Item Count`,
+	2. Compute average item premium of each order, writes to `Average Item Premium of Order`.
+
+Obviously, step 2 must have been done before step 3. Unfortunately, the order is unknown since pipelines are run concurrently, which means
+there might be a zero or null when read count in step 3.i. In this case, follow steps as below to avoid this possible problem,
+
+- Add prerequisite on unit, to avoid the average calculation from incorrect count value,
+	- A `Is Not Empty` check to avoid null,
+	- A `Not Equals` check to avoid zero,
+- Create a new pipeline from `Order Item Count`, do the same logic when count changed,
+	- Also do check to avoid null value from order premium.
+
+Now, no matter what value comes first, the computed value in `Average Item Premium of Order` always is correct (or correct at that moment).
+
 ## Validation
 
 [//]: # (- Group Name: required,)
