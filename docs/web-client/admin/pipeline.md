@@ -160,8 +160,6 @@ By click the `Open Pipeline` button on topic navigator, page is switched to pipe
 
 ![Edit Pipeline](images/pipeline.png)
 
-Once pipeline edit work area is opened, all stages are collapsed.
-
 ### Structure of Pipeline
 
 Before we go through the page, let's take a minute to learn the structure of pipeline.
