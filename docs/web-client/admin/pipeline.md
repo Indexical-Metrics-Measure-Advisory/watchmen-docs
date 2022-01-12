@@ -93,7 +93,7 @@ Topics, pipelines and other tuples related can be exported as a zip file, by cli
 - Any tuples included by space will be packed into zip according to selected spaces.
 - Pipelines will be packed into zip only when,
 	- Triggerred topic is selected,
-	- Topics receive data from this pipeline are selected,
+	- Topics receive data from this pipeline are selected.
 
 There is only one file in this zip,
 
