@@ -695,7 +695,7 @@ several built-in functions,
 
 ## Validation
 
-We try to do a full validation with pipeline, but since many of theme are based runtime data, which means they cannot be validated on design
+We try to do a full validation with pipeline, but since many of them are based runtime data, which means they cannot be validated on design
 time. According to this, we do not list the validation rules here. Pass the validation is a beginning of pipeline definition, it is highly
 recommended that check the defined logic carefully, and test it in simulator before applied it to environment.
 
