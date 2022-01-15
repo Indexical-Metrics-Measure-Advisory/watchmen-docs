@@ -313,6 +313,78 @@ there might be a zero or null when read count in step 3.i. In this case, follow 
 
 Now, no matter what value comes first, the computed value in `Average Item Premium of Order` always is correct (or correct at that moment).
 
+Sometimes, pipeline is defined to be performed in specific cases. For example, triggered by `Order` modification, according to the status of
+order,
+
+- Write to `Order Premium` in normal case,
+- Set premium to zero in `Order Premium` when status is `Cancelled`.
+
+Logics can be separated to 2 pipelines, and for each pipeline, performed on its prerequisite,
+
+- For normal case, let prerequisite be `Status is not Cancelled`,
+- For cancelled case, let prerequisite be `Status is Cancelled`.
+
+In pipeline prerequisite definition, only topic data which triggerred this pipeline can be used.
+
+:::tip  
+In following chapters, we will discuss how to use the old copy of trigger row. Find more details
+on [Parameter Definition > Constant > Functions](#constant-parameter-functions).
+:::
+
+### Stage
+
+Pipeline includes a group of stages, stages run sequentially.
+
+![Stage](images/stage.png)
+
+For each stage,
+
+- Can be named,
+- Has a prerequisite,
+- a group of units.
+
+In fact, stage is a group of units.
+
+:::info At least one stage for a pipeline.
+:::
+
+### Unit
+
+Stage includes a group of units, units run sequentially.
+
+![Unit](images/unit.png)
+
+Unit is a group of actions. Normally, it is similar with stage to units, for each unit,
+
+- Can be named,
+- Has a prerequisite,
+- a group of actions.
+
+And there is a `Loop Variable Name`, in case of a variable is an array or a list, fill this input with variable name, then unit will run for
+each element of this variable. It can be simply understood as a loop, likes a `for each`. Variable must be defined in previous stages or
+units, otherwise runtime exception will be raised. Typically, array/list variables are from raw topic or action `Read Rows`/`Read Factors`,
+and when in loop, there is a small difference with regular process, for example, we have an `items` variable, which got from `Read Rows` (
+let's just ignore the read part, will discuss in actions chapter),
+
+- Define `items` in `Loop Variable Name`, so this unit will do a loop based on given `items` data,
+- Obviously, element of `items` should be visit in actions of this unit, simply use `{items.premium}` in constant parameter.
+
+Like this,
+
+![Unit Loop](images/unit-loop.png)
+
+### Action
+
+## Parameter Definition
+
+### From Topic
+
+### Constant
+
+#### Functions {#constant-parameter-functions}
+
+### Computed
+
 ## Validation
 
 [//]: # (- Group Name: required,)
