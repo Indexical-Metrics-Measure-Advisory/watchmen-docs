@@ -586,7 +586,9 @@ this action,
 - Find row by given criteria,
 - Do a modification when found,
 - Do an insertion when not found,
-	- Do a modification when conflict exception raised on insertion.
+    - Do a modification when conflict exception raised on insertion.
+
+Theoretically
 
 ## Variables In Pipeline
 
