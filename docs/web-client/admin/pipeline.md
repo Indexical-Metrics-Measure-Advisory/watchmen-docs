@@ -586,7 +586,7 @@ this action,
 - Find row by given criteria,
 - Do a modification when found,
 - Do an insertion when not found,
-    - Do a modification when conflict exception raised on insertion.
+	- Do a modification when conflict exception raised on insertion.
 
 Theoretically
 
@@ -612,13 +612,84 @@ In constant parameter, variables are declared between `{}`, and use `.` to visit
 
 ## Parameter Definition
 
+Parameter is used in
+
+- Prerequisite of pipeline/stage/unit,
+- Prerequisite of `Alarm` action,
+- By of read/write actions,
+- Mapping of write actions.
+
+And also, the followings can be considered as another form of parameter,
+
+- Message of `Alarm` action,
+- Value from of `Copy to Variable` action,
+- Value from of `Write Factor` action.
+
+There are 3 types of parameter for different purposes.
+
 ### From Topic
+
+Read from/write to topic, topics available for parameter depend on situation where parameter is. For example,
+
+- In pipeline prerequisite, only trigger topic is available,
+- In by criteria of write actions, only trigger topic and target topic are available.
 
 ### Constant
 
+Constant parameter is more flexible than topic parameter, it can be used to
+
+- Simply define a constant value, such as a number `100`, a string `Hello World`,
+- Retrieve data from variables by `{}`,
+- Call built-in functions.
+
+We already learned how to retrieve data from variables in actions chapters. And to define primitive constant value is just enter them in
+constant input, it's too simple and not worth going to detail about. Now we are going to learn the built-in functions.
+
 #### Functions {#constant-parameter-functions}
 
+Functions always starts from a character `&`, and also there are several categories for functions. In the following part, we will learn to
+call these functions in constant parameter.
+
+##### System
+
+- `{&nextSeq}`, to generate a sequence value,
+- `{&old.x}`, to get `x` value of old data of trigger one,
+	- Be carefully, it might be a null if pipeline is triggerred on `Insert` or `Insert or Merge`,
+	- `x` is property name of trigger topic.
+
+##### Ask a Value of Something
+
+- `{x.&count}`, to get element count of variable `x`,
+	- or by `{x.y.&count}`, to get count of `x.y`,
+	- `x` is a variable,
+	- Count is available when value is a list or an array,
+- `{x.&length}`, to get length of variable `x`,
+	- or by `{x.y.&count}`, to get length of `x.y`,
+	- `x` is a variable,
+	- Length is available when value is a string,
+- `{x.&sum}`, to get sum value of variable `x`,
+	- Same as `&count`, but ask sum value.
+	- Null or empty value is summed as zero,
+	- Other non-numeric value leads runtime exception.
+
+##### Compute Functions
+
+- `{&dayDiff(x, y)}`, compute the days between given date `x` and `y`,
+- `{&monthDiff(x, y)}`, compute the months between given date `x` and `y`,
+- `{&yearDiff(x, y)}`, compute the years between given date `x` and `y`.
+
 ### Computed
+
+Computed parameter is mixed version of constant and topic parameter. In the meantime, it also can be part of another computed one. There are
+several built-in functions,
+
+- Math: `Add`, `Subtract`, `Multiply`, `Divide` and `Modulus`,
+- Date: `Year Of`, `Half Year Of`, `Quarter Of`, `Month Of`, `Week of Year`, `Week of Month`, `Day of Month` and `Day of Week`,
+- Case When, which also is known as
+	- A `switch` in Typescript,
+	- A `pattern match` in Python,
+	- Or a `if, else if, else` in Java,
+	- etc.
 
 ## Validation
 
