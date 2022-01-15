@@ -389,6 +389,8 @@ They can be categorized as three,
 
 Now let's go through the actions one by one.
 
+### In-Memory Actions
+
 #### Alarm
 
 `Alarm` is an in-memory operation, which,
@@ -439,23 +441,152 @@ the status of external writing, provides an asynchronous external writer by your
 action. **[Here](../../doll/extend/extend-external-writer)** to find for details about how to extend external writers.
 :::
 
+### Read-Data Actions
+
 #### Exists
+
+`Exists` is a read operation. In some cases, existing or not is the only thing we want to know instead of the exact value. `Exists` is
+exactly designed for these situations.
+
+![Exist](images/action-exists.png)
+
+In above case, it can be understood as a simple SQL as below,
+
+```sql
+SELECT COUNT(1) FROM TOPIC_QUOTATION WHERE TOPIC_QUOTATION.QUOTATION_NO = ?; 
+```
+
+`Order` is trigger topic, thus, `Order.QuotationNo` is in-memory, and will be passed to above sql as parameter binding value.
+
+:::info  
+`Exists` checks count of search result, returns `true` when not zero, otherwise `false` instead.
+:::
 
 #### Read Factor
 
+To know the exact value of a factor, use `Read Factor`. `Read Factor` is a read operation.
+
+![Read Factor](images/action-read-factor.png)
+
+It is similar with `Exists`, except value will be read to variable. You can see the difference between these two actions, in `Read Factor`
+action,
+
+- A factor must be chosen,
+- An aggregation arithmetic can be applied.
+
+In above case, it also can be understood as a SQL as below,
+
+```sql
+SELECT TQ.QUOTATION_CREATE_DATE FROM TOPIC_QUOTATION TQ WHERE TQ.QUOTATION_NO = ?;
+```
+
+We use `As Is` in this statement, which means don't do anything more on read value, just read as what it is. But in some cases, we use
+criteria to read a set of values and want to know the aggregation value of them, that's why we offer three more aggregation arithmetics
+here, they are,
+
+- SUM
+- COUNT
+- AVG
+
+If `COUNT` is picked in above case, in SQL, it will be,
+
+```sql
+SELECT COUNT(TQ.QUOTATION_CREATE_DATE) FROM TOPIC_QUOTATION TQ WHERE TQ.QUOTATION_NO = ?;
+```
+
+:::caution  
+Make sure there is one and only one row which fulfills the given criteria when aggregation is `As Is`, otherwise unpredicted exception might
+be raised in runtime.  
+In watchmen, it is very important to ensure behaviour of runtime is predictable, the above situation implies uncertainty because read engine
+cannot ensure the order of data, it must be swept away.
+:::
+
 #### Read Factors
+
+`Read Factors` is a read operation to retrieve a set of factor values.
+
+![Read Factors](images/action-read-factors.png)
+
+The only difference from `Read Factor` is no aggregation arithmetic here. Values will be read as a list into variable, and it can be used to
+do a loop in next units.
+
+:::info  
+Variable is a list even there is only one factor value read.
+:::
 
 #### Read Row
 
+`Read Row` is a read operation. Difference to `Read Factor` is read a row to a memory object instead of a factor value.
+
+![Read Row](images/action-read-row.png)
+
+Obviously, factor and aggregation arithmetic is not needed here.
+
+:::caution  
+Same as `As Is` in read factor, `one and only one` assertion is very important here, we have to remove uncertainty in the first place.
+:::
+
 #### Read Rows
+
+`Read Rows` is a read operation, rows matched by given criteria will be read into memory. Usually, it is used to do a loop in next unit.
+
+![Read Rows](images/action-read-rows.png)
+
+### Write-Data Actions
 
 #### Write Factor
 
+`Write Factor` is a write operation.
+
+![Write Factor](images/action-write-factor.png)
+
+It is used to write a value to appointed factor by
+
+- A factor of trigger data,
+- A constant might contain variables,
+- Mix above two through computing,
+
+on given criteria. And when from value is a value list, it should be aggregated by aggregation arithmetic, same as `Read Factor`, supported
+aggregation arithmetics are
+
+- `SUM`
+- `COUNT`
+- `AVG`
+
 #### Insert Row
+
+`Insert Row` is a write operation.
+
+![Insert Row](images/action-insert-row.png)
+
+A new row will be created on appointed topic, target factors are written by appointed mapping. Each factor can be mapped independently, and
+aggregation is provided as well.
+
+:::caution  
+Any conflict causes insertion failure breaks `Insert Row` action, so make sure insertion can be done correctly.
+:::
 
 #### Merge Row
 
+`Merge Row` is a write operation.
+
+![Merge Row](images/action-merge-row.png)
+
+This action always do a modification on data matched by given criteria on target topic. Other parts, is the same as `Insert Row`.
+
+:::caution  
+Runtime exception raised when no data found by given criteria, so make sure data can be found.
+:::
+
 #### Insert or Merge Row
+
+`Insert or Merge Row` is a write operation. Actually it is a mixed version of `Insert Row` and `Merge Row`, following steps are applied in
+this action,
+
+- Find row by given criteria,
+- Do a modification when found,
+- Do an insertion when not found,
+	- Do a modification when conflict exception raised on insertion.
 
 ## Variables In Pipeline
 
