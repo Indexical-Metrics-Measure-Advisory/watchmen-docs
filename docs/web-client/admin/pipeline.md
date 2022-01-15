@@ -375,6 +375,108 @@ Like this,
 
 ### Action
 
+Action is the atomic part of pipeline, there are several types of action are offered for operating data or something else.
+
+All action types as below,
+
+![Action Types](images/action-types.png)
+
+They can be categorized as three,
+
+- System: in-memory operations,
+- Read: read data from a topic,
+- Write: write data to a topic.
+
+Now let's go through the actions one by one.
+
+#### Alarm
+
+`Alarm` is an in-memory operation, which,
+
+- Has a prerequisite,
+- A severity to categorize alarm priority,
+- A message which including variables.
+
+![Alarm](images/action-alarm.png)
+
+:::info  
+For alarm action, now there is a log message only, find [Doll](../../doll/doll-index) for more details.
+:::
+
+#### Copy to Variable
+
+`Copy to Variable` is an in-memory operation, a simple example as below,
+
+![Copy to Variable](images/action-copy-to-variable.png)
+
+It can be used to copy
+
+- Property value from trigger data,
+- Constant value from previous variables,
+- Mix above two through computed value,
+
+to a new variable. It is helpful on preparing the data in memory before doing r/w operations, makes logic more clearly.
+
+:::info  
+Only trigger topic is available in this action.
+:::
+
+#### Write to External
+
+`Write to External` is an in-memory operation, it is designed to write trigger data to external system.
+
+![Write to External](images/action-write-to-external.png)
+
+Simply choose the external writer, and assign an event code.
+
+:::tip  
+**[Here](./external-writer)** to find how to define external writers.
+:::
+
+:::caution  
+Pipeline engine treats external writing as a synchronous operation, any exception raised will break the pipeline. If you don't care about
+the status of external writing, provides an asynchronous external writer by yourself and choose it in
+action. **[Here](../../doll/extend/extend-external-writer)** to find for details about how to extend external writers.
+:::
+
+#### Exists
+
+#### Read Factor
+
+#### Read Factors
+
+#### Read Row
+
+#### Read Rows
+
+#### Write Factor
+
+#### Insert Row
+
+#### Merge Row
+
+#### Insert or Merge Row
+
+## Variables In Pipeline
+
+Variable is a special concept in pipeline, it is designed to put some data into memory temporary. Once it is declared, it can be used in
+each pipeline part following. Variable value will be replaced when another declaration by same variable name, and there is no type check for
+variable, which means on first declaration, it can be an object, and might be a number on second declaration. Besides the replacement
+strategy, variable is immutable, there is no way to change variable value in memory except re-declaring.
+
+:::tip  
+It is much more alike with variables in RUST, immutable and explicit declaring.
+:::
+
+Variable is visited by name, for example, visit a variable via name `premium`, pipeline runtime engine find value by following,
+
+- Find the explicit declaration in previous, it is
+	- Declared by read actions,
+	- Declared by copy to variable action,
+- Or find property of trigger topic when it is not found in step one.
+
+In constant parameter, variables are declared between `{}`, and use `.` to visit sub property.
+
 ## Parameter Definition
 
 ### From Topic
