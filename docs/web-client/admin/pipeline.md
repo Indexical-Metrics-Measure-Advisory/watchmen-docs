@@ -678,6 +678,8 @@ call these functions in constant parameter.
 - `{&monthDiff(x, y)}`, compute the months between given date `x` and `y`,
 - `{&yearDiff(x, y)}`, compute the years between given date `x` and `y`.
 
+In above cases, `x`/`y` are variables.
+
 ### Computed
 
 Computed parameter is mixed version of constant and topic parameter. In the meantime, it also can be part of another computed one. There are
