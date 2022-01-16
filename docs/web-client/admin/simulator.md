@@ -68,5 +68,7 @@ in [Doll](../../doll/doll-index).
 :::
 
 :::info  
-You can find more from simulator, and we highly recommend testing every pipeline by simulator before deploy them to environment.
+We highly recommend testing every pipeline by simulator before deploy them to environment.
 :::
+
+There are more helpful features from pipeline simulator waiting for you to discover and hope enjoy as you wish.
