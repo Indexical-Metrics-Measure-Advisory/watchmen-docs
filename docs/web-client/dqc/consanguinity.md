@@ -31,6 +31,10 @@ You can list and view pipeline for overview,
 
 We don't care about the detail logic here, just for get usages of topic and factor in pipeline.
 
+:::tip  
+It's useful with command option `--inspect`, try it by yourself.
+:::
+
 ### Topic
 
 Same as on pipeline, here is the overview of topic,
@@ -58,3 +62,9 @@ There are 2 types of graphics offered, on topic level,
 And on factor level,
 
 ![Factor Graphic](images/factor-graph-consanguinity.png)
+
+## CLI Help
+
+Usages of commands can be found in help command, click `Help` button or key in `/help` for more details.
+
+![Help](images/cli-help-consanguinity.png)
