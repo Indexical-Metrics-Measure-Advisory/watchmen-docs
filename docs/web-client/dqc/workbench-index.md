@@ -13,3 +13,16 @@ DQC (Data Quality Center) workbench includes a group of features to
 - View runtime statistics.
 
 Here, we introduce them one by one.
+
+## Disable DQC
+
+DQC can be disabled by building, actually it is enabled only when `REACT_APP_DQC_ENABLED=true` (by default it is not), so change it
+to `false` to disable DQC.
+
+:::info  
+Find `REACT_APP_DQC_ENABLED` in `.env` file.
+:::
+
+:::caution  
+Topic profile also will be disabled when DQC is disabled.
+:::
