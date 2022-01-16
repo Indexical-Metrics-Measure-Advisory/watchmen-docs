@@ -28,6 +28,6 @@ Click row to edit details.
 - Add description for this catalog.
 
 :::info  
-Currently, we don't offer many features on catalog, but that's an important part of the further plans, will keep developing in next
-versions.
+Currently, we haven't offered many features on catalog, but that's an important part of management. We will keep developing in next
+versions, check our [blog](/blog) for updating please.
 :::
