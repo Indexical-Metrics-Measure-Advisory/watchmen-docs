@@ -183,7 +183,7 @@ Factors are the basic elements of a topic. According to topic stored, factor equ
 - A table column when topic is a table in RDS,
 - A field when topic is a document in NoSQL.
 
-### Factor Types
+### Factor Types {#factor-types}
 
 **_Watchmen_** offers 50+ types for factor,
 

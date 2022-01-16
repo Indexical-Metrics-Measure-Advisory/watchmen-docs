@@ -25,5 +25,10 @@ There are 4 parts of profile,
 
 ![Topic Profile](images/topic-profile.png)
 
+
+:::info  
+Topic profile is available for non-raw topics only.
+:::
+
 We use [Pandas Profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/) to analyze data and get profile,
 visit [Pandas Profiling](https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/) for more details.

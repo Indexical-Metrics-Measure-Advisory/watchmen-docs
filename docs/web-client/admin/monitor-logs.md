@@ -8,6 +8,12 @@ sidebar_position: 120
 
 A simple page for search and review the logs created by pipeline running.
 
+:::info  
+Monitor logs is available for `Admin` only.
+:::
+
+## Page
+
 ![Monitor Logs](images/monitor-logs.png)
 
 You can search logs by
