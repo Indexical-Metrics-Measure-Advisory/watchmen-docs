@@ -86,14 +86,15 @@ Topics, pipelines and other tuples related can be exported as a zip file, by cli
 
 - All topics and spaces are available in export dialog,
 - Topics assigned to space will be selected automatically when space is selected,
-- Topic not selected will also be packed into zip only when it is upstream of one of the selected topics,
+- Topic not selected will not be packed into zip,
+  - Or topics relevant will be packed when `Export Selection Only` is unpicked,
 - Monitor rules on selected topics will be packed into zip,
-	- Rules use another topic, and the related topic is not included, will be excluded,
+    - Rules use another topic, and the related topic is not included, will be excluded,
 - Space will be deselected automatically when topic within it is deselected,
 - Any tuples included by space will be packed into zip according to selected spaces.
 - Pipelines will be packed into zip only when,
-	- Triggerred topic is selected,
-	- Topics receive data from this pipeline are selected.
+    - Triggerred topic is selected,
+    - Topics receive data from this pipeline are selected.
 
 There is only one file in this zip,
 
