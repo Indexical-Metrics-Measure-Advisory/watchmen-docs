@@ -30,7 +30,7 @@ In this favorite bar, you can
 - Click yellow arrow to find more items,
 - Click `Unpin` button to remove the favorite bar from page.
 
-Also, click the favorite menu in menu bar when top favorite bar is not pinned, the following also can exactly the same thing as it at top,
+Also, click the favorite menu in menu bar when top favorite bar is not pinned, the following also can do the same thing as it at top,
 
 ![Favorite Button](images/favorite-button.png)
 
