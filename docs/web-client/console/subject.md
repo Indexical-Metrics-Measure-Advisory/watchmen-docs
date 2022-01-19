@@ -89,4 +89,4 @@ By click header buttons,
 - Switch to another subject,
 - Delete current one.
 
-And change subject name by click name part of header.
+And change subject name by click name part in header.
