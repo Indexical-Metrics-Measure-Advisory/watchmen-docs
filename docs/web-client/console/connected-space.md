@@ -1,6 +1,6 @@
 ---
-id: console-connected-space
-title: Connected Space
+id: console-connected-space  
+title: Connected Space  
 sidebar_position: 20
 ---
 

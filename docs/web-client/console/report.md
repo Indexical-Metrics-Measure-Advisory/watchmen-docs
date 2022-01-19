@@ -1,6 +1,6 @@
 ---
-id: console-report
-title: Report & Chart
+id: console-report  
+title: Report & Chart  
 sidebar_position: 40
 ---
 

@@ -1,6 +1,6 @@
 ---
-id: console-subject
-title: Subject
+id: console-subject  
+title: Subject  
 sidebar_position: 30
 ---
 

@@ -1,6 +1,6 @@
 ---
-id: console-home
-title: Home
+id: console-home  
+title: Home  
 sidebar_position: 10
 ---
 
