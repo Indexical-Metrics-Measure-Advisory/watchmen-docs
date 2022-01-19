@@ -78,3 +78,15 @@ Columns can be resized, sorted, drag-and-dropped and locked to left.
 Everything is OK now, let's goto reports page,
 
 ![Reports](images/subject-reports.png)
+
+## Header
+
+By click header buttons,
+
+- Back to connected-space,
+- Switch between structure/dataset/reports of current subject,
+- Create new report,
+- Switch to another subject,
+- Delete current one.
+
+And change subject name by click name part of header.
