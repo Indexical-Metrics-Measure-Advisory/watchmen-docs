@@ -61,4 +61,5 @@ dimensions.
 ### Data Truncate
 
 Sometimes, we don't want to discover the whole picture, we just want to know the outstanding ones. In this case, identify count of data you
-want and assign the truncate type from one of `None`, `Top` and `Bottom`.
+want and assign the truncate type by `Top` or `Bottom` instead of `None`.
+
