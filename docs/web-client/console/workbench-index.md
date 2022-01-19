@@ -13,11 +13,11 @@ If you are a business user, the first page after you signed in will be as below,
 
 ![Index](images/menu.png)
 
-The connected spaces are listed at menu bar, simply click it to open.
+The connected-spaces are listed at menu bar, simply click it to open.
 
 ## Favorites
 
-Connected spaces and dashboards can be collected to favorite, they can be pinned to the top of page,
+Connected-spaces and dashboards can be collected to favorite, they can be pinned to the top of page,
 
 ![Pinned Index](images/pinned-favorite-menu.png)
 

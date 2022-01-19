@@ -17,7 +17,7 @@ In **_Watchmen_**, definition objects are called as `Tuple`,
 - [Enumeration](enumeration)
 - [Topic](topic)
 - [Pipeline](pipeline)
-- [Connected Space](connected-space)
+- [Connected-Space](connected-space)
 - [Subject](subject)
 - [Report](report)
 - [Dashboard](dashboard)
