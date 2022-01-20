@@ -142,54 +142,55 @@ Here are some screenshots,
 
 ![Subtitle](images/report-subtitle.png)
 
-## Prebuilt Charts
+## Charts
+### Prebuilt
 
 As we introduced in [report type](#report-type), there are several types of charts built-in. For each type, there is different restriction
 for indicators and dimensions and specific style settings are available.
 
-### Single Value
+#### Single Value
 
 In previous section, we have seen the common style settings, and for single value chart, there is a peculiarity tab,
 
 ![Count Report](images/report-count-chart.png)
 
-### Bar
+#### Bar
 
 ![Bar Report](images/report-bar-chart.png)
 
-### Line
+#### Line
 
 ![Line Report](images/report-line-chart.png)
 
-### Scatter
+#### Scatter
 
 ![Scatter Report](images/report-scatter-chart.png)
 
-### Pie
+#### Pie
 
 ![Pie Report](images/report-pie-chart.png)
 
-### Doughnut
+#### Doughnut
 
 ![Doughnut Report](images/report-doughnut-chart.png)
 
-### Nightingale
+#### Nightingale
 
 ![Nightingale](images/report-nightingale-chart.png)
 
-### Sunburst
+#### Sunburst
 
 ![Sunburst](images/report-sunburst-chart.png)
 
-### Tree
+#### Tree
 
 ![Tree](images/report-tree-chart.png)
 
-### Treemap
+#### Treemap
 
 ![Treemap](images/report-treemap-chart.png)
 
-### Map
+#### Map
 
 ![Map](images/report-map-chart.png)
 
@@ -197,4 +198,4 @@ In previous section, we have seen the common style settings, and for single valu
 Level-1 map (in state/province level) of USA and Japan are built-in.
 :::
 
-## Customize Chart
+### Customized
