@@ -143,6 +143,7 @@ Here are some screenshots,
 ![Subtitle](images/report-subtitle.png)
 
 ## Charts
+
 ### Prebuilt
 
 As we introduced in [report type](#report-type), there are several types of charts built-in. For each type, there is different restriction
@@ -199,3 +200,35 @@ Level-1 map (in state/province level) of USA and Japan are built-in.
 :::
 
 ### Customized
+
+For those charts haven't built-in, could be rendered by customized type, this is tech-orientation and by default not open to business user,
+we recommend implementing the complex charts by your technical department and expose them to business users. Follow below steps,
+
+- First, you need to be an administrator, define a space as we introduced [here](../admin/space), make sure it is assigned to yourself and
+  business users who will use this customized chart.
+- Switch to console workbench, connect this space,
+- Create a subject and create a report, simply following the standard process,
+- Select report type as `Customized`,
+- Select indicators/dimensions/filters/funnels, and set truncate if needed, just as normal,
+- Set basic style/title/subtitle, also as normal.
+
+Now we have dataset for this report, open bottom bar, find script tab,
+
+![Customized](images/report-customized-chart.png)
+
+_**Watchmen**_ use [echarts](https://echarts.apache.org/) as chart engine, so in this script, a valid echarts options must be returned.
+Since script will be run in browser, which means please strictly follow the javascript syntax supported by your browser version, it can be
+found at [CanIUse](https://caniuse.com/).
+
+```javascript
+(() => {
+	return {              // this is what the echarts needed
+		/** ... */
+	};
+})();
+```
+
+:::tip  
+For how to use echarts, find their examples [here](https://echarts.apache.org/examples/en/index.html), and configuration
+docs [here](https://echarts.apache.org/en/option.html).
+:::
