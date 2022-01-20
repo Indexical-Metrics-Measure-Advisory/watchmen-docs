@@ -16,8 +16,8 @@ Here, we introduce them one by one.
 
 ## Disable DQC
 
-DQC can be disabled by building, actually it is enabled only when `REACT_APP_DQC_ENABLED=true` (by default it is not), so change it
-to `false` to disable DQC.
+DQC can be disabled by building, it is enabled only when `REACT_APP_DQC_ENABLED=true` (by default it is not), set it to `true`/`false` to
+enable/disable DQC.
 
 :::info  
 Find `REACT_APP_DQC_ENABLED` in `.env` file.
