@@ -196,7 +196,7 @@ In previous section, we have seen the common style settings, and for single valu
 ![Map](images/report-map-chart.png)
 
 :::info  
-Level-1 map (in state/province level) of USA and Japan are built-in.
+Level-1 map (in state/province level): China, Japan, Singapore and USA are built-in.
 :::
 
 ### Customized
