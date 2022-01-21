@@ -202,7 +202,11 @@ Level-1 map (in state/province level) of USA and Japan are built-in.
 ### Customized
 
 For those charts haven't built-in, could be rendered by customized type, this is tech-orientation and by default not open to business user,
-we recommend implementing the complex charts by your technical department and expose them to business users. Follow below steps,
+we recommend implementing the complex charts by your technical department and expose them to business users.
+
+#### Data Structure
+
+Follow below steps,
 
 - First, you need to be an administrator, define a space as we introduced [here](../admin/space), make sure it is assigned to yourself and
   business users who will use this customized chart.
@@ -211,6 +215,8 @@ we recommend implementing the complex charts by your technical department and ex
 - Select report type as `Customized`,
 - Select indicators/dimensions/filters/funnels, and set truncate if needed, just as normal,
 - Set basic style/title/subtitle, also as normal.
+
+#### Chart Script
 
 Now we have dataset for this report, open bottom bar, find script tab,
 
@@ -232,3 +238,104 @@ found at [CanIUse](https://caniuse.com/).
 For how to use echarts, find their examples [here](https://echarts.apache.org/examples/en/index.html), and configuration
 docs [here](https://echarts.apache.org/en/option.html).
 :::
+
+To build echarts options in script, there is one more parameter `options` is passed into this function. Typically, structure as below,
+
+```json5
+{
+	color: [],
+	// colors 
+	data: [],
+	// dataset, 2 dimensions array
+	title: {},
+	// title defined in title/subtitle tabs
+	vars: {}
+	// variables
+}
+```
+
+Use these data to build new options and return to engine to render chart.
+
+#### Define Variables
+
+When defining a customized charts, sometimes there are some dynamic variables want to expose to business users, so they can change the
+rendering behavior through giving values of these variables by their own. There is a `Variables Defs` tab to do this,
+
+![Variables Defs](images/report-variables-defs.png)
+
+Let's see a complete sample,
+
+```javascript
+(() => {
+	// your code starts
+	return [
+		// unit/placeholder/defaultValue is optional, defaultValue must be a number
+		{key: 'var1', type: 'number', placeholder: 'Number Variable...', label: 'V1', unit: 'px', defaultValue: 1},
+		// placeholder/defaultValue is optional, defaultValue must be a number
+		{key: 'var2', type: 'percentage', placeholder: 'Percentage Variable...', label: 'V2', defaultValue: 10},
+		// defaultValue is optional, defaultValue must be a boolean
+		{key: 'var3', type: 'boolean', label: 'V3', defaultValue: true},
+		{type: 'section', label: 'Section 2'},
+		// placeholder/defaultValue is optional
+		{key: 'var4', type: 'text', placeholder: 'Text Variable...', label: 'V4', defaultValue: 'abc'},
+		// defaultValue is optional, defaultValue must be css color
+		{key: 'var5', type: 'color', label: 'V5', defaultValue: '#ff0000'},
+		// placeholder/defaultValue is optional, defaultValue must match one of options
+		{
+			key: 'var6',
+			type: 'dropdown',
+			placeholder: 'Dropdown Variable...',
+			label: 'V6',
+			defaultValue: '1',
+			options: [{value: '1', label: 'Option 1'}, {value: '2', label: 'Option 2'}]
+		}
+	];
+	// your code ends
+})();
+```
+
+Also, it will be compiled and run on browser side, make sure it is strictly following the javascript syntax supported by your browser
+version. There are several types supported, variable declaration contains,
+
+- `key`: make sure it is unique,
+- `type`,
+	- `number`: numeric value, rendered as an input,
+		- `unit`: only for `number`,
+	- `percentage`: a numeric value, rendered as an input,
+		- `percentage` is a `number` with unit is `%`,
+	- `boolean`: a boolean value, rendered as a checkbox,
+	- `text`: a string value, rendered as an input,
+	- `color`: a color value, rendered as a color picker,
+	- `dropdown`: value type according to options, number/string/boolean are supported. It is rendered as a dropdown.
+		- `options`: options for dropdown,
+- `placeholder`: a string to describe meaning of this variable,
+- `label`: variable label,
+- `defaultValue`: default value of variable.
+
+#### Variables
+
+Defined variables will be rendered in `Variables` tab as below,
+
+![Variables](images/report-variables.png)
+
+And they will be passed as `options.vars` to chart script, like,
+
+```javascript {2-4}
+(() => {
+	console.log(options.vars);      
+	// in browser console, will see 
+	// {var: 1, var2: 10, var3: true, var4: "abc", var5: "rgba(255,0,0,1)", var6: "1"}
+	
+	return {                        // this is what the echarts needed
+		/** ... */
+	};
+})();
+```
+
+#### Summary
+
+`Script` and `Variables Defs` tabs are available for admin only by default, they can be open to business users when build and deploy
+by `REACT_APP_CHART_SCRIPT_IN_CONSOLE=true`. It is tech-orientation, and make sure that your business users understanding how to use this
+before you decide to open it, they must learn the part of Javascript and echarts, it's easy to a programmer, but not that easy to others.
+Another thing is, if script is not open to business users, then they cannot change the structure of report, which means chart type,
+indicators and dimensions is immutable, and filter and funnel still can be changed as normal. 
