@@ -608,3 +608,9 @@ tool, such as GIT.
 
 Find topic model **[here](../../tuples/topic)**.
 
+## Topic Layers
+
+There are a large amount of topics should be defined, we recommend that topics would be defined on different layers. Each layer has its own
+purpose, and using pipelines lead data through these layers, cleaning, transforming and aggregating them.
+
+![Topic Layers](images/topic-layers.png)
