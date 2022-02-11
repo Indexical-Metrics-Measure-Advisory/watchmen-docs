@@ -4,57 +4,55 @@ title: Integration
 sidebar_position: 100
 ---
 
+
+
+
+
+
+
+
 import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 
-## Integration 
+# Integration
+## PAT token
 
-### PAT token 
+- Login with admin user,
+- Go to [**setting**],
+- Generate `PAT` with name,
+- Copy `PAT` token.
 
-- login with admin user  
-- go to [**setting**]
-- generate pat with name 
-- copy pat token 
-
-
-
-### Collection
-
-##### API for import raw data 
-
-
-
-# Enumeration
-## Model
-
+## Collection
+### API for import raw data
 
 <Tabs>
-<TabItem value="py" label="Python">
+	<TabItem value="py" label="Python">
 
 
-```python
-    headers["authorization"] = "pat " + token
-    url = "https://localhost:8000"
-    event_data = {
-        "code":event_code,      ## raw topic name
-        "data":data   ## raw topic  data 
-    }
+		```python
+		headers["authorization"] = "pat " + token
+		url = "http://localhost:8000"
+		event_data = {
+			'code': event_code,      # raw topic name
+			'data': data             # raw topic  data
+		}
 
-    response = requests.post(url+'pipeline/data', data=json.dumps(event_data), headers=headers)
-    return response.json()
-    
-```
+		response = requests.post(url + 'pipeline/data', data=json.dumps(event_data), headers=headers)
+		return response.json()
+		```
 
 
-</TabItem>
-<TabItem value="ts" label="Typescript">
+	</TabItem>
+	<TabItem value="ts" label="Typescript">
 
-**_`(under construction)`_**
+		**_`(under construction)`_**
 
-</TabItem>
+	</TabItem>
 </Tabs>
 
-> /pipeline/data/async api After saving raw data, it returns directly and do data processing asynchronously
+:::info
+Or use `/pipeline/data/async`, it returns once data saved and trigger pipelines processing asynchronously.
+:::
 
 <!-- ##### Kafka 
 - put pat in header 
@@ -64,11 +62,10 @@ import Tabs from '@theme/Tabs';
 - put pat in header 
 - send {"event":"raw_topic code",data:data} to queue with exchange  -->
 
-### Third Party BI   
+## Third Party BI
+- [Metabase](https://www.metabase.com/)
+- [Superset](https://superset.apache.org/)
 
-##### Open Source 
-- metabase 
-  - add presto datasource
-- superset
-  - add presto datasource
-
+:::info
+Connect BI to Presto or storage directly.
+:::
