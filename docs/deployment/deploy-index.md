@@ -126,9 +126,9 @@ services:
 
 Watchmen-matryoshka-doll's configuration
 
-The config_file of doll, please refer to [doll configuration](/docs/doll/config/configuration.md) 
+The config_file of doll, please refer to [doll configuration](/docs/doll/config/configuration.md).
 
-Configure watchmen-web-client as a reverse proxy for HTTP
+Configure watchmen-web-client as a reverse proxy for HTTP.
 
 Configuration fragment of watchmen web client (nginx):
 
@@ -238,11 +238,11 @@ Storage(data source):
 
 #### Install watchmen-dqc
 
-At present, DQC only supports stand-alone deployment. You can use the host mode for container network
+At present, DQC only supports stand-alone deployment. You can use the host mode for container network.
 
 Deploy dqc database script:
 
-Please refer to "Deploy watchmen database"
+Please refer to "Deploy watchmen database".
 
 Start dqc container:
 ```commandline
@@ -250,4 +250,4 @@ docker run --net=host --name watchmen-dqc -v {mount_path}:/app/temp --env-file {
 ```
 Configuration of dqc:
 
-Please refer to [dqc configuration](/docs/doll/config/configuration.md) 
+Please refer to [dqc configuration](/docs/doll/config/configuration.md).
