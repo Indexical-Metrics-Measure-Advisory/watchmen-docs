@@ -142,14 +142,14 @@ upstream watchmen_doll{
     server IP2:PORT2;
 }
 ```
-```text
+```nginx
 location /watchmen/ {
   proxy_pass http://watchmen_doll/;
 }
 ```
-```text
+```nginx
 location /watchmen/dqc/ {
-  proxy_pass http://127.0.0.1:8002/dqc/;
+  proxy_pass http://ip:port/dqc/;
 }
 ```
 
