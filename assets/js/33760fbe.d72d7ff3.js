@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwatchmen_docs=self.webpackChunkwatchmen_docs||[]).push([[7388],{9831:function(a){a.exports=JSON.parse('{"allTagsPath":"/watchmen-docs/blog/tags","slug":"/watchmen-docs/blog/tags/matryoshka","name":"matryoshka","count":1,"permalink":"/watchmen-docs/blog/tags/matryoshka"}')}}]);
