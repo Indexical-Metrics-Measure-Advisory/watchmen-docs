@@ -133,7 +133,7 @@ Configure watchmen-web-client as a reverse proxy for HTTP.
 Configuration fragment of watchmen web client (nginx):
 
 ```nginx
-upstream watchmen_doll{
+upstream watchmen_doll {
     server IP1:PORT1;
     …………
     server IP1:PORT2;
