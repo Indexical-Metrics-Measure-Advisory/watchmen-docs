@@ -1,0 +1,220 @@
+---
+id: pipeline
+title: Pipeline
+sidebar_position: 10
+---
+
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+# Space
+## Model
+<Tabs>
+<TabItem value="ts" label="Typescript">
+
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-super-types.ts"
+export interface Conditional {
+	conditional: boolean;
+	on?: ParameterJoint;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-stage-unit-action/pipeline-stage-unit-action-types.ts"
+export enum SystemActionType {
+	ALARM = 'alarm',
+	COPY_TO_MEMORY = 'copy-to-memory',
+	WRITE_TO_EXTERNAL = 'write-to-external'
+}
+
+export enum ReadTopicActionType {
+	READ_ROW = 'read-row',
+	READ_FACTOR = 'read-factor',
+	EXISTS = 'exists',
+	READ_ROWS = 'read-rows',
+	READ_FACTORS = 'read-factors'
+}
+
+export enum WriteTopicActionType {
+	MERGE_ROW = 'merge-row',
+	INSERT_ROW = 'insert-row',
+	INSERT_OR_MERGE_ROW = 'insert-or-merge-row',
+	WRITE_FACTOR = 'write-factor',
+}
+
+export type PipelineStageUnitActionType = WriteTopicActionType | ReadTopicActionType | SystemActionType;
+
+export type PipelineStageUnitActionId = string;
+
+export interface PipelineStageUnitAction {
+	actionId: PipelineStageUnitActionId;
+	type: PipelineStageUnitActionType;
+}
+
+export interface MemoryWriter extends PipelineStageUnitAction {
+	variableName: string;
+}
+
+export interface FromTopic extends PipelineStageUnitAction {
+	topicId: TopicId;
+}
+
+export interface FromFactor extends FromTopic {
+	factorId: FactorId;
+}
+
+export interface ToTopic extends PipelineStageUnitAction {
+	topicId: TopicId;
+}
+
+export interface ToFactor extends ToTopic {
+	factorId: FactorId;
+}
+
+export interface FindBy extends PipelineStageUnitAction {
+	by: ParameterJoint;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-stage-unit-action/aggregate-arithmetic-types.ts"
+export enum AggregateArithmetic {
+	NONE = 'none',
+	COUNT = 'count',
+	SUM = 'sum',
+	AVG = 'avg'
+}
+
+export interface AggregateArithmeticHolder {
+	arithmetic: AggregateArithmetic;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-stage-unit-action/system-actions-types.ts"
+export enum AlarmActionSeverity {
+	LOW = 'low',
+	MEDIUM = 'medium',
+	HIGH = 'high',
+	CRITICAL = 'critical',
+}
+
+export interface AlarmAction extends PipelineStageUnitAction, Conditional {
+	type: SystemActionType.ALARM;
+	severity: AlarmActionSeverity;
+	message: string;
+}
+
+	/** copy something to memory variable */
+export interface CopyToMemoryAction extends PipelineStageUnitAction, MemoryWriter {
+	type: SystemActionType.COPY_TO_MEMORY;
+	source: Parameter;
+}
+
+export interface WriteToExternalAction extends PipelineStageUnitAction {
+	type: SystemActionType.WRITE_TO_EXTERNAL;
+	externalWriterId: string;
+	eventCode?: string;
+}
+```
+	
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-stage-unit-action/read-topic-actions-types.ts"
+export interface ReadTopicAction extends FromTopic, MemoryWriter, FindBy, PipelineStageUnitAction {
+	type: ReadTopicActionType;
+}
+
+export interface ReadRowAction extends ReadTopicAction {
+	type: ReadTopicActionType.READ_ROW;
+}
+
+export interface ReadRowsAction extends ReadTopicAction {
+	type: ReadTopicActionType.READ_ROWS;
+}
+
+export interface ReadFactorAction extends FromFactor, ReadTopicAction, AggregateArithmeticHolder {
+	type: ReadTopicActionType.READ_FACTOR;
+}
+
+export interface ReadFactorsAction extends FromFactor, ReadTopicAction {
+	type: ReadTopicActionType.READ_FACTORS;
+}
+
+export interface ExistsAction extends ReadTopicAction {
+	type: ReadTopicActionType.EXISTS;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-stage-unit-action/write-topic-actions-types.ts"
+export interface MappingFactor extends AggregateArithmeticHolder {
+	source: Parameter;
+	factorId: FactorId;
+}
+
+export interface MappingRow extends PipelineStageUnitAction {
+	mapping: Array<MappingFactor>;
+}
+
+export interface WriteTopicAction extends ToTopic, PipelineStageUnitAction {
+	type: WriteTopicActionType;
+}
+
+export interface InsertRowAction extends WriteTopicAction, MappingRow {
+	type: WriteTopicActionType.INSERT_ROW;
+}
+
+export interface MergeRowAction extends WriteTopicAction, MappingRow, FindBy {
+	type: WriteTopicActionType.MERGE_ROW | WriteTopicActionType.INSERT_OR_MERGE_ROW;
+}
+
+export interface WriteFactorAction extends ToFactor, WriteTopicAction, FindBy, AggregateArithmeticHolder {
+	type: WriteTopicActionType.WRITE_FACTOR;
+	source: Parameter;
+}
+```
+
+	
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-stage-unit-types.ts"
+export interface PipelineStageUnit extends Conditional {
+	unitId: PipelineStageUnitId;
+	name: string;
+	/** all actions in this unit can be looped inside */
+	loopVariableName?: string;
+	do: Array<PipelineStageUnitAction>;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-stage-types.ts"
+export interface PipelineStage extends Conditional {
+	stageId: PipelineStageId;
+	name: string;
+	units: Array<PipelineStageUnit>;
+}
+```
+
+```typescript title="watchmen-web-client/src/services/data/tuples/pipeline-types.ts"
+export enum PipelineTriggerType {
+	INSERT = 'insert',
+	MERGE = 'merge',
+	// insert or merge
+	INSERT_OR_MERGE = 'insert-or-merge',
+	DELETE = 'delete',
+}
+
+export type PipelineId = string;
+
+export interface Pipeline extends Tuple, Conditional {
+	pipelineId: PipelineId;
+	topicId: TopicId;
+	name: string;
+	type: PipelineTriggerType;
+	stages: Array<PipelineStage>;
+	enabled: boolean;
+	validated: boolean;
+	tenantId?: TenantId;
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+**_`(under construction)`_**
+
+</TabItem>
+</Tabs>

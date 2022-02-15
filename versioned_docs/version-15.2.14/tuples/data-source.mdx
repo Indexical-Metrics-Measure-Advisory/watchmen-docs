@@ -1,0 +1,50 @@
+---
+id: data-source  
+title: Data Source  
+sidebar_position: 3
+---
+
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
+
+# Data Source
+## Model
+<Tabs>
+<TabItem value="ts" label="Typescript">
+
+```typescript title="watchmen-web-client/src/services/data/tuples/data-source-types.ts"
+export enum DataSourceType {
+	MYSQL = 'mysql',
+	ORACLE = 'oracle',
+	MONGODB = 'mongodb'
+}
+
+export interface DataSourceParam {
+	name: string;
+	value: string;
+}
+
+export type DataSourceId = string;
+
+export interface DataSource extends Tuple {
+	dataSourceId: DataSourceId;
+	dataSourceCode: string;
+	dataSourceType: DataSourceType;
+	host: string;
+	port: string;
+	name: string;
+	username: string;
+	password: string;
+	url: string;
+	params: Array<DataSourceParam>;
+	tenantId?: TenantId;
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+**_`(under construction)`_**
+
+</TabItem>
+</Tabs>
