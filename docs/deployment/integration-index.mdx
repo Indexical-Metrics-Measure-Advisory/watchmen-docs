@@ -19,28 +19,28 @@ import Tabs from '@theme/Tabs';
 ### API for import raw data
 
 <Tabs>
-	<TabItem value="py" label="Python">
+<TabItem value="py" label="Python">
 
 
-		```python
-		headers["authorization"] = "pat " + token
-		url = "http://localhost:8000"
-		event_data = {
-			'code': event_code,      # raw topic name
-			'data': data             # raw topic  data
-		}
+```python
+headers["authorization"] = "pat " + token
+url = "http://localhost:8000"
+event_data = {
+	'code': event_code,      # raw topic name
+	'data': data             # raw topic  data
+}
 
-		response = requests.post(url + 'pipeline/data', data=json.dumps(event_data), headers=headers)
-		return response.json()
-		```
+response = requests.post(url + 'pipeline/data', data=json.dumps(event_data), headers=headers)
+return response.json()
+```
 
 
-	</TabItem>
-	<TabItem value="ts" label="Typescript">
+</TabItem>
+<TabItem value="ts" label="Typescript">
 
-		**_`(under construction)`_**
+**_`(under construction)`_**
 
-	</TabItem>
+</TabItem>
 </Tabs>
 
 :::info

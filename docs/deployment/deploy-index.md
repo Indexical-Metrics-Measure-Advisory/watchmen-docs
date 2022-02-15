@@ -35,21 +35,21 @@ Supported database type:
 * watchmen-dqc
 * presto
 
-#### watchmen web client 
+#### Watchmen web client 
 Watchmen's front desk
 
 ```bash
 docker pull ghcr.io/indexical-metrics-measure-advisory/watchmen-web-client:{version}
 ```
 
-#### Watchmen matryoshka doll 
+#### Watchmen doll 
 Watchmen's backend server （python）
 
 ```bash
 docker pull ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-doll:{version}
 ```
 
-#### Watchmen matryoshka dqc 
+#### Watchmen dqc 
 Watchmen's data quality center (python)
 
 ```bash
@@ -126,7 +126,7 @@ services:
 
 Watchmen-matryoshka-doll's configuration
 
-The config_file of doll, please refer to [doll configuration](/docs/doll/config/configuration.md).
+The `config_file` of doll, please refer to [doll configuration](../doll/doll-configuration).
 
 Configure watchmen-web-client as a reverse proxy for HTTP.
 
@@ -250,4 +250,4 @@ docker run --net=host --name watchmen-dqc -v {mount_path}:/app/temp --env-file {
 ```
 Configuration of dqc:
 
-Please refer to [dqc configuration](/docs/doll/config/configuration.md).
+Please refer to [dqc configuration](../doll/doll-configuration).

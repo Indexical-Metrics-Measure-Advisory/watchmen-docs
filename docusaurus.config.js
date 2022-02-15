@@ -9,7 +9,7 @@ const config = {
 	title: 'Matryoshka Watchmen',
 	tagline: 'Watchmen Platform is a low code data platform for data pipeline, meta management, analysis, and quality management.',
 	url: 'https://imma-watchmen.com',
-	baseUrl: '/watchmen-docs/',
+	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
 	favicon: 'img/favicon.ico',
