@@ -1,5 +1,5 @@
 ---
-id: index  
+id: config 
 title: Configuration Manifest  
 sidebar_position: 1
 ---

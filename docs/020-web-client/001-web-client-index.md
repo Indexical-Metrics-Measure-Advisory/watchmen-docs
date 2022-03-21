@@ -38,14 +38,14 @@ After login successfully, web client redirects to workbench homepage automatical
 
 **_Watchmen_** web client provides different workbenches for different roles,
 
-- [Admin Workbench](admin/workbench-index.md) for IT developers,
-- [Console Workbench](console/workbench-index.md) for business users,
-- [DQC Workbench](dqc/workbench-index.md) for IT maintainers.
+- [Admin Workbench](admin/admin-wb-index) for IT developers,
+- [Console Workbench](console/console-wb-index) for business users,
+- [DQC Workbench](dqc/dqc-wb-index) for IT maintainers.
 
 In **_Watchmen_**, IT developers and maintainers are treated as administrators. Typically, it's recommend that maintainers also acquire
 basic knowledge of the topics and pipelines which are developed by developers, should be helpful on monitoring, finding and locating
-problems. Therefore, if you are an IT, let's start from [Admin Workbench](admin/workbench-index.md). Or if you are a business user, let's
-start from [Console Workbench](console/workbench-index.md).
+problems. Therefore, if you are an IT, let's start from [Admin Workbench](admin/admin-wb-index). Or if you are a business user, let's
+start from [Console Workbench](console/console-wb-index).
 
 ## Workbench Layout
 

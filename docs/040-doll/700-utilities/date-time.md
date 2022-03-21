@@ -9,7 +9,7 @@ sidebar_position: 1
 **_Watchmen_** use **[0-9]** part of string to parse date time. Thus, supporting for timezone part is limited.
 
 :::info  
-Supported formats are defined in **_watchmen-data-kernel_** module, find them on [Configuration](../../configuration/index)
+Supported formats are defined in **_watchmen-data-kernel_** module, find them on [Configuration](../../installation/config)
 :::
 
 ## Default Formats

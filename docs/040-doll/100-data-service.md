@@ -75,7 +75,7 @@ metadata are stored in one storage, it can be RDS or NoSQL.
 implementation module should be included.
 
 Storage provides persistent layer both for meta service and data service. For meta service, find configuration
-details **[here](../configuration/index#meta).**
+details **[here](../installation/config#meta).**
 
 ### Snowflake Sequence Generator
 
