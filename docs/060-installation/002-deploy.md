@@ -38,20 +38,20 @@ Visit [**Quick Start**](/tutorial/tutorial-index) for more details.
   docker pull ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-dqc:{version}
   ```
 - Trino: fast distributed SQL query engine for big data analytics.
-	- **[Docker Trino](https://hub.docker.com/r/trinodb/trino)**
+	- **[Docker Trino](https://hub.docker.com/r/Trinodb/Trino)**
 
 ### Initial Environment
 
 A new environment needs to be initialized. The steps are as follows:
 
 - Deploy the database script for watchmen definition database,
-- Install watchmen components: web client, doll, dqc and/or trino,
+- Install watchmen components: web client, doll, dqc and/or Trino,
 - The environment started successfully,
 - Create zone, user, instance datasource online with superuser,
 - Deploy the database script of topics for watchmen instance database,
 - Deploy data asset to the environment,
 - Check all topics, binding the datasource to the topic online with tenant user,
-- Change configuration of trino, add the new datasource to trino server.
+- Change configuration of Trino, add the new datasource to Trino server.
 
 #### Deploy Database
 
@@ -80,7 +80,7 @@ services:
     image: ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-doll:{version}
     restart: always
     ports:
-      - "{host_port}:80"
+      - "{ host_port }:80"
     env_file:
       - { config_file }
     volumes:
@@ -92,7 +92,7 @@ services:
     image: ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-doll:{version}
     restart: always
     ports:
-      - "{host_port}:80"
+      - "{ host_port }:80"
     env_file:
       - { config_file }
     volumes:
@@ -105,7 +105,7 @@ services:
     image: ghcr.io/indexical-metrics-measure-advisory/watchmen-web-client:{version}
     restart: always
     ports:
-      - "{host_port}:80"
+      - "{ host_port }:80"
     volumes:
       - { mount_file }:/etc/nginx/nginx.conf
     links:
@@ -122,10 +122,10 @@ It also serves the static resource files of web client. Here are some configurat
 ```nginx
 upstream watchmen_doll {
     server IP1:PORT1;
-    …………
+    ...
     server IP1:PORT2;
     server IP2:PORT1;
-    …………
+    ...
     server IP2:PORT2;
 }
 ```
@@ -144,16 +144,14 @@ location /watchmen/dqc/ {
 
 #### Install DQC REST
 
-At present, DQC only supports stand-alone deployment. You can use the host mode for container network.
+DQC can be deployed standalone, use the host mode for container network. Start DQC by following command:
 
-Deploy dqc database script:
-
-Please refer to "Deploy watchmen database".
-
-Start dqc container:
-
-```commandline
-docker run --net=host --name watchmen-dqc -v {mount_path}:/app/temp --env-file {config_file} -p {host_port}:80 -d  indexical-metrics-measure-advisory/watchmen-dqc:{version}
+```bash
+docker run --net=host --name watchmen-dqc \
+	-v {mount_path}:/app/temp \
+	--env-file {config_file} \
+	-p { host_port }:80 \
+	-d  indexical-metrics-measure-advisory/watchmen-dqc:{version}
 ```
 
 #### Deploy Assets
@@ -172,27 +170,30 @@ watchmen-asset-deployment
 
 - A Dockerfile sample
 
-```dockerfile
+```bash
 FROM indexical-metrics-measure-advisory/watchmen-cli:{version}
 WORKDIR /app
 COPY config/ /app/config
 ```
 
-Start deploy asset container:
+Deploy by docker:
 
-```commandline
-docker run --rm -e command=deploy_asset -e host=http://host-of-doll:port -e username=imma-admin -e password=abc1234 indexical-metrics-measure-advisory/watchmen-cli:{version}
+```bash
+docker run --rm -e command=deploy_asset \
+	-e host=http://host-of-doll:port \
+	-e username=imma-admin \
+	-e password=abc1234 indexical-metrics-measure-advisory/watchmen-cli:{version}
 ```
 
 #### Install Trino Cluster
 
-Visit [**Trino Cluster**](https://trino.io/docs/current/installation/deployment.html?highlight=cluster#) for more details.
+Visit [**Trino Cluster**](https://Trino.io/docs/current/installation/deployment.html?highlight=cluster#) for more details.
 
-Storage(data source):
+For storage datasource:
 
-- Datasource extension online is not supported by presto (trino), manually add new catalog into presto (trino) is a must.
-- Datasource code must be consistent with prefix in presto (trino) catalog configuration file, which means datasource code in watchmen also
-  has to follow this principle as well
+- Datasource extension in runtime is not supported by Trino, manually add new catalog into Trino is a must.
+- Datasource code must be consistent with prefix in Trino catalog, which means datasource code in watchmen also has to follow this principle
+  as well.
 
-Configuration of dqc, visit **[here](../installation/config)** for more details.
+Visit **[here](../installation/config)** for more details about DQC configuration.
 
