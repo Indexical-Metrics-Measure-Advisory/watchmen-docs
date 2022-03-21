@@ -135,14 +135,8 @@ const config = {
 						title: 'GitHub',
 						items: [
 							{
-								label: 'Doll',
-								href: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-matryoshka-doll'
-							}, {
-								label: 'Data Quality Center',
-								href: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-dqc'
-							}, {
-								label: 'Web Client',
-								href: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-web-client'
+								label: 'Doll & DQC',
+								href: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen'
 							}
 						]
 					}
