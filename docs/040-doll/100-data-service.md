@@ -84,33 +84,40 @@ In storage module, there is a built-in snowflake sequence generator. Small chang
 - At most 4 data centers are supported, default is 0,
 - At most 1024 workers for each data center are supported, default is 0 too.
 
-It is expected that worker ids setting can be ignored when deploy watchmen to servers, if it is true, we have no need to care about settings
-in every server or docker image, since other settings are same in most case. Consider of this, a built-in mechanism called competitive
-worker is provided, and default is enabled. It acquires a worker id when server starting, and keep declaring itself alive to meta storage
-every 60 seconds when default settings is kept. Plus, an unused worker id would be released and reused after 1 day.
+It is expected that worker ids setting can be ignored when deploy watchmen to servers, it is no need to care about settings for each server
+, docker image and system variables of host server. Consider of this, a built-in mechanism called competitive worker is provided, and by
+default it is enabled. It acquires a worker id when server starting, and keep declaring itself alive to meta storage every 60 seconds when
+default settings is kept. Plus, an unused worker id would be released and reused after 1 day.
 
 :::tip  
 Default competitive worker is based on persistent layer, all data can be found at `snowflake_competitive_workers`. Manually clean dead
 worker ids when necessary.
 :::
 
+:::caution  
+Declare data center id and worker id by system variables for each node separated is recommended where conditions permit. Simply disable the
+competitive workers by settings parameter.   
+:::
+
 ### Extend Data Source Types
 
-MySQL and Oracle is built-in now, MSSQL and mongoDB are in plan now. 
-If you want to extend a new data source type, follow the steps to create supporting a type `SomeDB`.
+MySQL and Oracle is built-in now, MSSQL and mongoDB are in plan now. If you want to extend a new data source type, follow the steps to
+create supporting a type `SomeDB`.
 
-First fork our repo, for server side, 
+First fork our repo, for server side,
+
 - Add a new package, which named `watchmen-storage-somedb`,
 - Copy source from the analogue, such as from `watchmen-storage-mysql`,
 - Go through source codes, change them,
-  - If it is only for topic data, only a few apis should be implemented, find `watchmen-inquiry-trino` as a sample,
-  - If it is for metadata, most apis must be implemented except the apis which are used for inquiry subject and report data,
-  - If it is for both metadata and topic data, all apis have to be implemented,
-- Add data source types into `DataSourceType`, which in `watchmen-model`, 
+	- If it is only for topic data, only a few apis should be implemented, find `watchmen-inquiry-trino` as a sample,
+	- If it is for metadata, most apis must be implemented except the apis which are used for inquiry subject and report data,
+	- If it is for both metadata and topic data, all apis have to be implemented,
+- Add data source types into `DataSourceType`, which in `watchmen-model`,
 - Add dependency into doll and dqc instance.
 - Bingo!
 
 For defined new data source type in web client, you need to,
+
 - Add data source types into `DataSourceType`, which in `data-source-types.ts`,
 - Add dropdown label into `DataSourceTypeInput`, which in `data-source-type-input.tsx`,
 - Bingo!
@@ -132,6 +139,10 @@ A set of services and rest apis are provided by data kernel and surface. Pipelin
 A high frequency question is, how to refresh cache, there are multiple servers and only one node can be cleared when call clear cache rest
 api. For this situation, a heart beat cache refresher is built-in, and visit **[here](../installation/config#data-kernel)** for more
 details.
+
+:::caution  
+Heart beat of in-memory cache is not recommend in production.
+:::
 
 ### Topic Data
 
@@ -194,6 +205,6 @@ curl \
 	- for `insert`: `id_` will be generated, `version_` is 1 when it is required,
 - `tenant_id`: required when current user is super admin.
 
-:::caution  
+:::warning  
 No pipeline will be triggered on data patch.
 :::
