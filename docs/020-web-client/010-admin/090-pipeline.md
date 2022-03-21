@@ -87,14 +87,14 @@ Topics, pipelines and other tuples related can be exported as a zip file, by cli
 - All topics and spaces are available in export dialog,
 - Topics assigned to space will be selected automatically when space is selected,
 - Topic not selected will not be packed into zip,
-  - Or topics relevant will be packed when `Export Selection Only` is unpicked,
+	- Or topics relevant will be packed when `Export Selection Only` is unpicked,
 - Monitor rules on selected topics will be packed into zip,
-    - Rules use another topic, and the related topic is not included, will be excluded,
+	- Rules use another topic, and the related topic is not included, will be excluded,
 - Space will be deselected automatically when topic within it is deselected,
 - Any tuples included by space will be packed into zip according to selected spaces.
 - Pipelines will be packed into zip only when,
-    - Triggerred topic is selected,
-    - Topics receive data from this pipeline are selected.
+	- Triggerred topic is selected,
+	- Topics receive data from this pipeline are selected.
 
 There is only one file in this zip,
 
@@ -386,7 +386,8 @@ They can be categorized as three,
 
 - System: in-memory operations,
 - Read: read data from a topic,
-- Write: write data to a topic.
+- Write: write data to a topic,
+- Delete: delete data from a topic.
 
 Now let's go through the actions one by one.
 
@@ -589,7 +590,29 @@ this action,
 - Do an insertion when not found,
 	- Do a modification when conflict exception raised on insertion.
 
-Theoretically
+### Delete-Data Actions
+
+#### Delete Row
+
+`Delete Row` is a delete operation.
+
+![Delete Row](images/action-delete-row.png)
+
+:::caution  
+Runtime exception raised when no data found by given criteria, so make sure data can be found.
+:::
+
+#### Delete Rows
+
+`Delete Rows` is a delete operation for bulk data.
+
+![Delete Rows](images/action-delete-rows.png)
+
+This action reads data by given criteria, and delete them one by one.
+
+:::caution  
+Runtime exception raised when data not found on deletion, and bulk operation is stopped.
+:::
 
 ## Variables In Pipeline
 
@@ -654,6 +677,7 @@ call these functions in constant parameter.
 ##### System
 
 - `{&nextSeq}`, to generate a sequence value,
+- `{&now}`, to generate current date time,
 - `{&old.x}`, to get `x` value of old data of trigger one,
 	- Be carefully, it might be a null if pipeline is triggerred on `Insert` or `Insert or Merge`,
 	- `x` is property name of trigger topic.
@@ -675,11 +699,15 @@ call these functions in constant parameter.
 
 ##### Compute Functions
 
-- `{&dayDiff(x, y)}`, compute the days between given date `x` and `y`,
-- `{&monthDiff(x, y)}`, compute the months between given date `x` and `y`,
-- `{&yearDiff(x, y)}`, compute the years between given date `x` and `y`.
+- `{&dayDiff(end_date, start_date)}`, compute the days between given date `end_date` and `start_date`,
+- `{&monthDiff(end_date, start_date)}`, compute the months between given date `end_date` and `start_date`,
+- `{&yearDiff(end_date, start_date)}`, compute the years between given date `end_date` and `start_date`.
 
-In above cases, `x`/`y` are variables.
+In above cases, `end_date`/`start_date` are variables. In another hand, `&now` also can be one of the parameter.
+
+:::tip  
+`&factor_name` is also available in above functions, in find by definition only, factor must be defined on source or target topic.
+:::
 
 ### Computed
 

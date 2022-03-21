@@ -1,20 +1,18 @@
 ---
 id: deploy-index  
-title: Deployment Index  
-sidebar_position: 1
+title: Deployment  
+sidebar_position: 2
 ---
 
 # Deployment
 
+## Dev env
 
-## Dev env 
+Run docker-compose file for MySQL or MongoDB
 
-Run docker-compose file for MySQL or MongoDB 
+Visit [**Quick Start Repo**](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-quick-start) for more details.
 
-Ref to [**quick start repository**](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-quick-start)
-
-
-## Production env 
+## Production env
 
 ### Installation prerequisites：
 
@@ -23,10 +21,10 @@ Ref to [**quick start repository**](https://github.com/Indexical-Metrics-Measure
 3. Database: MySQL 8
 
 Supported database type:
+
 - MySQL
 - Oracle
 - MongoDB
-
 
 ### Watchmen components
 
@@ -35,28 +33,32 @@ Supported database type:
 * watchmen-dqc
 * presto
 
-#### Watchmen web client 
+#### Watchmen web client
+
 Watchmen's front desk
 
 ```bash
 docker pull ghcr.io/indexical-metrics-measure-advisory/watchmen-web-client:{version}
 ```
 
-#### Watchmen doll 
+#### Watchmen doll
+
 Watchmen's backend server （python）
 
 ```bash
 docker pull ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-doll:{version}
 ```
 
-#### Watchmen dqc 
+#### Watchmen dqc
+
 Watchmen's data quality center (python)
 
 ```bash
 docker pull ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-dqc:{version}
 ```
 
-#### Presto(Trino) 
+#### Presto(Trino)
+
 Fast distributed SQL query engine for big data analytics
 
 [**docker trino**](https://hub.docker.com/r/trinodb/trino)
@@ -67,35 +69,35 @@ A new environment needs to be initialized. The steps are as follows:
 
 1. Deploy the database script for watchmen definition database.
 2. Install watchmen component（web client, doll, dqc, trino）.
-3. The environment started successfully.  
+3. The environment started successfully.
 4. Create zone, user, instance datasource online with superuser.
 5. Deploy the database script of topics for watchmen instance database.
 6. Deploy data asset to the environment.
 7. Check all topics, binding the datasource to the topic online with tenant user.
 8. Change configuration of trino, add the new datasource to trino server.
 
-
 #### Install watchmen doll and watchmen web client
 
-Build docker compose. For example:  
+Build docker compose. For example:
 
 Two dolls and one web client installed on a node. Generally, N dolls and 1 web client will be deployed on a node
 
 Build docker-compose.yml
+
 ```yaml
 version: '3'
 services:
   watchmen-matryoshka-doll_01:
     container_name: watchmen-matryoshka-doll_01
     hostname: component
-    image:  ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-doll:{version}
+    image: ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-doll:{version}
     restart: always
     ports:
       - "{host_port}:80"
     env_file:
-      - {config_file}
+      - { config_file }
     volumes:
-      - {mount_path}:/app/temp/
+      - { mount_path }:/app/temp/
     network_mode: 'bridge'
   watchmen-matryoshka-doll_02:
     container_name: watchmen-matryoshka-doll_02
@@ -105,9 +107,9 @@ services:
     ports:
       - "{host_port}:80"
     env_file:
-      - {config_file}
+      - { config_file }
     volumes:
-      - {mount_path}:/app/temp/
+      - { mount_path }:/app/temp/
     network_mode: 'bridge'
 
   watchmen-web-client:
@@ -118,7 +120,7 @@ services:
     ports:
       - "{host_port}:80"
     volumes:
-      - {mount_file}:/etc/nginx/nginx.conf
+      - { mount_file }:/etc/nginx/nginx.conf
     links:
       - watchmen-matryoshka-doll
     network_mode: 'bridge'
@@ -142,11 +144,13 @@ upstream watchmen_doll {
     server IP2:PORT2;
 }
 ```
+
 ```nginx
 location /watchmen/ {
   proxy_pass http://watchmen_doll/;
 }
 ```
+
 ```nginx
 location /watchmen/dqc/ {
   proxy_pass http://ip:port/dqc/;
@@ -154,6 +158,7 @@ location /watchmen/dqc/ {
 ```
 
 #### Deploy watchmen database
+
 Watchmen only provides the database script project.
 
 [**watchmen dbscript**](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-dbscript)
@@ -179,6 +184,7 @@ watchmen-dbscript-deployment
    |-mysql-connector-java-8.0.27
 |-Dockerfile
 ```
+
 Dockerfile sample：
 
 ```dockerfile
@@ -195,7 +201,8 @@ docker run --rm liquibase/liquibase:4.3.5 --changeLogFile=upgrade-db.xml --url="
 ```
 
 #### Deploy watchmen asset
-The watchmen asset is in the form of Markdown file and can be exported on the page.  
+
+The watchmen asset is in the form of Markdown file and can be exported on the page.
 
 Use the watchmen-cli component to publish the asset to corresponding environment.
 
@@ -233,8 +240,10 @@ docker run --rm -e command=deploy_asset -e host=http://watchmen-matryoshka-doll 
 ref to [**trino cluster**](https://trino.io/docs/current/installation/deployment.html?highlight=cluster#)
 
 Storage(data source):
+
 - Datasource extension online is not supported by presto (trino), manually add new catalog into presto (trino) is a must.
-- Datasource code must be consistent with prefix in presto (trino) catalog configuration file, which means datasource code in watchmen also has to follow this principle as well
+- Datasource code must be consistent with prefix in presto (trino) catalog configuration file, which means datasource code in watchmen also
+  has to follow this principle as well
 
 #### Install watchmen-dqc
 
@@ -245,9 +254,11 @@ Deploy dqc database script:
 Please refer to "Deploy watchmen database".
 
 Start dqc container:
+
 ```commandline
 docker run --net=host --name watchmen-dqc -v {mount_path}:/app/temp --env-file {config_file} -p {host_port}:80 -d  indexical-metrics-measure-advisory/watchmen-dqc:{version}
 ```
+
 Configuration of dqc:
 
 Please refer to [dqc configuration](../doll/doll-configuration).

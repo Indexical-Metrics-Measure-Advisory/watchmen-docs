@@ -9,5 +9,5 @@ sidebar_position: 3
 **_Watchmen_** use native logger to logging.
 
 :::info  
-Supported formats are defined in **_watchmen-utilities_** module, find them on [Configuration](../../configuration/index)
+Supported formats are defined in **_watchmen-utilities_** module, find them on [Configuration](../../installation/index)
 :::
