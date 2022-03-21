@@ -164,12 +164,10 @@ by `watchmen-cli`.
 - A Project sample, cli detects markdown files under config folder.
 
 ```text
-
 watchmen-asset-deployment
  ┣ config
  ┃  ┗ log-asset.md
  ┗ Dockerfile
-
 ```
 
 - A Dockerfile sample
