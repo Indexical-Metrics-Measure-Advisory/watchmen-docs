@@ -1,6 +1,6 @@
 ---
 id: index  
-title: Configuration  
+title: Setting Manifest  
 sidebar_position: 1
 ---
 
