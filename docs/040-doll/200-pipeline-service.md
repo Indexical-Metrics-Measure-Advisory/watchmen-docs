@@ -98,6 +98,16 @@ parameter in different situations step by step.
 
 ![Constant Value Parse](images/constant_value_parse.png)
 
+### Alarm Action
+
+In the default implementation, there is only logging for alarm action, on error level with following format:
+
+```logging
+[PIPELINE] [ALARM] [SEVERITY] MESSAGE
+```
+
+Scan the log file to detect alarm by external services, such as filebeat.
+
 ### Retry on Insert or Merge Row
 
 If insertion is failed when do `insert-or-merge-row` action, typically it is caused by an unique index conflict exception. Kernel will try
@@ -108,10 +118,25 @@ to do modification, and the logic is exactly same as `merge-row`.
 To avoid aggregation topic resource contention, there is an additional version property for each aggregation topic. In high concurrency
 scenarios, version optimistic lock conflict might be occurred. In this case, write action will do modification retrying, and if all retrying
 is failed, the last retry will use pessimistic lock to ensure success. Visit **[here](../installation/config#pipeline-kernel)** for more
-details about the retry settings.  
+details about the retry settings.
 
 ## External Writers
 
 There are two built-in external writers:
-- Standard Restful Writer,
-- Standard Elastic Search Writer.
+
+- Standard restful writer,
+- Standard Elasticsearch writer, **_under construction__**.
+
+### Extend External Writer
+
+To extend an external writer, 
+
+Fork our repo, for server side,
+- Find `init_prebuilt_external_writers` in `watchmen-pipeline-kernel`, build your own just follow standard restful writer,
+- Register it,
+- Bingo!
+
+For defined new external writer type in web client, you need to,
+- Add data source types into `ExternalWriterType`, which in `external-writer-types.ts`,
+- Add dropdown label into `ExternalWriterTypeInput`, which in `external-writer-type-input.tsx`,
+- Bingo!

@@ -18,9 +18,6 @@ In **_Watchmen_**, definition objects are called as `Tuple`,
 - [Topic](admin/topic)
 - [Pipeline](admin/pipeline)
 
-They all following the same interface `Tuple`, you can find the whole list and base model **[here](../tuples/tuples-index)**.  
-Most of them are using standard tuple page for finding, editing and creating.
-
 ## Query
 
 Click entrance menu in menu bar,
@@ -76,12 +73,14 @@ An alert dialog pops up when failed on form data validation,
 
 ![Failed On Validation](images/fail-on-validation.png)
 
-### Tuple Saved 
+### Tuple Saved
+
 A saved message will be shown about 5 seconds with an animation,
 
 ![Tuple Saved](images/tuple-saved.png)
 
 ## Exception Case
+
 :::caution    
 Page for `Pipeline` is not a standard page, **[here](admin/pipeline)** for learn more.
 :::

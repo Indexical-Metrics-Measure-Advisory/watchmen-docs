@@ -128,7 +128,7 @@ services:
 
 Watchmen-matryoshka-doll's configuration
 
-The `config_file` of doll, please refer to [doll configuration](../doll/doll-configuration).
+The `config_file` of doll, visit **[here](config)** for more details.
 
 Configure watchmen-web-client as a reverse proxy for HTTP.
 

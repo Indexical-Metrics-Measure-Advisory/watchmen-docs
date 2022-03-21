@@ -404,7 +404,7 @@ Now let's go through the actions one by one.
 ![Alarm](images/action-alarm.png)
 
 :::info  
-For alarm action, now there is a log message only, find [Doll](../../doll/doll-index) for more details.
+For alarm action, now there is a log message only, find [Doll](../../doll/pipeline-service#alarm-action) for more details.
 :::
 
 #### Copy to Variable
@@ -440,7 +440,7 @@ Simply choose the external writer, and assign an event code.
 :::caution  
 Pipeline engine treats external writing as a synchronous operation, any exception raised will break the pipeline. If you don't care about
 the status of external writing, provides an asynchronous external writer by yourself and choose it in
-action. **[Here](../../doll/extend/extend-external-writer)** to find for details about how to extend external writers.
+action. **[Here](../../doll/pipeline-service#extend-external-writer)** to find for details about how to extend external writers.
 :::
 
 ### Read-Data Actions
