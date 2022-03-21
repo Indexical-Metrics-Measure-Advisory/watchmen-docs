@@ -27,7 +27,7 @@ External writer use [standard tuple page](../standard-tuple-page).
 - External Writer Code: required,
 - External Writer Type: required. Currently, 2 types are built-in:
 	- Standard Embedded Writer,
-	- Standard ElasticSearch Writer **_`(under construction)`_**,
+	- Standard ElasticSearch Writer,
 - Data Zone: required,
 - Url: optional,
 - Personal Access Token: optional. Signed by another system.

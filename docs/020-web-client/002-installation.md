@@ -81,4 +81,5 @@ Your app is ready to be deployed.
 **[Here](https://create-react-app.dev/docs/deployment)**.
 
 ## Build and Deployment By Docker
-**_`(under construction)`_**
+
+**[Here](../installation/deploy)

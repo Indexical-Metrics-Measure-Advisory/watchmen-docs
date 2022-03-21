@@ -11,37 +11,27 @@ import Tabs from '@theme/Tabs';
 ## PAT token
 
 - Login with admin user,
-- Go to [**setting**],
+- Go to [**Setting**],
 - Generate `PAT` with name,
 - Copy `PAT` token.
 
 ## Collection
 ### API for import raw data
 
-<Tabs>
-<TabItem value="py" label="Python">
-
-
 ```python
 headers["authorization"] = "pat " + token
-url = "http://localhost:8000"
 event_data = {
-	'code': event_code,      # raw topic name
-	'data': data             # raw topic  data
+	'code': 'event_code',       # raw topic name
+	'data': {                   # raw topic data
+		# ...data
+	},
+	'triggerType': 'insert'     # always be insert for raw data
 }
 
-response = requests.post(url + 'pipeline/data', data=json.dumps(event_data), headers=headers)
+response = requests.post(
+	'http://localhost:8000/pipeline/data', data=json.dumps(event_data), headers=headers)
 return response.json()
 ```
-
-
-</TabItem>
-<TabItem value="ts" label="Typescript">
-
-**_`(under construction)`_**
-
-</TabItem>
-</Tabs>
 
 :::info
 Or use `/pipeline/data/async`, it returns once data saved and trigger pipelines processing asynchronously.

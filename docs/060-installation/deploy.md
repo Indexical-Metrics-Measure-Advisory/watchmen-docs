@@ -1,5 +1,5 @@
 ---
-id: deploy-index  
+id: deploy  
 title: Deployment  
 sidebar_position: 2
 ---
