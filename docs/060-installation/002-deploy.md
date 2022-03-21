@@ -156,6 +156,36 @@ Start dqc container:
 docker run --net=host --name watchmen-dqc -v {mount_path}:/app/temp --env-file {config_file} -p {host_port}:80 -d  indexical-metrics-measure-advisory/watchmen-dqc:{version}
 ```
 
+#### Deploy Assets
+
+**_Watchmen_** asset files are in the form of Markdown and exported on the web client. Publish asset files to corresponding environment
+by `watchmen-cli`.
+
+- A Project sample, cli detects markdown files under config folder.
+
+```text
+
+watchmen-asset-deployment
+ ┣ config
+ ┃  ┗ log-asset.md
+ ┗ Dockerfile
+
+```
+
+- A Dockerfile sample
+
+```dockerfile
+FROM indexical-metrics-measure-advisory/watchmen-cli:{version}
+WORKDIR /app
+COPY config/ /app/config
+```
+
+Start deploy asset container:
+
+```commandline
+docker run --rm -e command=deploy_asset -e host=http://host-of-doll:port -e username=imma-admin -e password=abc1234 indexical-metrics-measure-advisory/watchmen-cli:{version}
+```
+
 #### Install Trino Cluster
 
 Visit [**Trino Cluster**](https://trino.io/docs/current/installation/deployment.html?highlight=cluster#) for more details.
@@ -168,70 +198,3 @@ Storage(data source):
 
 Configuration of dqc, visit **[here](../installation/config)** for more details.
 
-[//]: # (#### Deploy watchmen asset)
-
-[//]: # ()
-
-[//]: # (**_Watchmen_** asset is in the form of Markdown file and can be exported on the page.)
-
-[//]: # ()
-
-[//]: # (Use the watchmen-cli component to publish the asset to corresponding environment.)
-
-[//]: # ()
-
-[//]: # ([**watchmen cli**]&#40;https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-cli&#41;)
-
-[//]: # ()
-
-[//]: # (It is recommended package the asset release package with watchmen-cli into a container to execute.)
-
-[//]: # ()
-
-[//]: # (Project sample)
-
-[//]: # ()
-
-[//]: # (```text)
-
-[//]: # (watchmen-asset-deployment)
-
-[//]: # (|-config)
-
-[//]: # (   |-log-asset.md)
-
-[//]: # (|-Dockerfile)
-
-[//]: # (```)
-
-[//]: # ()
-
-[//]: # (Dockerfile sample)
-
-[//]: # ()
-
-[//]: # (```dockerfile)
-
-[//]: # (FROM indexical-metrics-measure-advisory/watchmen-cli:1.0.3)
-
-[//]: # ()
-
-[//]: # (WORKDIR /app)
-
-[//]: # ()
-
-[//]: # (COPY config/ /app/config )
-
-[//]: # (```)
-
-[//]: # ()
-
-[//]: # (Start deploy asset container:)
-
-[//]: # ()
-
-[//]: # (```commandline)
-
-[//]: # (docker run --rm -e command=deploy_asset -e host=http://watchmen-matryoshka-doll -e username=imma-admin -e password=abc1234 indexical-metrics-measure-advisory/watchmen-cli:1.0.3)
-
-[//]: # (```)
