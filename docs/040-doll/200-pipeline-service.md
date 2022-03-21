@@ -125,18 +125,46 @@ details about the retry settings.
 There are two built-in external writers:
 
 - Standard restful writer,
-- Standard Elasticsearch writer, **_under construction__**.
+- Standard Elasticsearch writer.
+
+### Rest Writer
+
+Like the following curl command,
+
+```bash
+curl \
+--location \ 
+--request POST 'some_url' \
+--header 'Authorization: PAT ...' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "code": "eventCode",
+    "currentData": {
+      ...
+    },
+    "previousData: {
+      ...
+    },
+    "triggerType": "insert-or-merge"
+}'
+```
+
+### Elasticsearch Writer
+
+**_`(under construction)`_**
 
 ### Extend External Writer
 
-To extend an external writer, 
+To extend an external writer,
 
 Fork our repo, for server side,
+
 - Find `init_prebuilt_external_writers` in `watchmen-pipeline-kernel`, build your own just follow standard restful writer,
 - Register it,
 - Bingo!
 
 For defined new external writer type in web client, you need to,
+
 - Add data source types into `ExternalWriterType`, which in `external-writer-types.ts`,
 - Add dropdown label into `ExternalWriterTypeInput`, which in `external-writer-type-input.tsx`,
 - Bingo!
