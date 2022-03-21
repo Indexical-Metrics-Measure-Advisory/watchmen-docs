@@ -27,7 +27,7 @@ sidebar_position: 30
   :::
 
 :::info
-**_Watchmen_** use [Presto](https://prestodb.io) or [Trino](https://trino.io/) as storage aggregator.
+**_Watchmen_** use [Trino](https://trino.io/) as storage aggregator.
 :::
 
 ## Doll

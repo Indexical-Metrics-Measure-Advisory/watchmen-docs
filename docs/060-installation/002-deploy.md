@@ -57,7 +57,7 @@ Watchmen's data quality center (python)
 docker pull ghcr.io/indexical-metrics-measure-advisory/watchmen-matryoshka-dqc:{version}
 ```
 
-#### Presto(Trino)
+#### Trino
 
 Fast distributed SQL query engine for big data analytics
 

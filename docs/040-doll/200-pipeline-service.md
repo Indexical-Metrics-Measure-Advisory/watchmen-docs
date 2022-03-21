@@ -98,6 +98,15 @@ parameter in different situations step by step.
 
 ![Constant Value Parse](images/constant_value_parse.png)
 
+### Decryption for Factor Value
+
+Factor can be defined with an encryption, and in pipeline, data is read from storage into memory. Sometimes, the encrypted data must be
+decrypted, in this case, to enable the `DECRYPT_FACTOR_VALUE`, kernel will do decryption on read factor/factors/row/rows action.
+
+:::caution  
+Decryption feature can be enabled only on pipeline processing, which means it will not be decrypted on retrieve topic data directly.
+:::
+
 ### Alarm Action
 
 In the default implementation, there is only logging for alarm action, on error level with following format:

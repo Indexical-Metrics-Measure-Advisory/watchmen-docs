@@ -1,6 +1,6 @@
 ---
-id: config 
-title: Configuration Manifest  
+id: config  
+title: Configuration  
 sidebar_position: 1
 ---
 
@@ -108,6 +108,7 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 
 | Key                                        | Type          | Default Value | Possible Values | For                                                             |
 |--------------------------------------------|---------------|---------------|-----------------|-----------------------------------------------------------------|
+| DECRYPT_FACTOR_VALUE                       | bool          | False         | True/False      | Decrypt encrypted factor value on read                          |
 | PIPELINE_PARALLEL_ACTIONS_IN_LOOP_UNIT     | bool          | False         | True/False      |                                                                 |
 | PIPELINE_PARALLEL_ACTIONS_COUNT            | int           | 8             |                 |                                                                 |
 | PIPELINE_PARALLEL_ACTIONS_DASK_TEMP_DIR    | Optional[str] | None          |                 |                                                                 |
@@ -182,8 +183,8 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | MONITOR_JOB_MONTHLY_MINUTES    | int  | 1             |                 | Trigger hour of daily job                                                  |
 | MONITOR_RESULT_PIPELINE_ASYNC  | bool | False         | True/False      | Enable asynchronized pipeline trigger for data which produced by DQC rules |
 
-
 ## Rest DQC
+
 | Key      | Type | Default Value | Possible Values | For              |
 |----------|------|---------------|-----------------|------------------|
 | APP_NAME | str  | Watchmen DQC  |                 | Overwrite Rest's |

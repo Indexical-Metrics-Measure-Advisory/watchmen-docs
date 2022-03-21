@@ -1,14 +1,11 @@
 ---
-id: integration-index  
+id: integration
 title: Integration  
-sidebar_position: 100
+sidebar_position: 3
 ---
 
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
-
 # Integration
-## PAT token
+## PAT Token
 
 - Login with admin user,
 - Go to [**Setting**],
@@ -16,7 +13,7 @@ import Tabs from '@theme/Tabs';
 - Copy `PAT` token.
 
 ## Collection
-### API for import raw data
+### API for import raw data, trigger pipeline
 
 ```python
 headers["authorization"] = "pat " + token
@@ -33,7 +30,7 @@ response = requests.post(
 return response.json()
 ```
 
-:::info
+:::tip
 Or use `/pipeline/data/async`, it returns once data saved and trigger pipelines processing asynchronously.
 :::
 
@@ -50,5 +47,5 @@ Or use `/pipeline/data/async`, it returns once data saved and trigger pipelines 
 - [Superset](https://superset.apache.org/)
 
 :::info
-Connect BI to Presto or storage directly.
+Connect BI to Trino (If it is enabled) or storage directly.
 :::
