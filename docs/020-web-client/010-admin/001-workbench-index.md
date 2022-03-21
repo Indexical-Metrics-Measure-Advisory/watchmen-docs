@@ -54,4 +54,4 @@ Following features are for data zone admin:
 ## Centralized Definition Persistence
 
 Definition data in **_Watchmen_** is stored centralized now. A definition data source must be configured in standard deployment, your can
-find it in [Deployment](../../deployment/deploy-index) chapter.
+find it in [Doll/Data Service](../../doll/data-service) chapter.

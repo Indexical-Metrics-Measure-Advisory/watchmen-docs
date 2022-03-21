@@ -32,16 +32,12 @@ When logged in with `Admin` role, page should be as following,
 - Nick Name: optional,
 - Password: optional. Leave empty if you DO NOT want to change password of this user,
 - User Role: required. Only 2 options are available:
-    - Console User, aka Business User,
-    - Administrator, aka Data Zone Admin,
+	- Console User, aka Business User,
+	- Administrator, aka Data Zone Admin,
 - Data Zone: required. Only visible when logged in with `Super Admin` role,
 - Groups: optional. Only visible when logged in with `Admin` role.
 
 :::caution  
 `Super Admin` is configured on backend, cannot do create/edit on web client.
 :::
-
-## Model
-
-Find user model **[here](../../tuples/user)**.
 

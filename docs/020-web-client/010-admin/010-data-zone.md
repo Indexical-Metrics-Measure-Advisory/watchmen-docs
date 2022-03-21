@@ -23,6 +23,3 @@ Data zone use [standard tuple page](../standard-tuple-page).
 ## Form Validation
 
 Only one field `Zone Name` for data zone, it is required, keep it not blank.
-
-## Model
-Find data zone model **[here](../../tuples/data-zone)**.

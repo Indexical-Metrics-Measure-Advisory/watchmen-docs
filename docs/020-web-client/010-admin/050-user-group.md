@@ -25,7 +25,3 @@ User group use [standard tuple page](../standard-tuple-page).
 - Spaces: optional,
 - Users: optional.
 
-## Model
-
-Find user group model **[here](../../tuples/user-group)**.
-

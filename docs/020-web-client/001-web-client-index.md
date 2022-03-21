@@ -82,7 +82,7 @@ workbench will be rendered as,
 :::caution Welcome to Contribute!
 PR of correction and contribution for i18n supporting are always welcome!  
 Find our language source
-files **[here](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-web-client/tree/main/src/widgets/langs)**.
+files **[here](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-web-client/src/widgets/langs)**.
 :::
 
 ## Theme

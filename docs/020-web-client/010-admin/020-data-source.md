@@ -29,9 +29,9 @@ Extra parameter pair is added automatically, and will not be removed when name a
 
 - Data Source Code: required,
 - Data Source Type: required. Currently, 3 types are built-in:
-  - `Oracle`,
-  - `MySQL`,
-  - `MongoDB`,
+    - `Oracle`,
+    - `MySQL`,
+    - `MongoDB`
 - Data Zone: required,
 - Host: optional,
 - Port: optional,
@@ -40,10 +40,6 @@ Extra parameter pair is added automatically, and will not be removed when name a
 - Password: optional,
 - Extra Parameter Name: required when value existed.
 
-## Model
-
-Find data source model **[here](../../tuples/data-source)**.
-
 ## Extend Data Source Supporting
 
-**[Here](../../doll/extend/extend-data-source)** for more details on supporting other data sources.
+**[Here](../../doll/data-service#extend-data-source-types)** for more details on supporting other data sources.

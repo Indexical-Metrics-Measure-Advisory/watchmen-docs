@@ -94,6 +94,27 @@ Default competitive worker is based on persistent layer, all data can be found a
 worker ids when necessary.
 :::
 
+### Extend Data Source Types
+
+MySQL and Oracle is built-in now, MSSQL and mongoDB are in plan now. 
+If you want to extend a new data source type, follow the steps to create supporting a type `SomeDB`.
+
+First fork our repo, for server side, 
+- Add a new package, which named `watchmen-storage-somedb`,
+- Copy source from the analogue, such as from `watchmen-storage-mysql`,
+- Go through source codes, change them,
+  - If it is only for topic data, only a few apis should be implemented, find `watchmen-inquiry-trino` as a sample,
+  - If it is for metadata, most apis must be implemented except the apis which are used for inquiry subject and report data,
+  - If it is for both metadata and topic data, all apis have to be implemented,
+- Add data source types into `DataSourceType`, which in `watchmen-model`, 
+- Add dependency into doll and dqc instance.
+- Bingo!
+
+For defined new data source type in web client, you need to,
+- Add data source types into `DataSourceType`, which in `data-source-types.ts`,
+- Add dropdown label into `DataSourceTypeInput`, which in `data-source-type-input.tsx`,
+- Bingo!
+
 ## Data Kernel and Surface
 
 A set of services and rest apis are provided by data kernel and surface. Pipeline and inquiry services are built based on data kernel.
@@ -107,6 +128,10 @@ A set of services and rest apis are provided by data kernel and surface. Pipelin
 - Relationship between topics and pipelines,
 - Key store,
 - Tenant.
+
+A high frequency question is, how to refresh cache, there are multiple servers and only one node can be cleared when call clear cache rest
+api. For this situation, a heart beat cache refresher is built-in, and visit **[here](../installation/config#data-kernel)** for more
+details.
 
 ### Topic Data
 

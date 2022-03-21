@@ -728,7 +728,3 @@ We try to do a full validation with pipeline, but since many of them are based r
 time. According to this, we do not list the validation rules here. Pass the validation is a beginning of pipeline definition, it is highly
 recommended that check the defined logic carefully, and test it in simulator before applied it to environment.
 
-## Model
-
-Find pipeline model **[here](../../tuples/pipeline)**.
-

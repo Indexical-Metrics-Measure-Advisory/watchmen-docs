@@ -604,10 +604,6 @@ tool, such as GIT.
 - Enumeration: required when a factor is an enumeration,
 - Flatten Column: required when topic is raw and factor name contains at least one dot(`.`).
 
-## Model
-
-Find topic model **[here](../../tuples/topic)**.
-
 ## Topic Layers
 
 There are a large amount of topics should be defined, we recommend that topics would be defined on different layers. Each layer has its own

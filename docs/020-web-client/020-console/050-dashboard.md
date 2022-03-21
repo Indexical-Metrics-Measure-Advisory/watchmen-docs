@@ -6,4 +6,4 @@ sidebar_position: 50
 
 # Dashboard
 
-# **_`(under construction)`_**
+A dashboard contains charts from reports and paragraphs. 

@@ -65,7 +65,7 @@ curl \
 - `data`: a JSON object, topic data,
 - `triggerType`: type of trigger, `insert`, `merge`, `insert-or-merge` and `delete`
 - `tenantId`: required when current user is super admin,
-- `traceId`: provide only when client wants to control the trace id, engine will generate one if it is null or undefined.
+- `traceId`: provide only when client wants to control the trace id, otherwise engine will generate one if it is null or undefined.
 
 Or can be triggered asynchronized,
 
@@ -91,4 +91,27 @@ curl \
 For performance consideration, pipeline is compiled on first invoking. Pipeline kernel cache compiled pipeline with same lifecycle with
 pipeline itself.
 
+#### Parse Constant Parameter
 
+It is very complex to parse and give the semantic to a constant parameter value string, following graph explains how to parse a constant
+parameter in different situations step by step.
+
+![Constant Value Parse](images/constant_value_parse.png)
+
+### Retry on Insert or Merge Row
+
+If insertion is failed when do `insert-or-merge-row` action, typically it is caused by an unique index conflict exception. Kernel will try
+to do modification, and the logic is exactly same as `merge-row`.
+
+### Retry on Aggregation Topic
+
+To avoid aggregation topic resource contention, there is an additional version property for each aggregation topic. In high concurrency
+scenarios, version optimistic lock conflict might be occurred. In this case, write action will do modification retrying, and if all retrying
+is failed, the last retry will use pessimistic lock to ensure success. Visit **[here](../installation/config#pipeline-kernel)** for more
+details about the retry settings.  
+
+## External Writers
+
+There are two built-in external writers:
+- Standard Restful Writer,
+- Standard Elastic Search Writer.

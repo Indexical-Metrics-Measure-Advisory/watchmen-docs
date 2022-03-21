@@ -93,7 +93,3 @@ Upgrading of enumerations stays on definition phase, we haven't started to use i
 	- New Code: optional,
 	- Parent Enum: optional.
 
-## Model
-
-Find user model **[here](../../tuples/enumeration)**.
-

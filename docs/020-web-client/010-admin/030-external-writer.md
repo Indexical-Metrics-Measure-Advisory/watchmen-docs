@@ -13,7 +13,7 @@ External writer is available for `Super Admin` only.
 :::
 
 :::caution  
-Implementation external writer must be packaged and deployed with doll instance.
+Implementation of extended external writer must be packaged and deployed with doll instance.
 :::
 
 ## Standard Tuple Page
@@ -32,13 +32,6 @@ External writer use [standard tuple page](../standard-tuple-page).
 - Url: optional,
 - Personal Access Token: optional. Signed by another system.
 
-## Model
+## Built-in and extend Writers
 
-Find external writer model **[here](../../tuples/external-writer)**.
-
-## Built-in Writers
-**[Here](../../doll/built-in/built-in-external-writers)** for more details on using built-in external writers.
-
-## Extend External Writer Supporting
-
-**[Here](../../doll/extend/extend-external-writer)** for more details to extend your own external writers.
+**[Here](../../doll/pipeline-service#external-writers)** for more details on using built-in or extends your own external writers.

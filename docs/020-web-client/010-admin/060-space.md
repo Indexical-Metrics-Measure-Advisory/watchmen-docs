@@ -38,8 +38,8 @@ For example,
 - `User A` can visit orders which amount < 10,000,
 - `User B` can visit orders which amount >= 10,000,
 
-For `User A` and `User B`, they both can visit a subset of topic `orders` rather than all rows. In this scenario, clearly space restriction provides more ability
-to control data access on topic rows level on the basis of topics access control provided by space itself.
+For `User A` and `User B`, they both can visit a subset of topic `orders` rather than all rows. In this scenario, clearly space restriction
+provides more ability to control data access on topic rows level on the basis of topics access control provided by space itself.
 
 ## Form Validation
 
@@ -48,8 +48,4 @@ to control data access on topic rows level on the basis of topics access control
 - Topics: optional,
 - Groups: optional,
 - Restrictions: optional.
-
-## Model
-
-Find space model **[here](../../tuples/space)**.
 

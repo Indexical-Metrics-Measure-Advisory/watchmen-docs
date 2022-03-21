@@ -66,7 +66,7 @@ After structure defined, move to dataset page,
 It is a pagination grid, page switcher is on top-right corner. Check data, make sure they are what you imaged.
 
 :::info  
-There is a count limitation for download all data, check [Doll](../../doll/doll-index) for more details.
+There is a count limitation for download all data, check [Doll](../../doll/inquiry-service) for more details.
 :::
 
 :::tip  
