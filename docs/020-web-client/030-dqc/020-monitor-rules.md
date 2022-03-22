@@ -44,13 +44,15 @@ After learning how to declare rules on topic and factor, let's go through the bu
 
 ## Topic Level Rules
 
-### RAW_MISMATCH_STRUCTURE
+[//]: # (### RAW_MISMATCH_STRUCTURE)
 
-Instance data cannot match the structure of definition.
+[//]: # (Instance data cannot match the structure of definition.)
 
-:::info  
-Only available on raw topic.
-:::
+[//]: # (:::info  )
+
+[//]: # (Only available on raw topic.)
+
+[//]: # (:::)
 
 ### FACTOR_MISMATCH_TYPE {#topic-factor-mismatch-type}
 
@@ -60,17 +62,21 @@ Factor value cannot match the type of definition. Monitors every factor when it 
 
 Factor value cannot match the enumeration value of definition. Monitors every `enum` factor when it is declared on topic level.
 
-### FACTOR_MISMATCH_DATE_TYPE {#topic-factor-mismatch-datetype}
+[//]: # (### FACTOR_MISMATCH_DATE_TYPE {#topic-factor-mismatch-datetype})
 
-Factor value cannot match the date type of definition. Monitors every date factor when it is declared on topic level.
+[//]: # (Factor value cannot match the date type of definition. Monitors every date factor when it is declared on topic level.)
 
-Factor types monitored by this rule as below,
+[//]: # (Factor types monitored by this rule as below,)
 
-- Date,
-- Datetime,
-- Full datetime,
-- Time,
-- Date of birth.
+[//]: # (- Date,)
+
+[//]: # (- Datetime,)
+
+[//]: # (- Full datetime,)
+
+[//]: # (- Time,)
+
+[//]: # (- Date of birth.)
 
 ### ROWS_NOT_EXISTS
 
@@ -112,9 +118,9 @@ Same as on [topic level](#topic-factor-mismatch-datetype), but only works on app
 
 Empty factor value detected.
 
-### FACTOR_USE_CAST
+[//]: # (### FACTOR_USE_CAST)
 
-Casting used on factor value, for receiving by topic.
+[//]: # (Casting used on factor value, for receiving by topic.)
 
 ### FACTOR_COMMON_VALUE_OVER_COVERAGE
 
@@ -131,21 +137,25 @@ Empty value overs given coverage. There are 2 parameters,
 - Coverage rate,
 - Statistical interval.
 
-### FACTOR_BREAKS_MONOTONE_INCREASING
+[//]: # (### FACTOR_BREAKS_MONOTONE_INCREASING)
 
-Value breaks the monotone increasing.
+[//]: # (Value breaks the monotone increasing.)
 
-:::info  
-Only available on `Number` and `Unsigned` factor.
-:::
+[//]: # (:::info  )
 
-### FACTOR_BREAKS_MONOTONE_DECREASING
+[//]: # (Only available on `Number` and `Unsigned` factor.)
 
-Value breaks the monotone decreasing.
+[//]: # (:::)
 
-:::info  
-Only available on `Number` and `Unsigned` factor.
-:::
+[//]: # (### FACTOR_BREAKS_MONOTONE_DECREASING)
+
+[//]: # (Value breaks the monotone decreasing.)
+
+[//]: # (:::info  )
+
+[//]: # (Only available on `Number` and `Unsigned` factor.)
+
+[//]: # (:::)
 
 ### FACTOR_NOT_IN_RANGE
 
