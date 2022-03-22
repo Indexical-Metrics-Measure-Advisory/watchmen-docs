@@ -228,3 +228,13 @@ Here is a sample of condition,
 ]
 ```
 [//]: # (@formatter:on)
+
+## Trino
+
+To inquiry data from multiple data sources, Trino must be enabled by configuration parameter `TRINO`. In the other hand, if topics of
+subject are from one storage, it also can be downgraded to fetch data from storage directly by enabled configuration
+parameter `USE_STORAGE_DIRECTLY`.
+
+:::tip
+`USE_STORAGE_DIRECTLY` and `TRINO` are default enabled.
+:::
