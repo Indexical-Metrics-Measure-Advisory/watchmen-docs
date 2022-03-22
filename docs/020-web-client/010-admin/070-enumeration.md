@@ -27,6 +27,7 @@ There is no online editing for enumeration items, follow steps as below to modif
 - Import the modified file.
 
 Here is a CSV sample:
+
 ```csv
 code,label,replaceCode,parentCode
 001,New York City,,
@@ -39,12 +40,15 @@ code,label,replaceCode,parentCode
 ```
 
 :::danger DON'T
+
 - DO NOT change the header line,
 - DO NOT import the change part only, because items will be replaced by items from file.
-:::
+  :::
 
 ### Search Bar
+
 There is no pagination of enumeration items, but sometimes there are too many items to find and locate. Use search bar to find them,
+
 - A text: try to match all fields of item,
 - `c:code`: match code only, such as `c:01`,
 - `l:label`: match label only, such as `l:new`,
@@ -81,6 +85,16 @@ In this case, use new code to describe the upgrading.
 :::danger  
 Upgrading of enumerations stays on definition phase, we haven't started to use it in runtime yet.
 :::
+
+## Bulk Export Items
+
+![Download Enumeration Data](images/enumeration-data.png)
+
+- Click `Download Enum Items` button,
+- Pick enumerations which need to be exported,
+- Click `Download` button.
+
+A zip file is exported, enumeration items are in csv files in zip.
 
 ## Form Validation
 
