@@ -88,7 +88,7 @@ curl \
 
 ### Compiled Pipeline and Cache
 
-For performance consideration, pipeline is compiled on first invoking. Pipeline kernel cache compiled pipeline with same lifecycle with
+For performance consideration, pipeline is compiled on first invoking. Pipeline kernel caches compiled pipeline with same lifecycle of
 pipeline itself.
 
 #### Parse Constant Parameter
