@@ -1,6 +1,6 @@
 {
   "name": "watchmen-docs",
-  "version": "0.1.0",
+  "version": "16.0.0",
   "private": false,
   "scripts": {
     "docusaurus": "docusaurus",
