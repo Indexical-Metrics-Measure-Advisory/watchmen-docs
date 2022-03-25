@@ -20,9 +20,17 @@ Firstly, define structure of subject. Topics included in connected-space are ava
 
   ![Define Columns](images/subject-define-columns.png)
 
-  Column can be from a topic directly, or a constant value, or computed by functions. There are several functions are supported here,
+  Column can be from,
+    - a topic directly,
+    - or a constant value,
+    - or computed by functions.
+
+  There are several functions are supported for computation,
 
   ![Compute Functions](images/subject-column-computed.png)
+  
+  Column also can be aggregated by one of `count`, `sum`, `avg`, `max` and `min`. If any column is configured as aggregation, dataset
+  should be grouped by other non-aggregation columns.
 
   :::tip  
   Give a friendly name to each column.
@@ -45,9 +53,9 @@ Firstly, define structure of subject. Topics included in connected-space are ava
   :::
 
   Depending on type of join, data searched out contains
-	- Intersection of both sides when it is `Exactly Match`,
-	- Left side and right side in intersection when `Left Side Prioritized`,
-	- Right side and left side in intersection when `Right Side Prioritized`.
+    - Intersection of both sides when it is `Exactly Match`,
+    - Left side and right side in intersection when `Left Side Prioritized`,
+    - Right side and left side in intersection when `Right Side Prioritized`.
 
 - Finally, view definition dsl,
 
