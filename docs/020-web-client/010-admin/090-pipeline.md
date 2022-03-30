@@ -701,9 +701,28 @@ call these functions in constant parameter.
 
 - `{&dayDiff(end_date, start_date)}`, compute the days between given date `end_date` and `start_date`,
 - `{&monthDiff(end_date, start_date)}`, compute the months between given date `end_date` and `start_date`,
-- `{&yearDiff(end_date, start_date)}`, compute the years between given date `end_date` and `start_date`.
+- `{&yearDiff(end_date, start_date)}`, compute the years between given date `end_date` and `start_date`,
 
 In above cases, `end_date`/`start_date` are variables. In another hand, `&now` also can be one of the parameter.
+
+- `{&fmtDate(date, format)}`, format the given date `date`. The following table describes the format specifiers:  
+
+    | Specifier | Description                           |
+    |:---------:|---------------------------------------|
+    |     Y     | Year, numeric, four digits            |
+    |     y     | Year, numeric (two digits)            |
+    |     M     | Month, numeric (01 .. 12)             |
+    |     D     | Day of the month, numeric (01 .. 31)  |
+    |     h     | Hour (00 .. 23)                       |
+    |     H     | Hour (01 .. 12)                       |
+    |     m     | Minutes, numeric (00 .. 59)           |
+    |     s     | Seconds (00 .. 59)                    |
+    |     W     | Weekday name (Sunday .. Saturday)     |
+    |     w     | Abbreviated weekday name (Sun .. Sat) |
+    |     B     | Month name (January .. December)      |
+    |     b     | Abbreviated month name (Jan .. Dec)   |
+    |     p     | AM or PM                              |
+  
 
 :::tip  
 `&factor_name` is also available in above functions, in find by definition only, factor must be defined on source or target topic.

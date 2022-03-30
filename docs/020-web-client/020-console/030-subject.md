@@ -36,6 +36,10 @@ Firstly, define structure of subject. Topics included in connected-space are ava
   Give a friendly name to each column.
   :::
 
+  :::tip
+  Compute functions supported by pipeline also are supported by subject.
+  :::
+
 - Step 3, define filters,
 
   ![Define Filters](images/subject-define-filters.png)
