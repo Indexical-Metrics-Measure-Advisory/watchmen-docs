@@ -86,7 +86,7 @@ In this case, use new code to describe the upgrading.
 Upgrading of enumerations stays on definition phase, we haven't started to use it in runtime yet.
 :::
 
-## Bulk Export Items
+## Bulk Export & Import Items
 
 ![Download Enumeration Data](images/enumeration-data.png)
 
@@ -95,6 +95,18 @@ Upgrading of enumerations stays on definition phase, we haven't started to use i
 - Click `Download` button.
 
 A zip file is exported, enumeration items are in csv files in zip.
+
+Bulk import enumeration items use exactly the same format as exported, enumeration must be identified by file name, format as below,
+
+- `id-name.csv`,
+- `id.csv`,
+- `name.csv`.
+
+Note name is case-sensitive.
+
+:::tip  
+`CSV`, `TXT`, `JSON` are supported.
+:::
 
 ## Form Validation
 
