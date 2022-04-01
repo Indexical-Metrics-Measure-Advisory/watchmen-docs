@@ -38,3 +38,11 @@ Body structure can be found on `MixImportDataRequest` in `watchmen-rest-doll` mo
 
 There are many options on build a doll package, find extra dependencies list in `pyproject.toml` in `watchmen-rest-doll` module, free to
 pick them according to the need.
+
+## Default Accounts
+
+There are three default accounts by installation scripts,
+
+- `imma-super`: `change-me`, as `Super Admin`,
+- `imma-admin`: `1234abcd`, as `Admin`,
+- `imma-user`: `1234abcd`,  as `Console User`. 

@@ -238,3 +238,8 @@ parameter `USE_STORAGE_DIRECTLY`.
 :::tip
 `USE_STORAGE_DIRECTLY` and `TRINO` are default enabled.
 :::
+
+:::caution  
+Some kinds of storage do not support fetch data directly, it will fall back to `Trino` even `USE_STORAGE_DIRECTLY` is enabled. For
+example, `MongoDB` does not support it.
+:::
