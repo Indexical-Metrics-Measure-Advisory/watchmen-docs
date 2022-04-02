@@ -33,14 +33,14 @@ const config = {
 					remarkPlugins: [
 						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
 					],
-					// includeCurrentVersion: false,
-					// lastVersion: '16.0.0',
-					// versions: {
-					// 	'16.0.0': {
-					// 		label: 'Current',
-					// 		path: '16.0.0',
-					// 	},
-					// }
+					includeCurrentVersion: false,
+					lastVersion: '15.2.14',
+					versions: {
+						'15.2.14': {
+							label: 'Current 15.2.14 🎯',
+							path: '15.2.14',
+						},
+					}
 				},
 				blog: {
 					showReadingTime: true, // Please change this to your repo.

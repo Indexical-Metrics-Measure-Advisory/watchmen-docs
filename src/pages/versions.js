@@ -7,8 +7,8 @@ import React from 'react';
 const Version = () => {
 	const versions = useVersions();
 	const latestVersion = useLatestVersion();
-	const currentVersion = versions.find(version => version.label === 'Current');
-	const pastVersions = versions.filter((version) => version !== latestVersion && version.label !== 'Current');
+	const currentVersion = versions.find(version => version.label.startsWith('Current'));
+	const pastVersions = versions.filter((version) => version !== latestVersion && !version.label.startsWith('Current'));
 
 	return (
 		<Layout
