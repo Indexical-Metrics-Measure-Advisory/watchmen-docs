@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://imma-watchmen.com/blog</id>
     <title>Matryoshka Watchmen Blog</title>
-    <updated>2021-12-28T00:00:00.000Z</updated>
+    <updated>2022-04-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://imma-watchmen.com/blog"/>
     <subtitle>Matryoshka Watchmen Blog</subtitle>
     <icon>https://imma-watchmen.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[v16 Released]]></title>
+        <id>v16-release</id>
+        <link href="https://imma-watchmen.com/blog/v16-release"/>
+        <updated>2022-04-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[🔥 V16.0.0 Released!]]></summary>
+        <content type="html"><![CDATA[<p>🔥 V16.0.0 Released!</p><p>We refactored all modules and put them to a single <strong><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen" target="_blank" rel="noopener noreferrer">Github repository</a></strong>.</p><p>For my friends who are using v15, we also offer the migration scripts, visit <strong><a href="/docs/16.0.0/installation/migration">here</a></strong> for more details.</p><p>Just enjoy it!</p>]]></content>
+        <author>
+            <name>botlikes456</name>
+            <uri>https://github.com/botlikes456</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16" term="v16"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
@@ -18,5 +32,8 @@
             <name>botlikes456</name>
             <uri>https://github.com/botlikes456</uri>
         </author>
+        <category label="matryoshka" term="matryoshka"/>
+        <category label="hello" term="hello"/>
+        <category label="watchmen" term="watchmen"/>
     </entry>
 </feed>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwatchmen_docs=self.webpackChunkwatchmen_docs||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"v16 Released","permalink":"/blog/v16-release"},{"title":"Welcome","permalink":"/blog/welcome"}]}')}}]);

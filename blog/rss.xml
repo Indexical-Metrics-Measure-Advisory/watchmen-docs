@@ -4,9 +4,20 @@
         <title>Matryoshka Watchmen Blog</title>
         <link>https://imma-watchmen.com/blog</link>
         <description>Matryoshka Watchmen Blog</description>
-        <lastBuildDate>Tue, 28 Dec 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 02 Apr 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[v16 Released]]></title>
+            <link>https://imma-watchmen.com/blog/v16-release</link>
+            <guid>v16-release</guid>
+            <pubDate>Sat, 02 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[🔥 V16.0.0 Released!]]></description>
+            <content:encoded><![CDATA[<p>🔥 V16.0.0 Released!</p><p>We refactored all modules and put them to a single <strong><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen" target="_blank" rel="noopener noreferrer">Github repository</a></strong>.</p><p>For my friends who are using v15, we also offer the migration scripts, visit <strong><a href="/docs/16.0.0/installation/migration">here</a></strong> for more details.</p><p>Just enjoy it!</p>]]></content:encoded>
+            <category>watchmen</category>
+            <category>v16</category>
+        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://imma-watchmen.com/blog/welcome</link>
@@ -14,6 +25,9 @@
             <pubDate>Tue, 28 Dec 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to Matryoshka Data!]]></description>
             <content:encoded><![CDATA[<p>Welcome to Matryoshka Data!</p>]]></content:encoded>
+            <category>matryoshka</category>
+            <category>hello</category>
+            <category>watchmen</category>
         </item>
     </channel>
 </rss>
