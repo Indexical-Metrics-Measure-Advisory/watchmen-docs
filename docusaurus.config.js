@@ -32,7 +32,15 @@ const config = {
 					showLastUpdateTime: true,
 					remarkPlugins: [
 						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
-					]
+					],
+					includeCurrentVersion: false,
+					lastVersion: '16.0.0',
+					versions: {
+						'16.0.0': {
+							label: 'Current',
+							path: '16.0.0',
+						},
+					}
 				},
 				blog: {
 					showReadingTime: true, // Please change this to your repo.

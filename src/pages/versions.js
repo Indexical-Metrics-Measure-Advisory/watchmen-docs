@@ -1,14 +1,14 @@
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-import {useLatestVersion, useVersions} from '@theme/hooks/useDocs';
+import {useLatestVersion, useVersions} from '@docusaurus/plugin-content-docs/client';
 import Layout from '@theme/Layout';
 import React from 'react';
 
 const Version = () => {
 	const versions = useVersions();
 	const latestVersion = useLatestVersion();
-	const currentVersion = versions.find(version => version.name === 'current');
-	const pastVersions = versions.filter((version) => version !== latestVersion && version.name !== 'current');
+	const currentVersion = versions.find(version => version.label === 'Current');
+	const pastVersions = versions.filter((version) => version !== latestVersion && version.label !== 'Current');
 
 	return (
 		<Layout
@@ -36,7 +36,7 @@ const Version = () => {
 						<table>
 							<tbody>
 							<tr>
-								<th>{latestVersion.label}</th>
+								<th>{latestVersion.name}</th>
 								<td>
 									<Link to={`${latestVersion.path}/docs-index`}>
 										<Translate id="versions-page.doc-link">
