@@ -33,14 +33,14 @@ const config = {
 					remarkPlugins: [
 						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
 					],
-					includeCurrentVersion: false,
-					lastVersion: '16.0.0',
-					versions: {
-						'16.0.0': {
-							label: 'Current',
-							path: '16.0.0',
-						},
-					}
+					// includeCurrentVersion: false,
+					// lastVersion: '16.0.0',
+					// versions: {
+					// 	'16.0.0': {
+					// 		label: 'Current',
+					// 		path: '16.0.0',
+					// 	},
+					// }
 				},
 				blog: {
 					showReadingTime: true, // Please change this to your repo.
@@ -156,7 +156,22 @@ const config = {
 				darkTheme: darkCodeTheme,
 				additionalLanguages: ['csv', 'json5']
 			}
-		})
+		}),
+	themes: [
+		// ... Your other themes.
+		[
+			require.resolve("@easyops-cn/docusaurus-search-local"),
+			{
+				// ... Your options.
+				// `hashed` is recommended as long-term-cache of index file is possible.
+				hashed: true,
+				// For Docs using Chinese, The `language` is recommended to set to:
+				// ```
+				// language: ["en", "zh"],
+				// ```
+			},
+		],
+	]
 };
 
 module.exports = config;

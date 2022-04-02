@@ -79,8 +79,19 @@ required.
 
 ## Third Party BI
 
-- [Metabase](https://www.metabase.com/)
-- [Superset](https://superset.apache.org/)
+- [Holistics](https://www.holistics.io/blog/the-most-powerful-bi-reporting-tools-for-presto/)
+- [Looker](https://docs.looker.com/setup-and-management/database-config/prestodb)
+- [Sisense](https://www.sisense.com/data-connectors/presto/)
+- [Tableau](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)
+- [Metabase](https://www.metabase.com/data_sources/presto)
+- [Superset](https://superset.apache.org/docs/databases/presto)
+- [Redash](https://redash.io/data-sources/presto)
 
-:::info Connect BI to Trino (If it is enabled) or storage directly.
+:::info  
+Connect BI to Trino (If it is enabled) or storage directly.
 :::
+
+And use Starburst ODBC driver,
+
+- [Qlik](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)
+- [PowerBI](https://docs.starburst.io/data-consumer/clients/powerbi.html)
