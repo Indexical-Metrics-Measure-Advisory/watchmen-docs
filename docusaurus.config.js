@@ -38,8 +38,8 @@ const config = {
 					versions: {
 						'16.0.0': {
 							label: 'Current 16.0.0 🎯',
-							path: '16.0.0',
-						},
+							path: '16.0.0'
+						}
 					}
 				},
 				blog: {
