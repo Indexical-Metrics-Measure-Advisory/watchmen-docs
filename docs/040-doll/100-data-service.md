@@ -101,7 +101,7 @@ competitive workers by settings parameter.
 
 ### Extend Data Source Types
 
-MySQL and Oracle is built-in now, MSSQL and mongoDB are in plan now. If you want to extend a new data source type, follow the steps to
+MySQL, Oracle, MSSQL and mongoDB are built-in now. If you want to extend a new data source type, follow the steps to
 create supporting a type `SomeDB`.
 
 First fork our repo, for server side,

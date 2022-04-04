@@ -34,11 +34,11 @@ const config = {
 						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
 					],
 					includeCurrentVersion: false,
-					lastVersion: '16.0.0',
+					lastVersion: '16.0.25',
 					versions: {
-						'16.0.0': {
-							label: 'Current 16.0.0 🎯',
-							path: '16.0.0'
+						'16.0.25': {
+							label: 'Current 16.0.25 🎯',
+							path: '16.0.25'
 						}
 					}
 				},
