@@ -24,10 +24,11 @@ sidebar_position: 30
 - `Lambda` service is optional,
 - `S3` service is optional,
 - Most popular RDS & NoSQL technologies are supported, via built-in storage engines.
-  :::
+
+:::
 
 :::info
-**_Watchmen_** use [Trino](https://trino.io/) as storage aggregator.
+**_Watchmen_** use [Trino](https://trino.io/) as storage aggregator.  
 :::
 
 ## Doll
