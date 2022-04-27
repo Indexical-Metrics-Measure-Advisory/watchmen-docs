@@ -1,6 +1,6 @@
 ---
-id: config  
-title: Configuration  
+id: config
+title: Configuration
 sidebar_position: 10
 ---
 
@@ -11,7 +11,7 @@ sidebar_position: 10
 Utilities settings are available for all modules.
 
 | Key                      | Type | Default Value                                                                       | Possible Values                 | For |
-|--------------------------|------|-------------------------------------------------------------------------------------|---------------------------------|-----|
+| ------------------------ | ---- | ----------------------------------------------------------------------------------- | ------------------------------- | --- |
 | LOGGER_LEVEL             | str  | ERROR                                                                               | DEBUG, INFO, WARN, ERROR, FATAL |     |
 | LOGGER_TO_FILE           | bool | False                                                                               | True/False                      |     |
 | LOGGER_FILE              | str  | temp/rotating.log                                                                   |                                 |     |
@@ -26,7 +26,7 @@ Utilities settings are available for all modules.
 Storage settings are available for all modules.
 
 | Key                     | Type | Default Value | Possible Values | For |
-|-------------------------|------|---------------|-----------------|-----|
+| ----------------------- | ---- | ------------- | --------------- | --- |
 | DECIMAL_INTEGRAL_DIGITS | int  | 24            |                 |     |
 | DECIMAL_FRACTION_DIGITS | int  | 8             |                 |     |
 
@@ -37,7 +37,7 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 ## Meta
 
 | Key                                               | Type | Default Value | Possible Values               | For                                                  |
-|---------------------------------------------------|------|---------------|-------------------------------|------------------------------------------------------|
+| ------------------------------------------------- | ---- | ------------- | ----------------------------- | ---------------------------------------------------- |
 | SUPER_ADMIN_TENANT_ID                             | str  | 1             |                               |                                                      |
 | SUPER_ADMIN_USER_ID                               | str  | 1             |                               |                                                      |
 | SUPER_ADMIN_USER_NAME                             | str  | imma-super    |                               |                                                      |
@@ -60,7 +60,7 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 ## Data Kernel
 
 | Key                              | Type     | Default Value                                                                                         | Possible Values | For                                                                                                                    |
-|----------------------------------|----------|-------------------------------------------------------------------------------------------------------|-----------------|------------------------------------------------------------------------------------------------------------------------|
+| -------------------------------- | -------- | ----------------------------------------------------------------------------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | STORAGE_ECHO                     | bool     | False                                                                                                 | True/False      | Enable data storage sql logging                                                                                        |
 | FULL_DATETIME_FORMATS            | Set[str] | %Y%m%d%H%M%S%f,<br/>%d%m%Y%H%M%S%f,<br/>%m%d%Y%H%M%S%f                                                |                 | Follow python date time formats                                                                                        |
 | DATETIME_FORMATS                 | Set[str] | %Y%m%d%H%M%S,<br/> %d%m%Y%H%M%S,<br/> %m%d%Y%H%M%S,<br/> %Y%m%d%H%M,<br/> %d%m%Y%H%M,<br/> %m%d%Y%H%M |                 | Follow python date time formats                                                                                        |
@@ -79,13 +79,13 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 ## Data Surface
 
 | Key                 | Type | Default Value | Possible Values | For                                 |
-|---------------------|------|---------------|-----------------|-------------------------------------|
+| ------------------- | ---- | ------------- | --------------- | ----------------------------------- |
 | TRUNCATE_TOPIC_DATA | bool | True          | True/False      | Enable topic data truncate rest api |
 
 ## Inquiry Trino
 
 | Key            | Type          | Default Value | Possible Values | For |
-|----------------|---------------|---------------|-----------------|-----|
+| -------------- | ------------- | ------------- | --------------- | --- |
 | TRINO_HOST     | str           | 127.0.0.1     |                 |     |
 | TRINO_PORT     | int           | 5678          |                 |     |
 | TRINO_USER     | str           | admin         |                 |     |
@@ -94,20 +94,20 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 ## Inquiry Kernel
 
 | Key                  | Type | Default Value | Possible Values | For                                                                                             |
-|----------------------|------|---------------|-----------------|-------------------------------------------------------------------------------------------------|
+| -------------------- | ---- | ------------- | --------------- | ----------------------------------------------------------------------------------------------- |
 | USE_STORAGE_DIRECTLY | bool | True          | True/False      | Enable use storage directly for inquiry, save Trino cost when all topics are from same storage. |
-| TRINO                | bool | True          | True/False      | Enable Trino                                                                                    |  
+| TRINO                | bool | True          | True/False      | Enable Trino                                                                                    |
 
 ## Inquiry Surface
 
 | Key                   | Type | Default Value | Possible Values | For                               |
-|-----------------------|------|---------------|-----------------|-----------------------------------|
+| --------------------- | ---- | ------------- | --------------- | --------------------------------- |
 | DATASET_PAGE_MAX_ROWS | int  | 10000         |                 | Default max rows for dataset page |
 
 ## Pipeline Kernel
 
 | Key                                        | Type          | Default Value | Possible Values | For                                                             |
-|--------------------------------------------|---------------|---------------|-----------------|-----------------------------------------------------------------|
+| ------------------------------------------ | ------------- | ------------- | --------------- | --------------------------------------------------------------- |
 | DECRYPT_FACTOR_VALUE                       | bool          | False         | True/False      | Decrypt encrypted factor value on read                          |
 | PIPELINE_PARALLEL_ACTIONS_IN_LOOP_UNIT     | bool          | False         | True/False      |                                                                 |
 | PIPELINE_PARALLEL_ACTIONS_COUNT            | int           | 8             |                 |                                                                 |
@@ -124,7 +124,7 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 ## Pipeline Surface
 
 | Key                    | Type | Default Value  | Possible Values | For                                   |
-|------------------------|------|----------------|-----------------|---------------------------------------|
+| ---------------------- | ---- | -------------- | --------------- | ------------------------------------- |
 | RABBITMQ_CONNECTOR     | bool | False          | True/False      | Enable trigger pipeline from RabbitMQ |
 | RABBITMQ_HOST          | str  | Empty string   |                 |                                       |
 | RABBITMQ_PORT          | str  | 5672           |                 |                                       |
@@ -141,7 +141,7 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 ## Rest
 
 | Key                         | Type     | Default Value                         | Possible Values | For                                                    |
-|-----------------------------|----------|---------------------------------------|-----------------|--------------------------------------------------------|
+| --------------------------- | -------- | ------------------------------------- | --------------- | ------------------------------------------------------ |
 | APP_NAME                    | str      | Watchmen REST App                     |                 | Application name                                       |
 | VERSION                     | str      | 16.0.0                                |                 | Application version                                    |
 | DESCRIPTION                 | str      | A lighter platform for data analytics |                 | A short description of application                     |
@@ -150,26 +150,38 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | JWT_ALGORITHM               | str      | HS256                                 |                 |                                                        |
 | ACCESS_TOKEN_EXPIRE_MINUTES | int      | 11520                                 |                 |                                                        |
 | CORS                        | bool     | True                                  | True/False      |                                                        |
-| CORS_ALLOWED_ORIGINS        | Set[str] | *                                     |                 |                                                        |
+| CORS_ALLOWED_ORIGINS        | Set[str] | \*                                    |                 |                                                        |
 | CORS_ALLOW_CREDENTIALS      | bool     | True                                  |                 |                                                        |
-| CORS_ALLOWED_METHODS        | Set[str] | *                                     |                 |                                                        |
-| CORS_ALLOWED_HEADERS        | Set[str] | *                                     |                 |                                                        |
+| CORS_ALLOWED_METHODS        | Set[str] | \*                                    |                 |                                                        |
+| CORS_ALLOWED_HEADERS        | Set[str] | \*                                    |                 |                                                        |
 | PROMETHEUS                  | bool     | False                                 | True/False      |                                                        |
 | PROMETHEUS_CONTEXT          | str      | /metrics                              |                 |                                                        |
 
 ## Rest Doll
 
-| Key                                             | Type | Default Value | Possible Values | For                                                        |
-|-------------------------------------------------|------|---------------|-----------------|------------------------------------------------------------|
-| APP_NAME                                        | str  | Watchmen Doll |                 | Overwrite Rest's                                           |
-| TUPLE_DELETABLE                                 | bool | False         | True/False      | Enable tuple deletable rest apis                           |
-| CREATE_PIPELINE_MONITOR_TOPICS_ON_TENANT_CREATE | bool | True          | True/False      | Enable create pipeline monitor log topics on create tenant |
-| CREATE_DQC_TOPICS_ON_TENANT_CREATE              | bool | True          | True/False      | Enable create DQC topics on create tenant                  |
+| Key                                             | Type | Default Value | Possible Values       | For                                                             |
+| ----------------------------------------------- | ---- | ------------- | --------------------- | --------------------------------------------------------------- |
+| APP_NAME                                        | str  | Watchmen Doll |                       | Overwrite Rest's                                                |
+| TUPLE_DELETABLE                                 | bool | False         | True/False            | Enable tuple deletable rest apis                                |
+| CREATE_PIPELINE_MONITOR_TOPICS_ON_TENANT_CREATE | bool | True          | True/False            | Enable create pipeline monitor log topics on create tenant      |
+| CREATE_DQC_TOPICS_ON_TENANT_CREATE              | bool | True          | True/False            | Enable create DQC topics on create tenant                       |
+| SSO_ON                                          | bool | False         | True/False            | Enable SSO integration                                          |
+| SSO_PROVIDER                                    | str  | saml2         | saml2                 | single sign-on (SSO) login protocol                             |
+| SAML_STRICT                                     | bool | True          | True/False            | If strict is True, then the Python Toolkit will reject unsigned |
+| SAML_DEBUG                                      | bool | True          | True/False            | Enable debug mode (outputs errors).                             |
+| SAML_IDP_ENTITY_ID                              | str  |               |                       | Identifier of the IdP entity                                    |
+| SAML_IDP_SSO_URL                                | str  |               | URL                   | URL Target of the IdP where the Authentication Request Message  |
+| SAML_IDP_SSO_BINDING                            | str  | HTTP-Redirect | SAML binding standard | SAML protocol binding to be used when returning                 |
+| SAML_IDP_X509CERT                               | str  |               |                       | Public X.509 certificate of the IdP                             |
+| SAML_SP_ENTITY_ID                               | str  |               |                       | Identifier of the SP entity                                     |
+| SAML_SP_ASSERT_URL                              | str  |               | URL                   | URL Location where the <Response> from the IdP will be returned |
+| SAML_SP_ASSERT_BINDING                          | str  | HTTP-Redirect | SAML binding standard | SAML protocol binding to be used when returning                 |
+| SAML_SP_X509CERT                                | str  |               |                       | X.509 certificate of the SP                                     |
 
 ## DQC
 
 | Key                            | Type | Default Value | Possible Values | For                                                                        |
-|--------------------------------|------|---------------|-----------------|----------------------------------------------------------------------------|
+| ------------------------------ | ---- | ------------- | --------------- | -------------------------------------------------------------------------- |
 | MONITOR_JOBS                   | bool | False         | True/False      | Enable DQC jobs                                                            |
 | MONITOR_JOB_TRIGGER            | str  | cron          |                 | Job trigger scheduler                                                      |
 | MONITOR_JOB_DAILY_DAY_OF_WEEK  | str  | mon-sun       |                 | Cron daily                                                                 |
@@ -186,6 +198,5 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 ## Rest DQC
 
 | Key      | Type | Default Value | Possible Values | For              |
-|----------|------|---------------|-----------------|------------------|
+| -------- | ---- | ------------- | --------------- | ---------------- |
 | APP_NAME | str  | Watchmen DQC  |                 | Overwrite Rest's |
-
