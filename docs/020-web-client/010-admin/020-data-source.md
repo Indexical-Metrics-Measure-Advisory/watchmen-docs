@@ -28,10 +28,11 @@ Extra parameter pair is added automatically, and will not be removed when name a
 ## Form Validation
 
 - Data Source Code: required,
-- Data Source Type: required. Currently, 3 types are built-in:
+- Data Source Type: required. Currently, 4 types are built-in:
     - `Oracle`,
-    - `MySQL`,
-    - `MongoDB`
+    - `MySQL` & `MariaDB`,
+    - `MongoDB`,
+    - `MSSQL`
 - Data Zone: required,
 - Host: optional,
 - Port: optional,

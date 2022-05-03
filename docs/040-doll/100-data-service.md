@@ -10,10 +10,10 @@ Data service is designed for serve such as definition CURD, pipeline and inquiry
 
 - Model,
 - Storage,
-	- MySQL,
-	- Oracle,
-	- MongoDB,
-	- MSSQL,
+	- `MySQL` & `MariaDB`,
+	- `Oracle`,
+	- `MongoDB`,
+	- `MSSQL`,
 - Meta,
 - Data Kernel,
 - Data Surface.

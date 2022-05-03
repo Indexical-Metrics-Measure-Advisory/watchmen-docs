@@ -509,10 +509,14 @@ For example,
 
 Check supported script types by following table,
 
-| Script Purpose | Oracle SQL Script | Oracle Liquibase | MySQL SQL Script | MySQL Liquibase |
-|:---------------|:-----------------:|:----------------:|:----------------:|:---------------:|
-| Creation       |         ✅         |        ✅         |        ✅         |        ✅        |
-| Alteration     |         ✅         |        ✅         |        ✅         |        ✅        |
+| Type                       | Creation | Alteration |
+|:---------------------------|:--------:|:----------:|
+| Oracle SQL Script          |    ✅     |     ✅      |
+| Oracle Liquibase           |    ✅     |     ✅      |
+| MySQL & MariaDB SQL Script |    ✅     |     ✅      |
+| MySQL & MariaDB Liquibase  |    ✅     |     ✅      |
+| MSSQL SQL Script           |    ✅     |     ✅      |
+| MSSQL Liquibase            |    ✅     |     ✅      |
 
 ### How to Export Scripts
 
@@ -536,7 +540,12 @@ zip root/
 │   │   └── order.sql
 │   └── creation
 │       └── order.sql
-└── mysql
+├── mysql
+│   ├── alteration
+│   │   └── order.sql
+│   └── creation
+│       └── order.sql
+└── mssql
     ├── alteration
     │   └── order.sql
     └── creation
