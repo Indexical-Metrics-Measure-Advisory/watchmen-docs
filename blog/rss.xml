@@ -4,10 +4,20 @@
         <title>Matryoshka Watchmen Blog</title>
         <link>https://imma-watchmen.com/blog</link>
         <description>Matryoshka Watchmen Blog</description>
-        <lastBuildDate>Sat, 02 Apr 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[v16.1 Released]]></title>
+            <link>https://imma-watchmen.com/blog/v16.1-release</link>
+            <guid>v16.1-release</guid>
+            <pubDate>Sun, 08 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[🔥 V16.1.0 Released!]]></description>
+            <content:encoded><![CDATA[<p>🔥 V16.1.0 Released!</p><p>Today we are releasing Watchmen 16.1.0. It contains bugfixes and new features. </p><p>For more info, <strong><a href="/docs/16.1/docs-index">See docs for 16.1.0 here</a></strong>.</p><p>Just enjoy it!</p>]]></content:encoded>
+            <category>watchmen</category>
+            <category>v16.1</category>
+        </item>
         <item>
             <title><![CDATA[v16 Released]]></title>
             <link>https://imma-watchmen.com/blog/v16-release</link>
