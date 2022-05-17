@@ -4,10 +4,20 @@
         <title>Matryoshka Watchmen Blog</title>
         <link>https://imma-watchmen.com/blog</link>
         <description>Matryoshka Watchmen Blog</description>
-        <lastBuildDate>Sun, 08 May 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 18 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[v16.1.1 Released]]></title>
+            <link>https://imma-watchmen.com/blog/v16.1.1-release</link>
+            <guid>v16.1.1-release</guid>
+            <pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[V16.1.1 Released!]]></description>
+            <content:encoded><![CDATA[<p>V16.1.1 Released!</p><p>It is patch release, which contains bugfixes. </p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_R0VQ" id="bugfixes">Bugfixes<a class="hash-link" href="#bugfixes" title="Direct link to heading">​</a></h2><ul><li>Remove exception raise from ask encryptor from registration</li><li>Flatten column is not working</li><li>DataSourceParam is unserializable</li><li>Bad argument passed of post_delete_pipeline</li><li>Missing the precision cell of factor in uploaded template</li></ul>]]></content:encoded>
+            <category>watchmen</category>
+            <category>v16.1</category>
+        </item>
         <item>
             <title><![CDATA[v16.0.39 Released]]></title>
             <link>https://imma-watchmen.com/blog/v16.0.39-release</link>

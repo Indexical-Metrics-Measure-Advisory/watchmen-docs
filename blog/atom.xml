@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://imma-watchmen.com/blog</id>
     <title>Matryoshka Watchmen Blog</title>
-    <updated>2022-05-08T00:00:00.000Z</updated>
+    <updated>2022-05-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://imma-watchmen.com/blog"/>
     <subtitle>Matryoshka Watchmen Blog</subtitle>
     <icon>https://imma-watchmen.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[v16.1.1 Released]]></title>
+        <id>v16.1.1-release</id>
+        <link href="https://imma-watchmen.com/blog/v16.1.1-release"/>
+        <updated>2022-05-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[V16.1.1 Released!]]></summary>
+        <content type="html"><![CDATA[<p>V16.1.1 Released!</p><p>It is patch release, which contains bugfixes. </p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_R0VQ" id="bugfixes">Bugfixes<a class="hash-link" href="#bugfixes" title="Direct link to heading">​</a></h2><ul><li>Remove exception raise from ask encryptor from registration</li><li>Flatten column is not working</li><li>DataSourceParam is unserializable</li><li>Bad argument passed of post_delete_pipeline</li><li>Missing the precision cell of factor in uploaded template</li></ul>]]></content>
+        <author>
+            <name>The Watchmen Team</name>
+            <uri>https://github.com/Indexical-Metrics-Measure-Advisory</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.1" term="v16.1"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[v16.0.39 Released]]></title>
         <id>v16.0.39-release</id>
