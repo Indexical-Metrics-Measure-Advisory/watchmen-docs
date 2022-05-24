@@ -8,6 +8,20 @@
     <subtitle>Matryoshka Watchmen Blog</subtitle>
     <icon>https://imma-watchmen.com/img/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[PostgreSQL coming soon!]]></title>
+        <id>postgresql</id>
+        <link href="https://imma-watchmen.com/blog/postgresql"/>
+        <updated>2022-05-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We plan to supported PostgreSQL officially, will be delivered soon.]]></summary>
+        <content type="html"><![CDATA[<p>We plan to supported PostgreSQL officially, will be delivered soon. </p><hr>]]></content>
+        <author>
+            <name>botlikes456</name>
+            <uri>https://github.com/botlikes456</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="postgresql" term="postgresql"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[v15 End of Life]]></title>
         <id>v15-eof</id>
         <link href="https://imma-watchmen.com/blog/v15-eof"/>
@@ -24,6 +38,20 @@ at <a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/
         </author>
         <category label="watchmen" term="watchmen"/>
         <category label="v15" term="v15"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v16.1.2 Released]]></title>
+        <id>v16.1.2-release</id>
+        <link href="https://imma-watchmen.com/blog/v16.1.2-release"/>
+        <updated>2022-05-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[V16.1.2 Released!]]></summary>
+        <content type="html"><![CDATA[<p>V16.1.2 Released!</p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_R0VQ" id="-fixed">🔧 Fixed<a class="hash-link" href="#-fixed" title="Direct link to heading">​</a></h2><ul><li>Reports and paragraphs in dashboard cannot be loaded.</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_R0VQ" id="-enhancement">📜 Enhancement<a class="hash-link" href="#-enhancement" title="Direct link to heading">​</a></h2><ul><li>Add server side log for detail messages of http 500 exception.</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_R0VQ" id="-images">📦 Images<a class="hash-link" href="#-images" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages/container/watchmen-web-client/22938411?tag=16.1.2" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages/container/watchmen-matryoshka-doll-mysql/22938964?tag=16.1.2" target="_blank" rel="noopener noreferrer">Doll Mysql</a></li><li><a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages/container/watchmen-matryoshka-dqc-mysql/22939227?tag=16.1.2" target="_blank" rel="noopener noreferrer">DQC Mysql</a></li></ul><p>Find other storage versions at <a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages?repo_name=watchmen" target="_blank" rel="noopener noreferrer">here</a>.</p><blockquote><p>All of these bug fixing and enhancement can be found at v16.0.40.</p></blockquote>]]></content>
+        <author>
+            <name>botlikes456</name>
+            <uri>https://github.com/botlikes456</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.2" term="v16.2"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[v16.1.1 Released]]></title>
