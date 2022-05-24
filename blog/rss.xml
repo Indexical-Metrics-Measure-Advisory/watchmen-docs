@@ -4,10 +4,24 @@
         <title>Matryoshka Watchmen Blog</title>
         <link>https://imma-watchmen.com/blog</link>
         <description>Matryoshka Watchmen Blog</description>
-        <lastBuildDate>Wed, 18 May 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 24 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[v15 End of Life]]></title>
+            <link>https://imma-watchmen.com/blog/v15-eof</link>
+            <guid>v15-eof</guid>
+            <pubDate>Tue, 24 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Watchmen V15 series, which deployed about 2 months ago, and was the very first version we published, working with us over 1 year, we decide]]></description>
+            <content:encoded><![CDATA[<p>Watchmen V15 series, which deployed about 2 months ago, and was the very first version we published, working with us over 1 year, we decide
+stop to maintain, and will not fix bug in this version again.</p><p>We already notify all our friends to upgrade their images to V16.1.x, and get good feedback from them. So if you still on V15 series, we
+highly recommend to upgrade to V16.1 immediately.</p><p>We offer upgrade scripts, you can find it
+at <a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-migration/v15.x-to-v16/meta-scripts" target="_blank" rel="noopener noreferrer">watchmen-migration</a>
+, just enjoy it.</p><p>Still, images of V15 series can be found at,</p><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/18108477?tag=15.2.16" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages/container/watchmen-matryoshka-doll/20816906?tag=15.2.18" target="_blank" rel="noopener noreferrer">Doll</a></li><li><a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages/container/watchmen-matryoshka-dqc/18514519?tag=16.0.26" target="_blank" rel="noopener noreferrer">DQC</a></li></ul><hr>]]></content:encoded>
+            <category>watchmen</category>
+            <category>v15</category>
+        </item>
         <item>
             <title><![CDATA[v16.1.1 Released]]></title>
             <link>https://imma-watchmen.com/blog/v16.1.1-release</link>
