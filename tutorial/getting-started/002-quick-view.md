@@ -31,10 +31,6 @@ docker compose -f docker-compose-mysql.yml up
 -   admin user ： imma-admin/1234abcd
 -   console user ：imma-user/1234abcd
 
-:::tip  
-The latest Chrome is recommended.
-:::
-
 #### General process of playground
 
 -   login with super user
@@ -53,11 +49,17 @@ The latest Chrome is recommended.
 DQC and indicator services are not included
 ```
 
-The current environment will automatically create table in instance database .
+#### Tips
+
+- The latest Chrome is recommended.
+
+- The current environment will automatically create table in instance database .
 f you modify the topic structure, it will be deleted and recreated.
 ref to documentation [SYNC_TOPIC_TO_STORAGE](https://imma-watchmen.com/docs/16.1/installation/config/)
 
-This cannot be used in a production environment
+- If it is not a Mac, please modify docker.for.mac.localhost parameter is configured in nginx
+
+- This cannot be used in a production environment
 If you need to deploy the production environment, please refer to the document production environment deployment
 https://imma-watchmen.com/docs/16.0/installation/deploy#production-environment
 
