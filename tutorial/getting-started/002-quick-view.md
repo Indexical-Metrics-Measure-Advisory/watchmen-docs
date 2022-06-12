@@ -53,6 +53,10 @@ The latest Chrome is recommended.
 DQC and indicator services are not included
 ```
 
+The current environment will automatically create table in instance database .
+f you modify the topic structure, it will be deleted and recreated.
+ref to documentation [SYNC_TOPIC_TO_STORAGE](https://imma-watchmen.com/docs/16.1/installation/config/)
+
 This cannot be used in a production environment
 If you need to deploy the production environment, please refer to the document production environment deployment
 https://imma-watchmen.com/docs/16.0/installation/deploy#production-environment
