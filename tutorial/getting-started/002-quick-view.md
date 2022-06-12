@@ -18,6 +18,8 @@ git clone repository  https://github.com/Indexical-Metrics-Measure-Advisory/watc
 
 for mysql
 
+Before starting, execute dbscript.sh copy script to mysql directory
+
 ```bash
 cd docker
 docker compose -f docker-compose-mysql.yml up
@@ -51,17 +53,17 @@ DQC and indicator services are not included
 
 #### Tips
 
-- The latest Chrome is recommended.
+-   The latest Chrome is recommended.
 
-- The current environment will automatically create table in instance database .
-f you modify the topic structure, it will be deleted and recreated.
-ref to documentation [SYNC_TOPIC_TO_STORAGE](https://imma-watchmen.com/docs/16.1/installation/config/)
+-   The current environment will automatically create table in instance database .
+    f you modify the topic structure, it will be deleted and recreated.
+    ref to documentation [SYNC_TOPIC_TO_STORAGE](https://imma-watchmen.com/docs/16.1/installation/config/)
 
-- If it is not a Mac, please modify docker.for.mac.localhost parameter is configured in nginx
+-   If it is not a Mac, please modify docker.for.mac.localhost parameter is configured in nginx
 
-- This cannot be used in a production environment
-If you need to deploy the production environment, please refer to the document production environment deployment
-https://imma-watchmen.com/docs/16.0/installation/deploy#production-environment
+-   This cannot be used in a production environment
+    If you need to deploy the production environment, please refer to the document production environment deployment
+    https://imma-watchmen.com/docs/16.0/installation/deploy#production-environment
 
 ## If You Get Stuck
 
