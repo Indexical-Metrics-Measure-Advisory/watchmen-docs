@@ -62,7 +62,7 @@ sidebar_position: 2
     -   create dashboard
 
 ```
-DQC and indicator services are not included
+DQC services are not included
 ```
 
 #### Tips
