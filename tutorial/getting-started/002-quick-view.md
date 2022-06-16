@@ -10,28 +10,42 @@ sidebar_position: 2
 
 ### Installing Watchmen Platform with docker-compose file
 
-To install Watchmen Platform
+- Clone repository,
 
-```bash
-git clone repository  https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-quick-start
-```
+    ```bash
+    git clone repository  https://github.com/Indexical-Metrics-Measure-Advisory/watchmen
+    ```
 
-for mysql
+- Enter quick start,
 
-Before starting, execute dbscript.sh copy script to mysql directory
+    ```bash
+    cd path-to-watchmen-cloned-repo/watchmen-quick-start
+    ```
 
-```bash
-cd docker
-docker compose -f docker-compose-mysql.yml up
-```
+- Before starting, execute `dbscript.sh` copy script to mysql directory,
 
--   Open browser on <http://localhost:3030>,
+  ```bash
+  sh dbscript.sh
+  ```
+
+  :::tip
+  Only MySQL scripts are included.
+  :::
+
+- Start docker,
+
+    ```bash
+    cd docker
+    docker compose -f docker-compose-mysql.yml up
+    ```
+
+- Open browser on <http://localhost:3030>.
 
 #### login with init user
 
--   super user ：imma-super/change-me
--   admin user ： imma-admin/1234abcd
--   console user ：imma-user/1234abcd
+-   super user: imma-super/change-me
+-   admin user: imma-admin/1234abcd
+-   console user: imma-user/1234abcd
 
 #### General process of playground
 

@@ -16,7 +16,7 @@ Ref to [**quick start repository**](https://github.com/Indexical-Metrics-Measure
 
 ## Production env 
 
-### Installation prerequisites：
+### Installation prerequisites:
 
 1. Operating System: Linux
 2. Container: Docker and Docker Compose
@@ -179,7 +179,7 @@ watchmen-dbscript-deployment
    |-mysql-connector-java-8.0.27
 |-Dockerfile
 ```
-Dockerfile sample：
+Dockerfile sample:
 
 ```dockerfile
 FROM liquibase/liquibase:4.3.5

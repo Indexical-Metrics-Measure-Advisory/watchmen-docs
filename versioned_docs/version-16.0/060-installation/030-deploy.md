@@ -14,7 +14,7 @@ Visit [**Quick Start**](/tutorial/tutorial-index) for more details.
 
 ## Production Environment
 
-### Installation Prerequisites：
+### Installation Prerequisites:
 
 - Operating System: Linux
 - Container: Docker or Docker Compose
