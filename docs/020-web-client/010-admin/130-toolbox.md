@@ -78,9 +78,9 @@ Task data topic is a raw topic, which contains factors as below,
 	- `ready` when task created,
 	- `processed` when task processed,
 - `snapshottag`: a tag for filter data,
-	- for monthly, format is `d%Y%m%d`,
+	- for daily, format is `d%Y%m%d`,
 	- for weekly, format is `w%Y%U`,
-	- for daily, format is `m%Y%m`
+	- for monthly, format is `m%Y%m`
 - `targettopicname`: target topic name. Multiple schedulers are allowed for snapshot catching.
 - `jobid` and `schedulerid`: to identify the scheduler definition and job instance. `jobid` is `lock_id` in `snapshot_job_locks`.
 
