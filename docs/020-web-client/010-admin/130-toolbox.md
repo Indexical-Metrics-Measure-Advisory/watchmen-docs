@@ -91,3 +91,19 @@ Target data topic is a distinct topic, which contains factors as below,
 - factors from source topic,
 - `snapshottag`: a tag for filter data.
 
+## Pipeline Trigger
+
+Use the existing data to re-trigger pipeline.
+
+![Pipeline Trigger](images/pipeline-trigger.png)
+
+- Choose topic,
+- Pick pipelines want to trigger,
+- Fill filter of topic.
+
+Fetch and trigger pipelines. Note if there are more than 1 thousand rows, then it can not be triggered in browser. In this scenario,
+download data to file and run them via CLI. Otherwise, it can be triggered in browser.
+
+:::caution  
+DO NOT close browser if it is running.
+:::
