@@ -505,6 +505,19 @@ For example,
 ]
 ```
 
+## Build Flatten Topics
+
+For raw topic, is hierarchical typically. Creating flatten distinct topics to copy data from raw topic is a fussy task anyway. The auto
+build function is offered as below,
+
+![Build flatten topics](images/flatten-distinct-topics.png)
+
+Click the `Build Flatten Topics` button, choose target distinct topics. Topics and pipelines will be created automatically.
+
+:::tip  
+Generated pipeline, use insert row action to copy data from this raw topic to target distinct topic, feel free to change it.
+:::
+
 ## Scripts
 
 Check supported script types by following table,
