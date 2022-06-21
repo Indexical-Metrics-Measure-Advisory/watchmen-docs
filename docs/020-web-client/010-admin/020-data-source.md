@@ -32,7 +32,9 @@ Extra parameter pair is added automatically, and will not be removed when name a
     - `Oracle`,
     - `MySQL` & `MariaDB`,
     - `MongoDB`,
-    - `MSSQL`
+    - `MSSQL`,
+    - `PostgreSQL`,
+    - S3 Storage: `AWS S3`, `Ali OSS`,
 - Data Zone: required,
 - Host: optional,
 - Port: optional,
@@ -40,6 +42,14 @@ Extra parameter pair is added automatically, and will not be removed when name a
 - Username: optional,
 - Password: optional,
 - Extra Parameter Name: required when value existed.
+
+:::caution
+Join query on multiple documents is not supported by MongoDB since performance consideration.
+:::
+
+:::caution
+Query is not supported by S3 storage.
+:::
 
 ## Extend Data Source Supporting
 
