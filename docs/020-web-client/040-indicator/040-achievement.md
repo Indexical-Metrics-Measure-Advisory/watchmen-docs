@@ -111,9 +111,34 @@ Variables from other indicators are supported,
 - and `v2.c`/`v2.p`/`v2.r`/`v2.s` ... `vn.c`/`vn.p`/`vn.r`/`vn.s`
 
 :::caution
+
 Be very careful,
 
 - circle dependencies may cause unpredicted result or error,
 - never use itself in formula.
-  :::
 
+:::
+
+## Append or Remove indicator
+
+- Append compute indicator by click `Add Manual Compute Indicator`,
+- Append pre-defined indicator by click leaf node of pre-defined indicators tree.
+
+![Add or Remove Indicator](images/achievement-indicator-add-remove.png)
+
+And, remove existing indicator by hover its first node, and click the remove button,
+
+- Remove pre-defined indicator,
+  ![Remove Indicator 1](images/achievement-remove-indicator-1.png)
+- Remove compute indicator,
+  ![Remove Indicator 2](images/achievement-remove-indicator-2.png)
+
+## Total Score
+
+Finally, all computed scores are sum and show at root node of achievement.
+
+![Total Score](images/achievement-total-score.png)
+
+:::tip  
+Simply remove the check `Include in Final Score` of indicator score node to remove its score value from summary. 
+:::
