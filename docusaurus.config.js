@@ -33,7 +33,7 @@ const config = {
 					remarkPlugins: [
 						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
 					],
-					includeCurrentVersion: false,
+					// includeCurrentVersion: true,
 					lastVersion: '16.1',
 					versions: {
 						'16.1': {
