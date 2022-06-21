@@ -50,7 +50,7 @@ Click the criteria node, to
 - Write formula which to compute score of this indicator.
 
 :::info
-Currently, formula is a 
+Formula syntax is based on Javascript.
 :::
 
 #### Supported Variables
@@ -63,9 +63,57 @@ Variables are computed before compute score using formula,
 
 #### Supported Math Functions
 
-All properties and methods on [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) are supported.  
+All properties and methods on [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) are supported.
 For example,
 
-```typescript
+```javascript
 let x = abs(c); // assign aboslute value of current indicator value to variable x
 ```
+
+And additional functions,
+
+```javascript
+// when r is less than 0.1, returns 10
+// when r is greater than 0.8, returns 50
+// when r is between 0.1 and 0.8, returns 10 + (50 - 10) * (r - 0.1) / (0.8 - 0.1)
+interpolation(r, 0.1, 10, 0.8, 50); 
+```
+
+:::info
+`return` keyword is not required when there is only one line of formula, otherwise use `return` to return the computed score.
+:::
+
+## Compute Indicator
+
+![Compute Indicator](images/achievement-compute-indicator.png)
+
+Compute indicators are designed for do manually calculation base on results of other indicators.
+
+### Formula
+
+![Compute Indicator 2](images/achievement-compute-indicator-2.png)
+
+Write formula which to compute score of this indicator.
+
+:::info
+Formula syntax is based on Javascript.
+:::
+
+#### Supported Variables
+
+Variables from other indicators are supported,
+
+- `v1`, `v2`, ..., `vn`: `n` is index of other indicator, can be found at its result node,
+- `v1.c`: current value of v1,
+- `v1.p`: previous value of v1,
+- `v1.r`: increment value of v1,
+- `v1.s`: score value of v1,
+- and `v2.c`/`v2.p`/`v2.r`/`v2.s` ... `vn.c`/`vn.p`/`vn.r`/`vn.s`
+
+:::caution
+Be very careful,
+
+- circle dependencies may cause unpredicted result or error,
+- never use itself in formula.
+  :::
+
