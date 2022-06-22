@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwatchmen_docs=self.webpackChunkwatchmen_docs||[]).push([[9346],{38710:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"matryoshka","count":1,"permalink":"/blog/tags/matryoshka"}')}}]);
