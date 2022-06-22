@@ -1,5 +1,5 @@
 ---
-id: buckets  
+id: bucket  
 title: Bucket  
 sidebar_position: 10
 ---
