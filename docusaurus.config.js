@@ -4,6 +4,8 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const VersionsArchived = require('./versions-archived.json');
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 	title: 'Matryoshka Watchmen',
@@ -36,6 +38,15 @@ const config = {
 					// includeCurrentVersion: true,
 					lastVersion: '16.1',
 					versions: {
+						...(() => {
+							return Object.keys(VersionsArchived).reduce((map, version) => {
+								map[version] = {
+									label: version + ' 🔚',
+									path: version
+								}
+								return map;
+							}, {})
+						})(),
 						'16.1': {
 							label: 'Current 16.1 🎯',
 							path: '16.1'
@@ -97,7 +108,10 @@ const config = {
 					{
 						type: 'docsVersionDropdown',
 						position: 'right',
-						dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+						dropdownItemsAfter: [
+							{type: 'html', value: '<hr class="dropdown-separator">'},
+							{to: '/versions', label: 'All versions'}
+						],
 						dropdownActiveClassDisabled: true
 					},
 					{
@@ -107,7 +121,7 @@ const config = {
 					}
 				]
 			},
-			hideableSidebar: true,
+			docs: {sidebar: {hideable: true}},
 			tableOfContents: {
 				minHeadingLevel: 2,
 				maxHeadingLevel: 4
@@ -175,13 +189,13 @@ const config = {
 			{
 				// ... Your options.
 				// `hashed` is recommended as long-term-cache of index file is possible.
-				hashed: true,
+				hashed: true
 				// For Docs using Chinese, The `language` is recommended to set to:
 				// ```
 				// language: ["en", "zh"],
 				// ```
-			},
-		],
+			}
+		]
 	]
 };
 

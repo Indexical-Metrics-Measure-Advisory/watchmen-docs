@@ -32,6 +32,15 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     font-variant: petite-caps;
 }
 
+.dropdown-separator {
+    margin: 0.3rem 0;
+}
+
+.dropdown-archived-versions {
+    font-size: .875rem;
+    padding: 0.2rem 0.5rem;
+}
+
 div.docs-doc-page main img {
     display: block;
     position: relative;
