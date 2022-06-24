@@ -14,7 +14,7 @@
             <guid>v16.2-coming-soon</guid>
             <pubDate>Fri, 24 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[V16.2 coming soon!]]></description>
-            <content:encoded><![CDATA[<p>V16.2 coming soon!</p><hr><p>The next version 16.2 will be deployed in next few days, including amazing features,</p><ul><li>AWS S3 and Ali OSS supporting for raw topic storage,</li><li>PostgreSQL supporting,</li><li>Indicator workbench, offers buckets, indicators, inspections, etc.</li></ul>]]></content:encoded>
+            <content:encoded><![CDATA[<p>V16.2 coming soon!</p><hr><p>V16.2 is coming in next few days, including amazing features,</p><ul><li>AWS S3 and Ali OSS supporting for raw topic storage,</li><li>PostgreSQL supporting,</li><li>Indicator workbench, offers buckets, indicators, inspections, etc.</li></ul>]]></content:encoded>
             <category>watchmen</category>
             <category>v16.2</category>
         </item>

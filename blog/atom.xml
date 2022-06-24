@@ -13,7 +13,7 @@
         <link href="https://imma-watchmen.com/blog/v16.2-coming-soon"/>
         <updated>2022-06-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[V16.2 coming soon!]]></summary>
-        <content type="html"><![CDATA[<p>V16.2 coming soon!</p><hr><p>The next version 16.2 will be deployed in next few days, including amazing features,</p><ul><li>AWS S3 and Ali OSS supporting for raw topic storage,</li><li>PostgreSQL supporting,</li><li>Indicator workbench, offers buckets, indicators, inspections, etc.</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>V16.2 coming soon!</p><hr><p>V16.2 is coming in next few days, including amazing features,</p><ul><li>AWS S3 and Ali OSS supporting for raw topic storage,</li><li>PostgreSQL supporting,</li><li>Indicator workbench, offers buckets, indicators, inspections, etc.</li></ul>]]></content>
         <author>
             <name>botlikes456</name>
             <uri>https://github.com/botlikes456</uri>
