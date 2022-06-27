@@ -35,8 +35,8 @@ const config = {
 					remarkPlugins: [
 						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
 					],
-					// includeCurrentVersion: true,
-					lastVersion: '16.1',
+					includeCurrentVersion: false,
+					lastVersion: '16.2',
 					versions: {
 						...(() => {
 							return Object.keys(VersionsArchived).reduce((map, version) => {
@@ -47,9 +47,9 @@ const config = {
 								return map;
 							}, {})
 						})(),
-						'16.1': {
-							label: 'Current 16.1 🎯',
-							path: '16.1'
+						'16.2': {
+							label: 'Current 16.2 🎯',
+							path: '16.2'
 						}
 					}
 				},
@@ -65,21 +65,7 @@ const config = {
 		]
 	],
 
-	plugins: [
-		[
-			'@docusaurus/plugin-content-docs',
-			{
-				id: 'tutorial',
-				path: 'tutorial',
-				routeBasePath: 'tutorial',
-				sidebarPath: require.resolve('./sidebars-tutorial.js'),
-				editUrl: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/',
-				showLastUpdateAuthor: true,
-				showLastUpdateTime: true
-			}
-		],
-		require.resolve("docusaurus-plugin-image-zoom")
-	],
+	plugins: [require.resolve("docusaurus-plugin-image-zoom")],
 
 	themeConfig:
 	/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -95,13 +81,6 @@ const config = {
 				},
 				hideOnScroll: true,
 				items: [
-					{
-						type: 'doc',
-						docsPluginId: 'tutorial',
-						docId: 'tutorial-index',
-						position: 'left',
-						label: 'Tutorial'
-					},
 					{type: 'doc', docId: 'docs-index', position: 'left', label: 'Docs'},
 					{to: '/blog', label: 'Blog', position: 'left'},
 					// {type: 'localeDropdown', position: 'right'},
