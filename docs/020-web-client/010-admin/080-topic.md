@@ -42,7 +42,7 @@ For example, topics for business data are `Business`, topics for log data are `S
 
 ### Synonym Topic
 
-Sometimes, tables from other systems are read to use already, it is not necessary to clone them to **_watchmen_**, simply declare them
+Sometimes, tables from other systems are ready to use for analysis, it is not a must to clone them to **_watchmen_**, simply declare them
 as `synonym` topics. There are some limitation on using synonym topics,
 
 - Structure of synonym will be kept as it was,
