@@ -32,12 +32,27 @@ Topic use [standard tuple page](../standard-tuple-page).
 
 ## Kind
 
-There are 2 kinds of topic,
+There are three kinds of topic,
 
 - System
 - Business
+- Synonym
 
 For example, topics for business data are `Business`, topics for log data are `System`.
+
+### Synonym Topic
+
+Sometimes, tables from other systems are read to use already, it is not necessary to clone them to **_watchmen_**, simply declare them
+as `synonym` topics. There are some limitation on using synonym topics,
+
+- Structure of synonym will be kept as it was,
+- Cannot write data into synonym,
+- Only RDS is supported.
+
+Typically, following are well-suited for synonym topic,
+
+- Meta tables,
+- Output tables, including the processed data, such as daily settlement data.
 
 ## Type
 
@@ -516,6 +531,14 @@ Click the `Build Flatten Topics` button, choose target distinct topics. Topics a
 
 :::tip  
 Generated pipeline, use insert row action to copy data from this raw topic to target distinct topic, feel free to change it.
+:::
+
+## Import Meta Data
+
+For meta topic, data can be imported. Simply download data template files on CSV and JSON format, fill data and click `Import Meta Data`.
+
+:::info  
+Data of synonym meta cannot be imported.
 :::
 
 ## Scripts
