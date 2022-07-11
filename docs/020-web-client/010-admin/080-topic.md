@@ -43,7 +43,9 @@ For example, topics for business data are `Business`, topics for log data are `S
 ### Synonym Topic
 
 Sometimes, tables from other systems are ready to use for analysis, it is not a must to clone them to **_Watchmen_**, simply declare them
-as `synonym` topics. There are some limitation on using synonym topics,
+as `synonym` topics and feel free to use them as regular topics.
+
+There are some limitation on using synonym topics,
 
 - Structure of synonym will be kept as it was,
 - Cannot write data into synonym,
@@ -97,6 +99,11 @@ SELECT * FROM TOPIC_CUSTOMER WHERE CUSTOMER_NAME = 'John Doe';
 - Dots(`.`) in factor name are replaced by underscore.
 
 :::
+
+:::caution  
+On synonym raw topic, a row will be treated as a raw object.
+:::
+
 
 ### Meta
 
