@@ -2,11 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://imma-watchmen.com/blog</id>
     <title>Matryoshka Watchmen Blog</title>
-    <updated>2022-06-27T00:00:00.000Z</updated>
+    <updated>2022-07-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://imma-watchmen.com/blog"/>
     <subtitle>Matryoshka Watchmen Blog</subtitle>
     <icon>https://imma-watchmen.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[v16.0 End of Life Planning]]></title>
+        <id>v16.1-plan-eof</id>
+        <link href="https://imma-watchmen.com/blog/v16.1-plan-eof"/>
+        <updated>2022-07-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Watchmen V16.1 series, is planning to stop to maintain in few weeks after 16.3 deployed.]]></summary>
+        <content type="html"><![CDATA[<p>Watchmen V16.1 series, is planning to stop to maintain in few weeks after 16.3 deployed.</p><p>We have done refactoring in 16.2, which leads the package structure break changes. In detail, we extract the common part from 4 supported
+rds storage (MySQL/MSSQL/Oracle/PostgreSQL) to a new package <code>watchment-storage-rds</code>. This change reduce our maintain cost on rds part, but
+on the other hand, because of lacking of manpower resource, it's really hard to maintain 16.1 since it still in original structure. Anyway,
+V16.1 is still on maintain now, but it's better to do upgrading to V16.2 now.</p><p>One more thing about V16.3, after we deploy the indicator workbench in V16.2, there is one more exciting feature will be deployed in 16.3,
+which is <code>Synonym Topic</code>. It introduces direct link to rds, to reuse the existing tables and views, to maximize the existing data usages. We
+are still on the final round verification work now, will be released in few weeks ❤️‍🔥.</p>]]></content>
+        <author>
+            <name>botlikes456</name>
+            <uri>https://github.com/botlikes456</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.1" term="v16.1"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[v16.0 End of Life]]></title>
         <id>v16.0-eof</id>
