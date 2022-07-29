@@ -36,7 +36,7 @@ const config = {
 						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
 					],
 					includeCurrentVersion: false,
-					lastVersion: '16.2',
+					lastVersion: '16.3',
 					versions: {
 						...(() => {
 							return Object.keys(VersionsArchived).reduce((map, version) => {
@@ -47,9 +47,9 @@ const config = {
 								return map;
 							}, {})
 						})(),
-						'16.2': {
-							label: 'Current 16.2 🎯',
-							path: '16.2'
+						'16.3': {
+							label: 'Current 16.3 🎯',
+							path: '16.3'
 						}
 					}
 				},
