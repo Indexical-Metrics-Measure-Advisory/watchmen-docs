@@ -6,6 +6,10 @@ sidebar_position: 50
 
 # Objective Analysis
 
+:::info  
+Objective analysis is available for `Admin` only.
+:::
+
 Objective analysis is combination instrument of inspections and achievements.
 
 ![Objective Analysis](images/objective-analysis.png)

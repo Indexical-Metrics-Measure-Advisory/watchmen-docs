@@ -6,6 +6,10 @@ sidebar_position: 30
 
 # Inspection
 
+:::info  
+Inspection is available for `Admin` only.
+:::
+
 Inspection is based on single indicator.
 
 ![Inspection](images/inspection.png)

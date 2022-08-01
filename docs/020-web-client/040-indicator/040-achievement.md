@@ -6,6 +6,10 @@ sidebar_position: 40
 
 # Achievement
 
+:::info  
+Achievement is available for `Admin` only.
+:::
+
 Achievement is based on multiple indicators.
 
 ![Achievement](images/achievement.png)
