@@ -38,7 +38,7 @@ docker run --rm --env-file /usr/watchmen/watchmen-cli/env.list ghcr.io/indexical
 			username: Optional[str] = None,
 			password: Optional[str] = None,
 			pat: Optional[str] = None
-	):
+	)
 ```
 | Parameter | Type | Description |  
 | --------- | ---- | ----------- |

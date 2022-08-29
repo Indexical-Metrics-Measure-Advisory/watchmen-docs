@@ -22,6 +22,7 @@ Doll has several modules,
 - [Data Surface](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-data-surface)
 - [Pipeline Kernel](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-pipeline-kernel)
 - [Pipeline Surface](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-pipeline-surface)
+- [Collector Kernel](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-collector-kernel)  
 - [Inquiry Kernel](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-inquiry-kernel)
 - [Inquiry Trino](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-inquiry-trino)
 - [Inquiry Surface](https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/tree/main/packages/watchmen-inquiry-surface)

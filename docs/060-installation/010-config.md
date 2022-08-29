@@ -138,6 +138,21 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | KAFKA_BOOTSTRAP_SERVER | str  | localhost:9092 |                 |                                       |
 | KAFKA_TOPICS           | str  | Empty string   |                 |                                       |
 
+## S3 Collector
+
+| Key                                  | Type | Default Value  | Possible Values | For                                      |
+|--------------------------------------|------|----------------|-----------------|------------------------------------------|
+| S3_COLLECTOR_CONNECTOR               | bool | False          | True/False      | Enable trigger pipeline from S3          |
+| S3_COLLECTOR_ACCESS_KEY_ID           | str  | Empty string   |                 |                                          |
+| S3_COLLECTOR_SECRET_ACCESS_KEY       | str  | Empty string   |                 |                                          |
+| S3_COLLECTOR_BUCKET_NAME             | str  | Empty string   |                 |                                          |
+| S3_COLLECTOR_REGION                  | str  | Empty string   |                 |                                          |
+| S3_COLLECTOR_TENANT                  | str  | Empty string   |                 |                                          |
+| S3_COLLECTOR_CONSUME_PREFIX          | str  | Empty string   |                 | like 'test/watchmen-data/consume-queue/' |
+| S3_COLLECTOR_DEAD_PREFIX             | str  | Empty string   |                 | like 'test/watchmen-data/dead-queue/'    |
+| S3_COLLECTOR_MAX_KEYS                | bool | 10             | Int             | The number of object list                |
+| S3_COLLECTOR_CLEAN_TASK_INTERVAL     | bool | 3600           | Seconds         | The time of task cleanup interval        |
+
 ## Rest
 
 | Key                         | Type     | Default Value                         | Possible Values | For                                                    |
