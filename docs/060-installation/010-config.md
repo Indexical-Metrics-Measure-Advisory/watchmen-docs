@@ -150,8 +150,8 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | S3_COLLECTOR_TENANT                  | str  | Empty string   |                 |                                          |
 | S3_COLLECTOR_CONSUME_PREFIX          | str  | Empty string   |                 | like 'test/watchmen-data/consume-queue/' |
 | S3_COLLECTOR_DEAD_PREFIX             | str  | Empty string   |                 | like 'test/watchmen-data/dead-queue/'    |
-| S3_COLLECTOR_MAX_KEYS                | bool | 10             | Int             | The number of object list                |
-| S3_COLLECTOR_CLEAN_TASK_INTERVAL     | bool | 3600           | Seconds         | The time of task cleanup interval        |
+| S3_COLLECTOR_MAX_KEYS                | int  | 10             | Int             | The number of object list                |
+| S3_COLLECTOR_CLEAN_TASK_INTERVAL     | int  | 3600           | Seconds         | The time of task cleanup interval        |
 
 ## Rest
 
