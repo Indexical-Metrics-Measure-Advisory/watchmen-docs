@@ -4,10 +4,30 @@
         <title>Matryoshka Watchmen Blog</title>
         <link>https://imma-watchmen.com/blog</link>
         <description>Matryoshka Watchmen Blog</description>
-        <lastBuildDate>Fri, 29 Jul 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Aug 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[v16.2.4 Released]]></title>
+            <link>https://imma-watchmen.com/blog/v16.2.4-release</link>
+            <guid>v16.2.4-release</guid>
+            <pubDate>Mon, 29 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[V16.2.4 Released!]]></description>
+            <content:encoded><![CDATA[<p>V16.2.4 Released!</p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-enhancement">📜 Enhancement<a class="hash-link" href="#-enhancement" title="Direct link to heading">​</a></h2><ul><li>Support reverse aggregate in pipeline</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-fixed">🔧 Fixed<a class="hash-link" href="#-fixed" title="Direct link to heading">​</a></h2><ul><li>clear subject id and report id when connect template connected space</li><li>incorrect topic id of mapping source</li><li>incorrect operator on entity criteria expression building for subject</li><li>incorrect reference of parameter in build_comparison  </li><li>ignore parse right part of expression where operator is empty or not-empty</li><li>connection leak on rerun topic data</li><li>incorrect check return value on do insert function, will not do retry again</li><li>add error log for easier to locate insert sql data issue</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-images">📦 Images<a class="hash-link" href="#-images" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/39463095?tag=16.2.4" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/39463212?tag=16.2.4" target="_blank" rel="noopener noreferrer">Doll Mysql</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/39463271?tag=16.2.4" target="_blank" rel="noopener noreferrer">DQC Mysql</a></li></ul><p>Find other storage versions <a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages?repo_name=watchmen" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content:encoded>
+            <category>watchmen</category>
+            <category>v16.2.4</category>
+        </item>
+        <item>
+            <title><![CDATA[v16.3.6 Released]]></title>
+            <link>https://imma-watchmen.com/blog/v16.3.6-release</link>
+            <guid>v16.3.6-release</guid>
+            <pubDate>Mon, 29 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[V16.3.6 Released!]]></description>
+            <content:encoded><![CDATA[<p>V16.3.6 Released!</p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-new-feature">📜 New Feature<a class="hash-link" href="#-new-feature" title="Direct link to heading">​</a></h2><ul><li>S3 collector</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-enhancement">📜 Enhancement<a class="hash-link" href="#-enhancement" title="Direct link to heading">​</a></h2><ul><li>Support reverse aggregate in pipeline</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-fixed">🔧 Fixed<a class="hash-link" href="#-fixed" title="Direct link to heading">​</a></h2><ul><li>ignore parse right part of expression where operator is empty or not-empty</li><li>connection leak on rerun topic data</li><li>incorrect check return value on do insert function, will not do retry again</li><li>add error log for easier to locate insert sql data issue</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-images">📦 Images<a class="hash-link" href="#-images" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/39458459?tag=16.3.6" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/39458620?tag=16.3.6" target="_blank" rel="noopener noreferrer">Doll Mysql</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/39458730?tag=16.3.6" target="_blank" rel="noopener noreferrer">DQC Mysql</a></li></ul><p>Find other storage versions <a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages?repo_name=watchmen" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content:encoded>
+            <category>watchmen</category>
+            <category>v16.3.6</category>
+        </item>
         <item>
             <title><![CDATA[v16.1 End of Life]]></title>
             <link>https://imma-watchmen.com/blog/v16.1-eof</link>
