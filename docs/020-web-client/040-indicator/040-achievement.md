@@ -43,7 +43,7 @@ Click the criteria node, to
 
 - Define indicator name in this achievement,
 - Apply criteria into indicator,
-	- `year` and `month` can be used in criteria value, which defined in common criteria,
+	- `{&year}` and `{&month}` can be used in criteria value, which defined in common criteria,
 	- Use pre-defined bucket to filter, or manually key-in.
 
 ### Aggregation & Formula
