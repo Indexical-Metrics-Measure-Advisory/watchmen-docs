@@ -36,26 +36,29 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 
 ## Meta
 
-| Key                                               | Type | Default Value | Possible Values               | For                                                  |
-|---------------------------------------------------|------|---------------|-------------------------------|------------------------------------------------------|
-| SUPER_ADMIN_TENANT_ID                             | str  | 1             |                               |                                                      |
-| SUPER_ADMIN_USER_ID                               | str  | 1             |                               |                                                      |
-| SUPER_ADMIN_USER_NAME                             | str  | imma-super    |                               |                                                      |
-| SUPER_ADMIN_USER_NICKNAME                         | str  | IMMA Super    |                               |                                                      |
-| META_STORAGE_TYPE                                 | str  | mysql         | mysql, oracle, mongodb, mssql |                                                      |
-| META_STORAGE_USER_NAME                            | str  | watchmen      |                               |                                                      |
-| META_STORAGE_PASSWORD                             | str  | watchmen      |                               |                                                      |
-| META_STORAGE_HOST                                 | str  | localhost     |                               |                                                      |
-| META_STORAGE_PORT                                 | int  | 3306          |                               |                                                      |
-| META_STORAGE_NAME                                 | str  | watchmen      |                               |                                                      |
-| META_STORAGE_ECHO                                 | bool | False         | True/False                    | Enable meta storage sql logging                      |
-| SNOWFLAKE_DATA_CENTER_ID                          | int  | 0             | 0 ~ 3                         | Data center id                                       |
-| SNOWFLAKE_WORKER_ID                               | int  | 0             | 0 ~ 1023                      | Worker id                                            |
-| SNOWFLAKE_COMPETITIVE_WORKERS                     | bool | True          | True/False                    | Enable competitive snowflake worker                  |
-| SNOWFLAKE_COMPETITIVE_WORKER_HEART_BEAT_INTERVAL  | int  | 60            |                               | Competitive worker heart beat interval, in seconds   |
-| SNOWFLAKE_COMPETITIVE_WORKER_CREATION_RETRY_TIMES | int  | 3             |                               | Competitive worker creation max retry times          |
-| SNOWFLAKE_COMPETITIVE_WORKER_RESTART_ON_SHOWDOWN  | bool | False         | True/False                    | Competitive worker restart automatically on shutdown |
-| ENGINE_INDEX                                      | bool | True          | True/False                    | Enable meta data auto index                          |
+| Key                                               | Type | Default Value | Possible Values               | For                                                                                   |
+|---------------------------------------------------|------|---------------|-------------------------------|---------------------------------------------------------------------------------------|
+| SUPER_ADMIN_TENANT_ID                             | str  | 1             |                               |                                                                                       |
+| SUPER_ADMIN_USER_ID                               | str  | 1             |                               |                                                                                       |
+| SUPER_ADMIN_USER_NAME                             | str  | imma-super    |                               |                                                                                       |
+| SUPER_ADMIN_USER_NICKNAME                         | str  | IMMA Super    |                               |                                                                                       |
+| META_STORAGE_TYPE                                 | str  | mysql         | mysql, oracle, mongodb, mssql |                                                                                       |
+| META_STORAGE_USER_NAME                            | str  | watchmen      |                               |                                                                                       |
+| META_STORAGE_PASSWORD                             | str  | watchmen      |                               |                                                                                       |
+| META_STORAGE_HOST                                 | str  | localhost     |                               |                                                                                       |
+| META_STORAGE_PORT                                 | int  | 3306          |                               |                                                                                       |
+| META_STORAGE_NAME                                 | str  | watchmen      |                               |                                                                                       |
+| META_STORAGE_ECHO                                 | bool | False         | True/False                    | Enable meta storage sql logging                                                       |
+| SNOWFLAKE_DATA_CENTER_ID                          | int  | 0             | 0 ~ 3                         | Data center id                                                                        |
+| SNOWFLAKE_WORKER_ID                               | int  | 0             | 0 ~ 1023                      | Worker id                                                                             |
+| SNOWFLAKE_COMPETITIVE_WORKERS                     | bool | True          | True/False                    | Enable competitive snowflake worker                                                   |
+| SNOWFLAKE_COMPETITIVE_WORKER_HEART_BEAT_INTERVAL  | int  | 60            |                               | Competitive worker heart beat interval, in seconds                                    |
+| SNOWFLAKE_COMPETITIVE_WORKER_CREATION_RETRY_TIMES | int  | 3             |                               | Competitive worker creation max retry times                                           |
+| SNOWFLAKE_COMPETITIVE_WORKER_RESTART_ON_SHOWDOWN  | bool | False         | True/False                    | Competitive worker restart automatically on shutdown                                  |
+| DATASOURCE_AES_ENABLED                            | bool | True          | True/False                    | Enable AES for datasource password                                                    |
+| DATASOURCE_AES_KEY                                | str  | 32 chars str  |                               | Default AES key of data source pwd encryption, <br/><strong>MUST BE REPLACED</strong> |
+| DATASOURCE_AES_IV                                 | str  | 16 chars str  |                               | Default AES iv of data source pwd encryption, <br/><strong>MUST BE REPLACED</strong>  |
+| ENGINE_INDEX                                      | bool | True          | True/False                    | Enable meta data auto index                                                           |
 
 ## Data Kernel
 
@@ -67,7 +70,7 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | DATE_FORMATS                     | Set[str] | %Y%m%d,<br/>%d%m%Y,<br/>%m%d%Y                                                                        |                 | Follow python date time formats                                                                                        |
 | TIME_FORMATS                     | Set[str] | %H%M%S,<br/>%H%M                                                                                      |                 | Follow python date time formats                                                                                        |
 | ABANDON_DATE_TIME_ON_PARSE_FAIL  | bool     | False                                                                                                 | True/False      | Abandon value or not when it cannot be parsed to date or time by designated factor type,<br/>works only on topic data. |
-| ENCRYPT_AES_KEY                  | str      | 32 chars str                                                                                          |                 | Default AES key,<br/><strong>MUST BE REPLACED</strong>                                                                 |
+| ENCRYPT_AES_KEY                  | str      | 32 chars str                                                                                          |                 | Default AES key, <br/><strong>MUST BE REPLACED</strong>                                                                |
 | ENCRYPT_AES_IV                   | str      | 16 chars str                                                                                          |                 | Default AES iv,<br/><strong>MUST BE REPLACED</strong>                                                                  |
 | IGNORE_DEFAULT_ON_RAW            | bool     | True                                                                                                  | True/False      | Default value of factor will be ignored on the raw topic                                                               |
 | KERNEL_CACHE                     | bool     | True                                                                                                  | True/False      | Enable kernel cache, keep it enabled in production                                                                     |
