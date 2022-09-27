@@ -177,24 +177,25 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 
 ## Rest Doll
 
-| Key                                             | Type | Default Value | Possible Values       | For                                                                   |
-|-------------------------------------------------|------|---------------|-----------------------|-----------------------------------------------------------------------|
-| APP_NAME                                        | str  | Watchmen Doll |                       | Overwrite Rest's                                                      |
-| TUPLE_DELETABLE                                 | bool | False         | True/False            | Enable tuple deletable rest apis                                      |
-| CREATE_PIPELINE_MONITOR_TOPICS_ON_TENANT_CREATE | bool | True          | True/False            | Enable create pipeline monitor log topics on create tenant            |
-| CREATE_DQC_TOPICS_ON_TENANT_CREATE              | bool | True          | True/False            | Enable create DQC topics on create tenant                             |
-| SSO_ON                                          | bool | False         | True/False            | Enable SSO integration                                                |
-| SSO_PROVIDER                                    | str  | saml2         | saml2                 | single sign-on (SSO) login protocol                                   |
-| SAML_STRICT                                     | bool | True          | True/False            | If strict is True, then the Python Toolkit will reject unsigned       |
-| SAML_DEBUG                                      | bool | True          | True/False            | Enable debug mode (outputs errors).                                   |
-| SAML_IDP_ENTITY_ID                              | str  |               |                       | Identifier of the IdP entity                                          |
-| SAML_IDP_SSO_URL                                | str  |               | URL                   | URL Target of the IdP where the Authentication Request Message        |
-| SAML_IDP_SSO_BINDING                            | str  | HTTP-Redirect | SAML binding standard | SAML protocol binding to be used when returning                       |
-| SAML_IDP_X509CERT                               | str  |               |                       | Public X.509 certificate of the IdP                                   |
-| SAML_SP_ENTITY_ID                               | str  |               |                       | Identifier of the SP entity                                           |
-| SAML_SP_ASSERT_URL                              | str  |               | URL                   | URL Location where the &lt;Response&gt; from the IdP will be returned |
-| SAML_SP_ASSERT_BINDING                          | str  | HTTP-Redirect | SAML binding standard | SAML protocol binding to be used when returning                       |
-| SAML_SP_X509CERT                                | str  |               |                       | X.509 certificate of the SP                                           |
+| Key                                             | Type | Default Value | Possible Values       | For                                                                              |
+|-------------------------------------------------|------|---------------|-----------------------|----------------------------------------------------------------------------------|
+| APP_NAME                                        | str  | Watchmen Doll |                       | Overwrite Rest's                                                                 |
+| TUPLE_DELETABLE                                 | bool | False         | True/False            | Enable tuple deletable rest apis                                                 |
+| CREATE_PIPELINE_MONITOR_TOPICS_ON_TENANT_CREATE | bool | True          | True/False            | Enable create pipeline monitor log topics on create tenant                       |
+| CREATE_DQC_TOPICS_ON_TENANT_CREATE              | bool | True          | True/False            | Enable create DQC topics on create tenant                                        |
+| HIDE_DATASOURCE_PWD                             | bool | True          | True/False            | Hide datasource pwd on api, keep same value with `REACT_APP_HIDE_DATASOURCE_PWD` |
+| SSO_ON                                          | bool | False         | True/False            | Enable SSO integration                                                           |
+| SSO_PROVIDER                                    | str  | saml2         | saml2                 | single sign-on (SSO) login protocol                                              |
+| SAML_STRICT                                     | bool | True          | True/False            | If strict is True, then the Python Toolkit will reject unsigned                  |
+| SAML_DEBUG                                      | bool | True          | True/False            | Enable debug mode (outputs errors).                                              |
+| SAML_IDP_ENTITY_ID                              | str  |               |                       | Identifier of the IdP entity                                                     |
+| SAML_IDP_SSO_URL                                | str  |               | URL                   | URL Target of the IdP where the Authentication Request Message                   |
+| SAML_IDP_SSO_BINDING                            | str  | HTTP-Redirect | SAML binding standard | SAML protocol binding to be used when returning                                  |
+| SAML_IDP_X509CERT                               | str  |               |                       | Public X.509 certificate of the IdP                                              |
+| SAML_SP_ENTITY_ID                               | str  |               |                       | Identifier of the SP entity                                                      |
+| SAML_SP_ASSERT_URL                              | str  |               | URL                   | URL Location where the &lt;Response&gt; from the IdP will be returned            |
+| SAML_SP_ASSERT_BINDING                          | str  | HTTP-Redirect | SAML binding standard | SAML protocol binding to be used when returning                                  |
+| SAML_SP_X509CERT                                | str  |               |                       | X.509 certificate of the SP                                                      |
 
 ## DQC
 
