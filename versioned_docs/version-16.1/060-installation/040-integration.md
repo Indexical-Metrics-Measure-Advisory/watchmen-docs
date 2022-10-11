@@ -32,7 +32,8 @@ response = requests.post(
 return response.json()
 ```
 
-:::tip Or use `/pipeline/data/async`, it returns once data saved and trigger pipelines processing asynchronously.
+:::tip  
+Or use `/pipeline/data/async`, it returns once data saved and trigger pipelines processing asynchronously.
 :::
 
 ### Via Other Middleware

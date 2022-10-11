@@ -702,9 +702,6 @@ call these functions in constant parameter.
 - `{&dayDiff(end_date, start_date)}`, compute the days between given date `end_date` and `start_date`,
 - `{&monthDiff(end_date, start_date)}`, compute the months between given date `end_date` and `start_date`,
 - `{&yearDiff(end_date, start_date)}`, compute the years between given date `end_date` and `start_date`,
-
-In above cases, `end_date`/`start_date` are variables. In another hand, `&now` also can be one of the parameter.
-
 - `{&fmtDate(date, format)}`, format the given date `date`. The following table describes the format specifiers:  
 
     | Specifier | Description                           |
@@ -722,9 +719,49 @@ In above cases, `end_date`/`start_date` are variables. In another hand, `&now` a
     |     B     | Month name (January .. December)      |
     |     b     | Abbreviated month name (Jan .. Dec)   |
     |     p     | AM or PM                              |
-  
+
+- `{&moveDate(date, pattern)}`, set/add/subtract the given date `date. The following table describes the pattern specifiers:
+
+    | Specifier | Description                                                                          |
+    |:---------:|--------------------------------------------------------------------------------------|
+    |   Y9999   | Set year to specific value.                                                          |
+    |   Y+999   | Add specific value to given year.                                                    |
+    |   Y-999   | Add specific value to given year.                                                    |
+    |    M12    | Set month to specific value, value must be 1 - 12.                                   |
+    |   M+999   | Add specific value to given month.                                                   |
+    |   M-999   | Add specific value to given month.                                                   |
+    |    D99    | Set day of month to last day of given month, value must be 99.                       |
+    |    D99    | Set day of month to specific value, value must be 1 - 28/29/30/31, depends on month. |
+    |   D+999   | Add specific value to given day.                                                     |
+    |   D-999   | Add specific value to given day.                                                     |
+    |    h99    | Set hour to specific value, value must be 0 - 23.                                    |
+    |   h+999   | Add specific value to given hour.                                                    |
+    |   h-999   | Add specific value to given hour.                                                    |
+    |    m99    | Set minute to specific value, value must be 0 - 59.                                  |
+    |   m+999   | Add specific value to given minute.                                                  |
+    |   m-999   | Add specific value to given minute.                                                  |
+    |    s99    | Set second to specific value, value must be 0 - 59.                                  |
+    |   s+999   | Add specific value to given second.                                                  |
+    |   s-999   | Add specific value to given second.                                                  |
+
+	:::caution  
+	Be careful with the data type, never do time operation on date only and vice versa.  
+	:::
+
+	```python title="Examples"
+	# Set year to 2020, keep other value,
+	{&moveDate(&now, Y2020)}
+	
+	# Set date to last day of Feb. 2019, which is 2019/02/28
+	{&moveDate(&now, Y2019M2D99)}
+	
+	# set date & time to 2019/02/28 23:59:59 (Set to 1st Mar., and subtract 1 day)
+	{&moveDate(&now, Y2019M3D1D-1h23m59s59)}
+	```
+
 
 :::tip  
+In above cases, date parameters are variables. In another hand, `&now` also can be one of the parameter.  
 `&factor_name` is also available in above functions, in find by definition only, factor must be defined on source or target topic.
 :::
 
