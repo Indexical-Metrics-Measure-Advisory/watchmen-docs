@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://imma-watchmen.com/blog</id>
     <title>Matryoshka Watchmen Blog</title>
-    <updated>2022-09-13T00:00:00.000Z</updated>
+    <updated>2022-10-10T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://imma-watchmen.com/blog"/>
     <subtitle>Matryoshka Watchmen Blog</subtitle>
     <icon>https://imma-watchmen.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[v16.2 End of Life]]></title>
+        <id>v16.2-eof</id>
+        <link href="https://imma-watchmen.com/blog/v16.2-eof"/>
+        <updated>2022-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Watchmen V16.2 series, is stop to maintain, and will not fix bug in this version again.]]></summary>
+        <content type="html"><![CDATA[<p>Watchmen V16.2 series, is stop to maintain, and will not fix bug in this version again.</p><p>The latest version of 16.2 series is <code>16.2.6</code>, which can be found at,</p><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/40718276?tag=16.2.6" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/40719642?tag=16.2.6" target="_blank" rel="noopener noreferrer">Doll</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/40719334?tag=16.2.6" target="_blank" rel="noopener noreferrer">DQC</a></li></ul>]]></content>
+        <author>
+            <name>botlikes456</name>
+            <uri>https://github.com/botlikes456</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.2" term="v16.2"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[v16.2.6 Released]]></title>
         <id>v16.2.6-release</id>

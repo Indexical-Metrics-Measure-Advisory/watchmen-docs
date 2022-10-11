@@ -4,10 +4,20 @@
         <title>Matryoshka Watchmen Blog</title>
         <link>https://imma-watchmen.com/blog</link>
         <description>Matryoshka Watchmen Blog</description>
-        <lastBuildDate>Tue, 13 Sep 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Oct 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[v16.2 End of Life]]></title>
+            <link>https://imma-watchmen.com/blog/v16.2-eof</link>
+            <guid>v16.2-eof</guid>
+            <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Watchmen V16.2 series, is stop to maintain, and will not fix bug in this version again.]]></description>
+            <content:encoded><![CDATA[<p>Watchmen V16.2 series, is stop to maintain, and will not fix bug in this version again.</p><p>The latest version of 16.2 series is <code>16.2.6</code>, which can be found at,</p><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/40718276?tag=16.2.6" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/40719642?tag=16.2.6" target="_blank" rel="noopener noreferrer">Doll</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/40719334?tag=16.2.6" target="_blank" rel="noopener noreferrer">DQC</a></li></ul>]]></content:encoded>
+            <category>watchmen</category>
+            <category>v16.2</category>
+        </item>
         <item>
             <title><![CDATA[v16.2.6 Released]]></title>
             <link>https://imma-watchmen.com/blog/v16.2.6-release</link>
