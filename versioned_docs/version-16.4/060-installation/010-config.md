@@ -141,6 +141,18 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | KAFKA_BOOTSTRAP_SERVER | str  | localhost:9092 |                 |                                       |
 | KAFKA_TOPICS           | str  | Empty string   |                 |                                       |
 
+## Indicator Kernel
+
+| Key         | Type | Default Value | Possible Values | For                                                                                  |
+|-------------|------|---------------|-----------------|--------------------------------------------------------------------------------------|
+| PLUGIN_HOST | str  |               |                 | Plugin host for handle the plugin request, typically is a proxy for all plugin types |
+
+## Indicator Surface
+
+| Key             | Type | Default Value | Possible Values | For                                                             |
+|-----------------|------|---------------|-----------------|-----------------------------------------------------------------|
+| TUPLE_DELETABLE | bool | False         | True/False      | Enable tuple deletable rest apis. Typically define in rest doll |
+
 ## S3 Collector
 
 | Key                                  | Type | Default Value  | Possible Values | For                                      |

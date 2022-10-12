@@ -124,6 +124,18 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | PIPELINE_UPDATE_RETRY_FORCE                | bool          | True          | True/False      | Enable force retry after all retries failed                     |
 | PIPELINE_ASYNC_HANDLE_MONITOR_LOG          | bool          | True          | True/False      | Handle monitor log (might with pipelines) asynchronized         |
 
+## Indicator Kernel
+
+| Key         | Type | Default Value | Possible Values | For                                                                                  |
+|-------------|------|---------------|-----------------|--------------------------------------------------------------------------------------|
+| PLUGIN_HOST | str  |               |                 | Plugin host for handle the plugin request, typically is a proxy for all plugin types |
+
+## Indicator Surface
+
+| Key             | Type | Default Value | Possible Values | For                                                             |
+|-----------------|------|---------------|-----------------|-----------------------------------------------------------------|
+| TUPLE_DELETABLE | bool | False         | True/False      | Enable tuple deletable rest apis. Typically define in rest doll |
+
 ## Pipeline Surface
 
 | Key                    | Type | Default Value  | Possible Values | For                                   |
