@@ -88,7 +88,7 @@ const Version = () => {
 					<div className="margin-bottom--lg">
 						<h3 id="archive">
 							<Translate id="versions-page.past-version-title">
-								Past versions (Not maintained anymore, recommend to upgrade to latest stable version)
+								Past versions (🔚 are Not maintained anymore, recommend to upgrade to latest stable version)
 							</Translate>
 						</h3>
 						<p>
