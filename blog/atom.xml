@@ -8,6 +8,20 @@
     <subtitle>Matryoshka Watchmen Blog</subtitle>
     <icon>https://imma-watchmen.com/img/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[v16.3 End of Life]]></title>
+        <id>v16.3-eof</id>
+        <link href="https://imma-watchmen.com/blog/v16.3-eof"/>
+        <updated>2023-04-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Watchmen V16.3 series, is stop to maintain, and will not fix bug in this version again.]]></summary>
+        <content type="html"><![CDATA[<p>Watchmen V16.3 series, is stop to maintain, and will not fix bug in this version again.</p><p>The latest version of 16.3 series is <code>16.3.25</code>, which can be found at,</p><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/64109946?tag=16.3.25" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/64110388?tag=16.3.25" target="_blank" rel="noopener noreferrer">Doll</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/64110603?tag=16.3.25" target="_blank" rel="noopener noreferrer">DQC</a></li></ul>]]></content>
+        <author>
+            <name>botlikes456</name>
+            <uri>https://github.com/botlikes456</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.3" term="v16.3"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[v16.5 Released]]></title>
         <id>v16.5-release</id>
         <link href="https://imma-watchmen.com/blog/v16.5-release"/>
