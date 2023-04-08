@@ -153,11 +153,18 @@ Settings of decimal digits are used in MySQL only for cast string value to decim
 | KAFKA_BOOTSTRAP_SERVER | str  | localhost:9092 |                 |                                       |
 | KAFKA_TOPICS           | str  | Empty string   |                 |                                       |
 
+## Collector
+| Key                                  | Type | Default Value  | Possible Values | For                                                                                                                                                      |
+|--------------------------------------|------|----------------|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| COLLECTOR_ON                         | bool | False          | True/False      | "COLLECTOR_ON" is the master switch of the collector module. To use any sub function of the collector module, this configuration must be turned on first.|
+| QUERY_BASED_CHANGE_DATA_CAPTURE      | bool | False          | True/False      | Enable the function that collecting CDC data based on the configuration.                                                                                 |
+| TASK_LISTENER_ON                     | bool | False          | True/False      | Enable asynchronous task consumption function and support data collection integration.                                                                   |
+
 ## S3 Collector
 
 | Key                                  | Type | Default Value  | Possible Values | For                                      |
 |--------------------------------------|------|----------------|-----------------|------------------------------------------|
-| S3_COLLECTOR_CONNECTOR               | bool | False          | True/False      | Enable trigger pipeline from S3          |
+| S3_COLLECTOR                         | bool | False          | True/False      | Enable trigger pipeline from S3          |
 | S3_COLLECTOR_ACCESS_KEY_ID           | str  | Empty string   |                 |                                          |
 | S3_COLLECTOR_SECRET_ACCESS_KEY       | str  | Empty string   |                 |                                          |
 | S3_COLLECTOR_BUCKET_NAME             | str  | Empty string   |                 |                                          |
