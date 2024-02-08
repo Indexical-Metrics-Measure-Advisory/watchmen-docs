@@ -2,11 +2,55 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://imma-watchmen.com/blog</id>
     <title>Matryoshka Watchmen Blog</title>
-    <updated>2023-04-07T00:00:00.000Z</updated>
+    <updated>2023-11-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://imma-watchmen.com/blog"/>
     <subtitle>Matryoshka Watchmen Blog</subtitle>
     <icon>https://imma-watchmen.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[v16.4 End of Life]]></title>
+        <id>v16.4-eof</id>
+        <link href="https://imma-watchmen.com/blog/v16.4-eof"/>
+        <updated>2023-11-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Watchmen V16.4 series, is stop to maintain, and will not fix bug in this version again.]]></summary>
+        <content type="html"><![CDATA[<p>Watchmen V16.4 series, is stop to maintain, and will not fix bug in this version again.</p><p>The latest version of 16.4 series is <code>16.4.10</code>, which can be found at,</p><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/83403320?tag=16.4.10" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/83403759?tag=16.4.10" target="_blank" rel="noopener noreferrer">Doll</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/83403951?tag=16.4.10" target="_blank" rel="noopener noreferrer">DQC</a></li></ul>]]></content>
+        <author>
+            <name>skywalkerX69</name>
+            <uri>https://github.com/skywalkerX69</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.4" term="v16.4"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v16.5 Released]]></title>
+        <id>v16.5-release</id>
+        <link href="https://imma-watchmen.com/blog/v16.5-release"/>
+        <updated>2023-11-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[V16.5.33 Released!]]></summary>
+        <content type="html"><![CDATA[<p>V16.5.33 Released!</p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-fixed">🔧 Fixed<a class="hash-link" href="#-fixed" title="Direct link to heading">​</a></h2><ul><li>fix: missing implementation of find_for_update_skip_locked in trino storage,</li><li>fix: missing November, mistakenly written as January in 'move_day_of_month' function.</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-images">📦 Images<a class="hash-link" href="#-images" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/151840083?tag=16.5.33" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/151840915?tag=16.5.33" target="_blank" rel="noopener noreferrer">Doll Mysql</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/151841130?tag=16.5.33" target="_blank" rel="noopener noreferrer">DQC Mysql</a></li></ul><p>Find other storage versions <a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages?repo_name=watchmen" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content>
+        <author>
+            <name>skywalkerX69</name>
+            <uri>https://github.com/skywalkerX69</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.5" term="v16.5"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v16.6 Released]]></title>
+        <id>v16.6-release</id>
+        <link href="https://imma-watchmen.com/blog/v16.6-release"/>
+        <updated>2023-11-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[V16.6.0 Released!]]></summary>
+        <content type="html"><![CDATA[<p>V16.6.0 Released!</p><hr><p>We are thrilled to announce the release of version 16.6 of watchmen.
+This latest release marks a significant milestone in our development journey, as it will serve as the primary maintenance version going forward.
+At the same time, the 16.5 series will only accept bug fixing.</p><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-enhancement">📜 Enhancement<a class="hash-link" href="#-enhancement" title="Direct link to heading">​</a></h2><ul><li>Support S3 as datasource for extractor,</li><li>Documentation is still on process, coming soon.</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-images">📦 Images<a class="hash-link" href="#-images" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/151841115?tag=16.6.0" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/151841675?tag=16.6.0" target="_blank" rel="noopener noreferrer">Doll Mysql</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/151841996?tag=16.6.0" target="_blank" rel="noopener noreferrer">DQC Mysql</a></li></ul><p>Find other storage versions <a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages?repo_name=watchmen" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content>
+        <author>
+            <name>skywalkerX69</name>
+            <uri>https://github.com/skywalkerX69</uri>
+        </author>
+        <category label="watchmen" term="watchmen"/>
+        <category label="v16.6" term="v16.6"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[v16.3 End of Life]]></title>
         <id>v16.3-eof</id>
@@ -27,7 +71,7 @@
         <link href="https://imma-watchmen.com/blog/v16.5-release"/>
         <updated>2023-04-07T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[V16.5 Released!]]></summary>
-        <content type="html"><![CDATA[<p>V16.5 Released!</p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-enhancement">📜 Enhancement<a class="hash-link" href="#-enhancement" title="Direct link to heading">​</a></h2><ul><li>Indicator Workbench Go-live!</li><li>Documentation is still on process, coming soon.</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-images">📦 Images<a class="hash-link" href="#-images" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/83421450?tag=16.5.0" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/83422062?tag=16.5.0" target="_blank" rel="noopener noreferrer">Doll Mysql</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/83422135?tag=16.5.0" target="_blank" rel="noopener noreferrer">DQC Mysql</a></li></ul><p>Find other storage versions <a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages?repo_name=watchmen" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content>
+        <content type="html"><![CDATA[<p>V16.5.33 Released!</p><hr><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-fixed">🔧 Fixed<a class="hash-link" href="#-fixed" title="Direct link to heading">​</a></h2><ul><li>fix: missing implementation of find_for_update_skip_locked in trino storage,</li><li>fix: missing November, mistakenly written as January in 'move_day_of_month' function.</li></ul><h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-images">📦 Images<a class="hash-link" href="#-images" title="Direct link to heading">​</a></h2><ul><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-web-client/151840083?tag=16.5.33" target="_blank" rel="noopener noreferrer">Web client</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-doll-mysql/151840915?tag=16.5.33" target="_blank" rel="noopener noreferrer">Doll Mysql</a></li><li><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen/pkgs/container/watchmen-matryoshka-dqc-mysql/151841130?tag=16.5.33" target="_blank" rel="noopener noreferrer">DQC Mysql</a></li></ul><p>Find other storage versions <a href="https://github.com/orgs/Indexical-Metrics-Measure-Advisory/packages?repo_name=watchmen" target="_blank" rel="noopener noreferrer">here</a>.</p>]]></content>
         <author>
             <name>botlikes456</name>
             <uri>https://github.com/botlikes456</uri>
