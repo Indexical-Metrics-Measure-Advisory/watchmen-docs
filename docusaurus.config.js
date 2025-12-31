@@ -13,7 +13,7 @@ const config = {
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	customFields: {
-		quickStartUrl: process.env.QUICK_START_URL || '/docs/getting-started/first-metric',
+		quickStartUrl: process.env.QUICK_START_URL || '/docs/18.0.0/getting-started/installation-quick-start',
 	},
 	markdown: {
 		mermaid: true,
