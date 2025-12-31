@@ -48,7 +48,7 @@ const config = {
 							[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
 						],
 						includeCurrentVersion: true,
-						lastVersion: '16.5-prerelease',
+						lastVersion: '18.0.0',
 						versions: {
 							...(() => {
 								return Object.fromEntries(
@@ -63,8 +63,14 @@ const config = {
 									])
 								);
 							})(),
+							'18.0.0': {
+								label: 'Current 18.0.0 🎯',
+								path: '18.0.0',
+								badge: true,
+								banner: 'none'
+							},
 							'16.5-prerelease': {
-								label: 'Current 16.5-prerelease 🎯',
+								label: '16.5-prerelease',
 								path: '16.5-prerelease',
 								badge: true,
 								banner: 'none'
