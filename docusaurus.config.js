@@ -12,6 +12,9 @@ const config = {
 	url: 'https://imma-watchmen.com',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
+	customFields: {
+		quickStartUrl: process.env.QUICK_START_URL || '/docs/getting-started/first-metric',
+	},
 	markdown: {
 		mermaid: true,
 		hooks: {
