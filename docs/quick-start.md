@@ -47,7 +47,7 @@ Let's discover **_Watchmen_** in less than 15 minutes.
     docker compose -f docker-compose-mysql.yml up
     ```
 
-- Open browser on <http://localhost:3030>.
+- Open browser on [http://localhost:3030](http://localhost:3030).
 
 ### Login with pre-built users
 
@@ -60,6 +60,7 @@ Let's discover **_Watchmen_** in less than 15 minutes.
 - Login with super admin user,
 	- create datasource,
 - Login with admin user,
+  - go to ingestion ui and create ingestion configuration,
 	- create topics and pipelines,
 	- test pipelines with simulator,
 	- Create pat and import test data,

@@ -1,22 +1,31 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes: prismThemes} = require('prism-react-renderer');
 
 const VersionsArchived = require('./versions-archived.json');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'Matryoshka Watchmen',
+		title: 'Matryoshka Watchmen',
 	tagline: 'Watchmen Platform is a low code data platform for data pipeline, meta management, analysis, and quality management.',
 	url: 'https://imma-watchmen.com',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
-	onBrokenMarkdownLinks: 'warn',
+	markdown: {
+		mermaid: true,
+		hooks: {
+			onBrokenMarkdownLinks: 'warn'
+		}
+	},
 	favicon: 'img/favicon.ico',
 	organizationName: 'Matryoshka',
 	projectName: 'Watchmen',
+	stylesheets: [
+		{
+			href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap'
+		}
+	],
 
 	// i18n: {
 	// 	defaultLocale: 'en',
@@ -27,32 +36,38 @@ const config = {
 		['classic',
 			/** @type {import('@docusaurus/preset-classic').Options} */
 			({
-				docs: {
-					sidebarPath: require.resolve('./sidebars.js'),
-					editUrl: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/',
-					showLastUpdateAuthor: true,
-					showLastUpdateTime: true,
-					remarkPlugins: [
-						[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
-					],
-					includeCurrentVersion: false,
-					lastVersion: '16.5-prerelease',
-					versions: {
-						...(() => {
-							return Object.keys(VersionsArchived).reduce((map, version) => {
-								map[version] = {
-									label: version + ' 🔚',
-									path: version
-								}
-								return map;
-							}, {})
-						})(),
-						'16.5-prerelease': {
-							label: 'Current 16.5-prerelease 🎯',
-							path: '16.5-prerelease'
+					docs: {
+						sidebarPath: require.resolve('./sidebars.js'),
+						editUrl: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/',
+						showLastUpdateAuthor: true,
+						showLastUpdateTime: true,
+						remarkPlugins: [
+							[require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
+						],
+						includeCurrentVersion: true,
+						lastVersion: '16.5-prerelease',
+						versions: {
+							...(() => {
+								return Object.fromEntries(
+									Object.keys(VersionsArchived).map(version => [
+										version,
+										{
+											label: version + ' 🔚',
+											path: version,
+											banner: 'unmaintained',
+											badge: true
+										}
+									])
+								);
+							})(),
+							'16.5-prerelease': {
+								label: 'Current 16.5-prerelease 🎯',
+								path: '16.5-prerelease',
+								badge: true,
+								banner: 'none'
+							}
 						}
-					}
-				},
+					},
 				blog: {
 					showReadingTime: true, // Please change this to your repo.
 					editUrl: 'https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/',
@@ -103,7 +118,7 @@ const config = {
 			docs: {sidebar: {hideable: true}},
 			tableOfContents: {
 				minHeadingLevel: 2,
-				maxHeadingLevel: 4
+				maxHeadingLevel: 5
 			},
 			footer: {
 				style: 'dark',
@@ -144,9 +159,34 @@ const config = {
 				copyright: `Copyright © ${new Date().getFullYear()} Matryoshka Watchmen. Built with Docusaurus.`
 			},
 			prism: {
-				theme: lightCodeTheme,
-				darkTheme: darkCodeTheme,
-				additionalLanguages: ['csv', 'json5']
+				theme: prismThemes.github,
+				darkTheme: prismThemes.dracula,
+				additionalLanguages: ['bash', 'csv', 'diff', 'ini', 'java', 'json', 'json5', 'python', 'sql', 'toml', 'typescript', 'yaml'],
+				magicComments: [
+					{
+						className: 'code-block-highlight-line',
+						line: 'highlight-next-line'
+					},
+					{
+						className: 'code-block-highlight-line',
+						block: {start: 'highlight-start', end: 'highlight-end'}
+					},
+					{
+						className: 'code-block-error-line',
+						line: 'error'
+					},
+					{
+						className: 'code-block-warning-line',
+						line: 'warn'
+					},
+					{
+						className: 'code-block-success-line',
+						line: 'success'
+					}
+				]
+			},
+			mermaid: {
+				theme: {light: 'neutral', dark: 'forest'}
 			},
 			zoom: {
 				selector: '.markdown :not(em) > img',
@@ -159,21 +199,15 @@ const config = {
 				}
 			}
 		}),
-	themes: [
-		// ... Your other themes.
-		[
-			require.resolve("@easyops-cn/docusaurus-search-local"),
-			{
-				// ... Your options.
-				// `hashed` is recommended as long-term-cache of index file is possible.
-				hashed: true
-				// For Docs using Chinese, The `language` is recommended to set to:
-				// ```
-				// language: ["en", "zh"],
-				// ```
-			}
+		themes: [
+			[
+				require.resolve("@easyops-cn/docusaurus-search-local"),
+				{
+					hashed: true
+				}
+			],
+			'@docusaurus/theme-mermaid'
 		]
-	]
 };
 
 module.exports = config;

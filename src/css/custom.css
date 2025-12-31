@@ -6,13 +6,22 @@
 
 /* You can override the default Infima variables here. */
 :root {
-    --ifm-color-primary: #2554a0; /** #3578e5; */
+    --ifm-color-primary: #2554a0;
     --ifm-color-primary-dark: #234f95;
     --ifm-color-primary-darker: #1f4684;
     --ifm-color-primary-darkest: #1b3d74;
     --ifm-color-primary-light: #2b60b6;
     --ifm-color-primary-lighter: #2f69c6;
     --ifm-color-primary-lightest: #3973d0;
+    --ifm-link-color: #1e3a8a;
+    --ifm-font-size-base: 16px;
+    --ifm-line-height-base: 1.7;
+    --ifm-h1-font-size: 2.25rem;
+    --ifm-h2-font-size: 1.75rem;
+    --ifm-h3-font-size: 1.5rem;
+    --ifm-h4-font-size: 1.25rem;
+    --ifm-h5-font-size: 1.125rem;
+    --ifm-h6-font-size: 1rem;
     --ifm-code-font-size: 95%;
     --ifm-pre-padding: 1rem;
 }
@@ -66,6 +75,7 @@ pre[class*="language-"].line-numbers > code {
 
 .prism-code {
     counter-reset: line-number;
+    line-height: 1.6;
 }
 
 .prism-code .token-line::marker {
@@ -79,4 +89,135 @@ pre[class*="language-"].line-numbers > code {
     padding-left: var(--ifm-pre-padding);
     margin-left: calc(var(--ifm-pre-padding) * 2.5);
     border-left: 1px solid var(--ifm-color-gray-400);
+}
+
+.code-block-title,
+.theme-code-block .codeBlockTitle {
+    background: rgba(37, 84, 160, 0.08);
+    color: var(--ifm-font-color-base);
+    padding: 0.5rem 0.75rem;
+    border-top-left-radius: var(--ifm-pre-border-radius, 6px);
+    border-top-right-radius: var(--ifm-pre-border-radius, 6px);
+}
+
+.code-block-highlight-line {
+    background-color: rgba(37, 84, 160, 0.12);
+    border-left: 3px solid var(--ifm-color-primary);
+}
+
+.code-block-error-line {
+    background-color: rgba(220, 38, 38, 0.12);
+    border-left: 3px solid #dc2626;
+}
+
+.code-block-warning-line {
+    background-color: rgba(245, 158, 11, 0.12);
+    border-left: 3px solid #f59e0b;
+}
+
+.code-block-success-line {
+    background-color: rgba(16, 185, 129, 0.12);
+    border-left: 3px solid #10b981;
+}
+
+.table-of-contents {
+    position: sticky;
+    top: 6rem;
+}
+
+.markdown h2 .hash-link,
+.markdown h3 .hash-link,
+.markdown h4 .hash-link,
+.markdown h5 .hash-link,
+.markdown h6 .hash-link {
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.markdown h2:hover .hash-link,
+.markdown h3:hover .hash-link,
+.markdown h4:hover .hash-link,
+.markdown h5:hover .hash-link,
+.markdown h6:hover .hash-link {
+    opacity: 1;
+}
+
+.markdown img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.25rem auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 8px;
+}
+
+.markdown figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.markdown figcaption {
+    font-size: .875rem;
+    color: var(--ifm-color-emphasis-700);
+    margin-top: .5rem;
+}
+
+.markdown table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+.markdown table th,
+.markdown table td {
+    border: 1px solid var(--ifm-table-border-color);
+    padding: .5rem .75rem;
+}
+
+.markdown table thead th {
+    background: rgba(37, 84, 160, 0.08);
+}
+
+.markdown table tbody tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 996px) {
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+kbd {
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 0 .35rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: .875rem;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 2px;
 }
