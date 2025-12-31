@@ -10,7 +10,7 @@ sidebar_position: 30
 
 Run docker-compose file for MySQL or MongoDB
 
-Visit [**Quick Start**](/docs/020-getting-started/150-first-metric) for more details.
+Visit [**Quick Start**](/tutorial/tutorial-index) for more details.
 
 ## Production Environment
 
