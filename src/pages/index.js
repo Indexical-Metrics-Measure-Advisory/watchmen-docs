@@ -15,7 +15,7 @@ const HomepageHeader = () => {
 				<h1 className={clsx("hero__title", styles.heroTitle)}>{siteConfig.title}</h1>
 				<p className="hero__subtitle">{siteConfig.tagline}</p>
 				<div className={styles.buttons}>
-					<Link className="button button--secondary button--lg" to="/tutorial/tutorial-index">
+					<Link className="button button--secondary button--lg" to="/docs/020-getting-started/150-first-metric">
 						<Translate id="homepage.tutorial-button">
 							Watchmen Tutorial - 15min ⏱
 						</Translate>️
