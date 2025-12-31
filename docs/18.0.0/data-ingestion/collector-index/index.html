@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-18.0.0 docs-doc-page docs-doc-id-data-ingestion/collector-index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Watchmen Ingestion | Matryoshka Watchmen</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://imma-watchmen.com/docs/18.0.0/data-ingestion/collector-index"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="matryoshka, watchmen, data lake, lakehouse, pipeline, analysis, warehouse"><meta data-rh="true" name="docusaurus_version" content="18.0.0"><meta data-rh="true" name="docusaurus_tag" content="docs-default-18.0.0"><meta data-rh="true" name="docsearch:version" content="18.0.0"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-18.0.0"><meta data-rh="true" property="og:title" content="Watchmen Ingestion | Matryoshka Watchmen"><meta data-rh="true" name="description" content="UI Overview"><meta data-rh="true" property="og:description" content="UI Overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://imma-watchmen.com/docs/18.0.0/data-ingestion/collector-index"><link data-rh="true" rel="alternate" href="https://imma-watchmen.com/docs/18.0.0/data-ingestion/collector-index" hreflang="en"><link data-rh="true" rel="alternate" href="https://imma-watchmen.com/docs/18.0.0/data-ingestion/collector-index" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Watchmen Ingestion","item":"https://imma-watchmen.com/docs/18.0.0/data-ingestion/collector-index"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Matryoshka Watchmen RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Matryoshka Watchmen Atom Feed">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap"><link rel="stylesheet" href="/assets/css/styles.59897168.css">
+<script src="/assets/js/runtime~main.07c15f47.js" defer="defer"></script>
+<script src="/assets/js/main.58e95c50.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Matryoshka" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Matryoshka" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Matryoshka Watchmen</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/18.0.0/docs-index">Docs</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/18.0.0/data-ingestion/collector-index">18.0.0</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/next/data-ingestion/collector-index">Next</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/docs/18.0.0/data-ingestion/collector-index">18.0.0</a></li><li><a class="dropdown__link" href="/docs/16.5-prerelease/docs-index">Current 16.5-prerelease 🎯</a></li><li><a class="dropdown__link" href="/docs/16.4/docs-index">16.4</a></li><li><a class="dropdown__link" href="/docs/16.3/docs-index">16.3 🔚</a></li><li><a class="dropdown__link" href="/docs/16.2/docs-index">16.2 🔚</a></li><li><a class="dropdown__link" href="/docs/16.1/docs-index">16.1 🔚</a></li><li><a class="dropdown__link" href="/docs/16.0/docs-index">16.0 🔚</a></li><li><a class="dropdown__link" href="/docs/15.2.14/docs-index">15.2.14 🔚</a></li><li class=""><hr class="dropdown-separator"></li><li><a class="dropdown__link" href="/versions">All versions</a></li></ul></div><a href="https://github.com/Indexical-Metrics-Measure-Advisory" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a tabindex="-1" class="sidebarLogo_isFc" href="/"><img src="/img/logo.svg" alt="Matryoshka" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="Matryoshka" class="themedComponent_mlkZ themedComponent--dark_xIcU"><b>Matryoshka Watchmen</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/18.0.0/why"><span title="Why Watchmen" class="linkLabel_WmDU">Why Watchmen</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/introduction/what-is-watchmen"><span title="Introduction" class="categoryLinkLabel_W154">Introduction</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/18.0.0/docs-index"><span title="Roles &amp; Usage" class="linkLabel_WmDU">Roles &amp; Usage</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/getting-started/installation-quick-start"><span title="Getting Started" class="categoryLinkLabel_W154">Getting Started</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/18.0.0/data-ingestion/collector-index"><span title="Data Ingestion" class="categoryLinkLabel_W154">Data Ingestion</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/18.0.0/data-ingestion/collector-index"><span title="Watchmen Ingestion" class="linkLabel_WmDU">Watchmen Ingestion</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/18.0.0/data-ingestion/data-ingestion"><span title="Data Ingestion Strategy" class="linkLabel_WmDU">Data Ingestion Strategy</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/18.0.0/data-ingestion/configuration-for-change-data-capture/model-config"><span title="Configuration For CDC" class="categoryLinkLabel_W154">Configuration For CDC</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/18.0.0/data-ingestion/How to Reduce Recognize Complex in Data Ingestion"><span title="How to Reduce Recognize Complex in Data Ingestion" class="linkLabel_WmDU">How to Reduce Recognize Complex in Data Ingestion</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/data-modeling/admin-wb-index"><span title="Data Modeling &amp; Transformation" class="categoryLinkLabel_W154">Data Modeling &amp; Transformation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/data-analysis/console-wb-index"><span title="Data Analysis &amp; Visualization" class="categoryLinkLabel_W154">Data Analysis &amp; Visualization</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/data-quality/dqc-index"><span title="Data Quality" class="categoryLinkLabel_W154">Data Quality</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/kernel-architecture/doll-index"><span title="Watchmen Core" class="categoryLinkLabel_W154">Watchmen Core</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/cli-tools/cli/cli-index"><span title="cli-tools" class="categoryLinkLabel_W154">cli-tools</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/installation/config"><span title="Installation" class="categoryLinkLabel_W154">Installation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/appendix/license"><span title="Appendix" class="categoryLinkLabel_W154">Appendix</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/18.0.0/escosystem/databricks"><span title="escosystem" class="categoryLinkLabel_W154">escosystem</span></a></div></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role="alert"><div>This is unreleased documentation for <!-- -->Matryoshka Watchmen<!-- --> <b>18.0.0</b> version.</div><div class="margin-top--md">For up-to-date documentation, see the <b><a href="/docs/16.5-prerelease/docs-index">latest version</a></b> (<!-- -->Current 16.5-prerelease 🎯<!-- -->).</div></div><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Data Ingestion</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Watchmen Ingestion</span></li></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 18.0.0</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Collector</h1></header>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="ui-overview">UI Overview<a href="#ui-overview" class="hash-link" aria-label="Direct link to UI Overview" title="Direct link to UI Overview" translate="no">​</a></h2>
+<ul>
+<li class="">Left navigation: <code>Dashboard</code>, <code>Modules</code>, <code>Models</code>, <code>Tables</code>, <code>Configuration</code>, <code>Monitor</code>.</li>
+<li class="">Modules page uses card view: each card shows <code>ID</code>, <code>Priority</code> badge, <code>Version</code> badge, <code>Last modified</code>, and a quick edit button.</li>
+<li class="">Page actions: <code>Execution Flow</code> visualizes the ingestion DAG; <code>Create Module</code> adds a new module.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="modules">Modules<a href="#modules" class="hash-link" aria-label="Direct link to Modules" title="Direct link to Modules" translate="no">​</a></h2>
+<ul>
+<li class="">Manage system modules as independent ingestion domains.</li>
+<li class="">Card view supports quick inspection and inline edit of module metadata.</li>
+<li class="">Priority and version badges help sort and track release readiness.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="models">Models<a href="#models" class="hash-link" aria-label="Direct link to Models" title="Direct link to Models" translate="no">​</a></h2>
+<ul>
+<li class="">Define ingestion models per module (entities, mappings, business keys).</li>
+<li class="">Organize source‑to‑domain mappings used by CDC and file/queue ingestion.</li>
+<li class="">Create, edit and validate models before wiring them to tables.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="tables">Tables<a href="#tables" class="hash-link" aria-label="Direct link to Tables" title="Direct link to Tables" translate="no">​</a></h2>
+<ul>
+<li class="">Configure table‑level extraction and CDC (primary keys, audit columns, triggers).</li>
+<li class="">Map tables to models, set batch size and concurrency, and enable/disable per table.</li>
+<li class="">Quick edit supports fast adjustments during rollout.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="configuration">Configuration<a href="#configuration" class="hash-link" aria-label="Direct link to Configuration" title="Direct link to Configuration" translate="no">​</a></h2>
+<ul>
+<li class="">Global runtime settings for connectors, credentials, checkpoints and retention.</li>
+<li class="">Control concurrency, backoff/retry, and resource limits per module.</li>
+<li class="">Toggle feature flags for preview/production modes.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="monitor">Monitor<a href="#monitor" class="hash-link" aria-label="Direct link to Monitor" title="Direct link to Monitor" translate="no">​</a></h2>
+<ul>
+<li class="">Observe execution flow and runtime status: running jobs, errors and throughput.</li>
+<li class="">View logs, backlog, and last modified timestamps to track freshness.</li>
+<li class="">Drill into modules and tables to diagnose issues rapidly.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="dashboard">Dashboard<a href="#dashboard" class="hash-link" aria-label="Direct link to Dashboard" title="Direct link to Dashboard" translate="no">​</a></h2>
+<ul>
+<li class="">High‑level counters and recent activity across modules.</li>
+<li class="">Shortcuts to create modules and open the execution flow.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="capabilities">Capabilities<a href="#capabilities" class="hash-link" aria-label="Direct link to Capabilities" title="Direct link to Capabilities" translate="no">​</a></h2>
+<ul>
+<li class="">Change Data Capture from source databases.</li>
+<li class="">File/S3 ingestion for cloud object storage.</li>
+<li class="">Queue‑based ingestion for event streams.</li>
+</ul>
+<h1>Watchmen Collector Technical Overview</h1>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary" translate="no">​</a></h2>
+<ul>
+<li class="">watchmen-collector-kernel: core engine connecting external sources, executing extraction/CDC, normalizing events, delivery and task orchestration.</li>
+<li class="">watchmen-collector-surface: outer service and routing interface providing configuration, triggers, status query and monitoring; platform integration entry.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="architecture">Architecture<a href="#architecture" class="hash-link" aria-label="Direct link to Architecture" title="Direct link to Architecture" translate="no">​</a></h2>
+<ul>
+<li class="">Layered design: Surface (service/routing/scheduling) invokes Kernel (connectors/CDC/transform/delivery) for low coupling and extensibility.</li>
+<li class="">Event‑driven: extractions and changes become unified events, transformed and delivered to targets (storage, queues, downstream APIs).</li>
+<li class="">Task‑centric: all collection actions are organized as tasks with triggering, scheduling, retries and state management.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="roles--responsibilities">Roles &amp; Responsibilities<a href="#roles--responsibilities" class="hash-link" aria-label="Direct link to Roles &amp; Responsibilities" title="Direct link to Roles &amp; Responsibilities" translate="no">​</a></h2>
+<ul>
+<li class="">Surface<!-- -->
+<ul>
+<li class="">Exposes REST/HTTP routes: configuration, tasks, triggers, monitoring.</li>
+<li class="">Unified scheduler: translates triggers into executable tasks and hands them to Kernel.</li>
+<li class="">Runtime settings: control concurrency, retry and feature toggles.</li>
+</ul>
+</li>
+<li class="">Kernel<!-- -->
+<ul>
+<li class="">Abstract source protocols: pluggable connectors (DB, object storage, messaging, etc.).</li>
+<li class="">CDC pipeline: incremental change capture producing standardized events.</li>
+<li class="">Transform chain: mapping/validation/cleaning to align with target schema.</li>
+<li class="">Delivery &amp; persistence: write to targets and persist task/event states.</li>
+<li class="">Reliability controls: locks, idempotency, retries and timeout cleanup.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="core-flow">Core Flow<a href="#core-flow" class="hash-link" aria-label="Direct link to Core Flow" title="Direct link to Core Flow" translate="no">​</a></h2>
+<ul>
+<li class="">Register configuration: sources, collection units (tables/paths/topics) and scheduling policies.</li>
+<li class="">Generate task: manual/cron/event trigger → Surface scheduler → Kernel execution.</li>
+<li class="">Connect &amp; extract: connector establishes link; full/incremental extraction; CDC captures changes.</li>
+<li class="">Normalize: convert raw records to unified event with mappings and validations.</li>
+<li class="">Deliver &amp; record: write to target (DB/object storage/queue/API) and record processing states.</li>
+<li class="">Monitor &amp; feedback: report metrics, errors and alerts for ops and platform coordination.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="module-design-kernel">Module Design (Kernel)<a href="#module-design-kernel" class="hash-link" aria-label="Direct link to Module Design (Kernel)" title="Direct link to Module Design (Kernel)" translate="no">​</a></h2>
+<ul>
+<li class="">Connector<!-- -->
+<ul>
+<li class="">Encapsulate protocols, auth and extraction strategy.</li>
+<li class="">Unified pull interface hides differences.</li>
+</ul>
+</li>
+<li class="">CDC<!-- -->
+<ul>
+<li class="">Support log/subscription/polling strategies.</li>
+<li class="">Convert changes into unified messages.</li>
+</ul>
+</li>
+<li class="">Transform<!-- -->
+<ul>
+<li class="">Field mapping, type correction, filtering and aggregation.</li>
+<li class="">Ensure output aligns with target schema.</li>
+</ul>
+</li>
+<li class="">Delivery<!-- -->
+<ul>
+<li class="">Write to storage/queues/downstream APIs.</li>
+<li class="">Provide idempotent keys and retry policy.</li>
+</ul>
+</li>
+<li class="">State &amp; Storage<!-- -->
+<ul>
+<li class="">Persist task/event metadata, progress and results.</li>
+<li class="">Pluggable backends (relational/key‑value/object storage).</li>
+</ul>
+</li>
+<li class="">Reliability<!-- -->
+<ul>
+<li class="">Concurrency locks to avoid duplicate parallel runs.</li>
+<li class="">Idempotency to process duplicates safely.</li>
+<li class="">Exponential backoff retries.</li>
+<li class="">Timeout cleanup for stuck tasks.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="module-design-surface">Module Design (Surface)<a href="#module-design-surface" class="hash-link" aria-label="Direct link to Module Design (Surface)" title="Direct link to Module Design (Surface)" translate="no">​</a></h2>
+<ul>
+<li class="">Config Router: register/change sources and collection units; validate and distribute parameters.</li>
+<li class="">Task Router: create/query/cancel/retry tasks; expose status and history.</li>
+<li class="">Trigger Router: immediate/cron/event triggers; multi‑tenant/project isolation.</li>
+<li class="">Scheduler: map triggers to executable tasks; control priority and concurrency.</li>
+<li class="">Settings: environment/auth/concurrency/retry/rate limit.</li>
+<li class="">Main/Surface: register routes, load config and start service.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="data-flow--interaction">Data Flow &amp; Interaction<a href="#data-flow--interaction" class="hash-link" aria-label="Direct link to Data Flow &amp; Interaction" title="Direct link to Data Flow &amp; Interaction" translate="no">​</a></h2>
+<ul>
+<li class="">Input: source connection info, collection units, scheduling policies and trigger commands.</li>
+<li class="">Process: extract → normalize → transform → deliver, with state/metrics recorded along the way.</li>
+<li class="">Output: targets (storage/queue/API), task/event records and monitoring data.</li>
+<li class="">Feedback: query status/metrics; callbacks and alerts.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="reliability--consistency">Reliability &amp; Consistency<a href="#reliability--consistency" class="hash-link" aria-label="Direct link to Reliability &amp; Consistency" title="Direct link to Reliability &amp; Consistency" translate="no">​</a></h2>
+<ul>
+<li class="">Idempotency: unique event keys and idempotent delivery avoid duplicates.</li>
+<li class="">Delivery semantics: at‑least‑once by default; with idempotency approximates exactly‑once.</li>
+<li class="">Retry &amp; compensation: failure retries; optional local rollback/compensation tasks.</li>
+<li class="">Timeout &amp; reclamation: detect stuck tasks and reclaim resources.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="extensibility">Extensibility<a href="#extensibility" class="hash-link" aria-label="Direct link to Extensibility" title="Direct link to Extensibility" translate="no">​</a></h2>
+<ul>
+<li class="">New sources: implement new connectors under a unified interface; register via Surface.</li>
+<li class="">New CDC strategies: extend change capture (logs/subscriptions/triggers).</li>
+<li class="">Transform strategies: add mappers/validators/aggregators to match target schema.</li>
+<li class="">Delivery targets: extend backends (DB/object storage/queue/HTTP) as pluggable options.</li>
+<li class="">Scheduling policies: priority queues, rate limit, cross‑task dependency and multi‑tenant isolation.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="configuration--deployment">Configuration &amp; Deployment<a href="#configuration--deployment" class="hash-link" aria-label="Direct link to Configuration &amp; Deployment" title="Direct link to Configuration &amp; Deployment" translate="no">​</a></h2>
+<ul>
+<li class="">Central settings managed at Surface; support env injection and multi‑env isolation.</li>
+<li class="">Deployment modes:<!-- -->
+<ul>
+<li class="">Monolith: lightweight integration.</li>
+<li class="">Worker/Sidecar: horizontal scaling and elasticity.</li>
+<li class="">Platform‑integrated: collaborate with Meta/Pipeline for end‑to‑end chains.</li>
+<li class="">Serverless/Lambda: run tasks/functions on AWS Lambda/Azure Functions/GCP Cloud Functions; event/cron triggers; scale‑to‑zero; ephemeral execution with delivery to targets.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="security--isolation">Security &amp; Isolation<a href="#security--isolation" class="hash-link" aria-label="Direct link to Security &amp; Isolation" title="Direct link to Security &amp; Isolation" translate="no">​</a></h2>
+<ul>
+<li class="">AuthZ: token/OAuth at routes; tenant/project permissions.</li>
+<li class="">Least privilege: connectors follow minimal permissions; secrets via env/keys.</li>
+<li class="">Audit &amp; trace: task/event operation logs for audit and troubleshooting.</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen-docs/tree/main/versioned_docs/version-18.0.0/030-data-ingestion/001-collector-index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2025-12-31T14:20:06.000Z" itemprop="dateModified">Dec 31, 2025</time></b> by <b>luke0623</b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/18.0.0/getting-started/first-metric"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Build Your First Metric</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/18.0.0/data-ingestion/data-ingestion"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Data Ingestion Strategy</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ui-overview" class="table-of-contents__link toc-highlight">UI Overview</a></li><li><a href="#modules" class="table-of-contents__link toc-highlight">Modules</a></li><li><a href="#models" class="table-of-contents__link toc-highlight">Models</a></li><li><a href="#tables" class="table-of-contents__link toc-highlight">Tables</a></li><li><a href="#configuration" class="table-of-contents__link toc-highlight">Configuration</a></li><li><a href="#monitor" class="table-of-contents__link toc-highlight">Monitor</a></li><li><a href="#dashboard" class="table-of-contents__link toc-highlight">Dashboard</a></li><li><a href="#capabilities" class="table-of-contents__link toc-highlight">Capabilities</a></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a></li><li><a href="#architecture" class="table-of-contents__link toc-highlight">Architecture</a></li><li><a href="#roles--responsibilities" class="table-of-contents__link toc-highlight">Roles &amp; Responsibilities</a></li><li><a href="#core-flow" class="table-of-contents__link toc-highlight">Core Flow</a></li><li><a href="#module-design-kernel" class="table-of-contents__link toc-highlight">Module Design (Kernel)</a></li><li><a href="#module-design-surface" class="table-of-contents__link toc-highlight">Module Design (Surface)</a></li><li><a href="#data-flow--interaction" class="table-of-contents__link toc-highlight">Data Flow &amp; Interaction</a></li><li><a href="#reliability--consistency" class="table-of-contents__link toc-highlight">Reliability &amp; Consistency</a></li><li><a href="#extensibility" class="table-of-contents__link toc-highlight">Extensibility</a></li><li><a href="#configuration--deployment" class="table-of-contents__link toc-highlight">Configuration &amp; Deployment</a></li><li><a href="#security--isolation" class="table-of-contents__link toc-highlight">Security &amp; Isolation</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">GitHub</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/Indexical-Metrics-Measure-Advisory/watchmen" target="_blank" rel="noopener noreferrer" class="footer__link-item">Doll &amp; DQC<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Matryoshka Watchmen. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

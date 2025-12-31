@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwatchmen_docs=self.webpackChunkwatchmen_docs||[]).push([[9346],{38710:a=>{a.exports=JSON.parse('{"label":"matryoshka","permalink":"/blog/tags/matryoshka","allTagsPath":"/blog/tags","count":1}')}}]);
