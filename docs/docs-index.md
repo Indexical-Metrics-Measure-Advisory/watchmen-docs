@@ -9,40 +9,39 @@ sidebar_position: 2
 ### Business User
 - Focus: manage connected spaces, build subjects/datasets, create reports and dashboards, query and analyze data.
 - Entry points:
-  - Home: see [Home](./020-web-client/020-console/010-home)
-  - Connected Space: see [Connected Space](./020-web-client/020-console/020-connected-space)
-  - Subject: see [Subject](./020-web-client/020-console/030-subject)
-  - Report: see [Report](./020-web-client/020-console/040-report)
-  - Dashboard: see [Dashboard](./020-web-client/020-console/050-dashboard)
+  - Home: see [Home](./data-analysis/console-home)
+  - Connected Space: see [Connected Space](./data-analysis/console-connected-space)
+  - Subject: see [Subject](./data-analysis/console-subject)
+  - Report: see [Report](./data-analysis/console-report)
+  - Dashboard: see [Dashboard](./data-analysis/dashboard)
 
 ### Data Engineer
 - Focus: data modeling, enumerations & topics management, pipeline orchestration, external writers & integrations, simulation & runtime monitoring.
 - Entry points:
-  - Data Zone / Data Source: see [Data Zone](./020-web-client/010-admin/010-data-zone) and [Data Source](./020-web-client/010-admin/020-data-source)
-  - Topic / Enumeration: see [Topic](./020-web-client/010-admin/080-topic) and [Enumeration](./020-web-client/010-admin/070-enumeration)
-  - Pipeline: see [Pipeline](./020-web-client/010-admin/090-pipeline)
-  - External Writer: see [External Writer](./020-web-client/010-admin/030-external-writer)
-  - Simulator: see [Simulator](./020-web-client/010-admin/100-simulator)
-  - Monitor Logs / Toolbox: see [Monitor Logs](./020-web-client/010-admin/120-monitor-logs) and [Toolbox](./020-web-client/010-admin/130-toolbox)
+  - Data Zone / Data Source: see [Data Zone](./data-modeling/data-zone) and [Data Source](./data-modeling/data-source)
+  - Topic / Enumeration: see [Topic](./data-modeling/topic) and [Enumeration](./data-modeling/enumeration)
+  - Pipeline: see [Pipeline](./data-modeling/pipeline)
+  - External Writer: see [External Writer](./data-modeling/external-writer)
+  - Simulator: see [Simulator](./data-modeling/simulator)
+  - Monitor Logs / Toolbox: see [Monitor Logs](./data-modeling/monitor-logs) and [Toolbox](./data-modeling/toolbox)
 
 ### DS/ML Engineer
 - Focus: data quality monitoring, dataset preparation & analysis, visualization & insights.
 - Entry points:
-  - DQC: see [Run Statistics](./020-web-client/030-dqc/010-run-statistics), [Monitor Rules](./020-web-client/030-dqc/020-monitor-rules), [Consanguinity](./020-web-client/030-dqc/030-consanguinity)
-  - Console: see [Subject](./020-web-client/020-console/030-subject) and [Report](./020-web-client/020-console/040-report)
+  - DQC: see [Run Statistics](./data-quality/run-statistics), [Monitor Rules](./data-quality/monitor-rules), [Consanguinity](./data-quality/consanguinity)  
+  - Console: see [Subject](./data-analysis/console-subject) and [Report](./data-analysis/console-report)
 
 ### Admin / DevOps
 - Focus: platform installation & configuration, versioning & permissions, operations & resource observability.
 - Entry points:
-  - Installation & Config: see [Installation](./060-installation/010-config) and [Web Client Installation](./020-web-client/002-installation)
-  - Admin Workbench: see [Admin Workbench](./020-web-client/010-admin/001-workbench-index)
+  - Installation & Config: see [Install](./getting-started/install) and [Config](./installation/config)
+  - Admin Workbench: see [Admin Workbench](./data-modeling/console-workbench-index)
 
 ---
 
 ### Quick Navigation
-- Overview & Key Features: see [What is Watchmen](./05-overview/what-is-watchmen) and [Key Features](./05-overview/key-features)
-- Console (Business Analysis): see [Console Index](./020-web-client/020-console/001-workbench-index)
-- Admin (Data Engineering): see [Admin Index](./020-web-client/010-admin/001-workbench-index)
-- Data Quality Center: see [DQC Index](./020-web-client/030-dqc/001-workbench-index)
-
+- Overview & Key Features: see [What is Watchmen](./introduction/what-is-watchmen) and [Key Features](./introduction/key-features)
+- Console (Business Analysis): see [Console Index](./data-analysis/console-wb-index)
+- Admin (Data Engineering): see [Admin Index](./data-modeling/admin-wb-index)
+- Data Quality Center: see [DQC Index](./data-quality/dqc-wb-index)
 
