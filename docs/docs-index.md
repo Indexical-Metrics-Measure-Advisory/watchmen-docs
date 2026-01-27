@@ -35,7 +35,7 @@ sidebar_position: 2
 - Focus: platform installation & configuration, versioning & permissions, operations & resource observability.
 - Entry points:
   - Installation & Config: see [Install](./getting-started/install) and [Config](./installation/config)
-  - Admin Workbench: see [Admin Workbench](./data-modeling/console-workbench-index)
+  - Admin Workbench: see [Admin Workbench](./data-modeling/workbench-index)
 
 ---
 
